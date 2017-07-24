@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<robot name="simple_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--Define constants-->
+  <xacro:property name="link_type" value="cuboidal" />
+  <xacro:property name="PI" value="3.14159"/>
+  <xacro:property name="mass1" value="50" />
+  <xacro:property name="mass2" value="10" />
+  <xacro:property name="mass3" value="1" />
+  <xacro:property name="radius1" value="0.3" /> <!--base_link radius-->
+  <xacro:property name="radius2" value="0.1" /> <!--link_1 radius-->
+  <xacro:property name="radius3" value="0.1" /> <!--link_2 radius-->
+  <xacro:property name="length1" value="0.2" /> <!--link_1 length-->
+  <xacro:property name="length2" value="1.0" /> <!--link_2 length-->
+  <xacro:property name="length3" value="0.75" /> <!--link_3 length-->
+  <xacro:property name="camera_size" value="0.05" />
+
+  <!--Import gazebo elements-->
+  <xacro:include filename="$(find simple_arm)/urdf/simple_arm.gazebo.xacro" />
+
+  <!--Links-->
+  <link name="world"/>
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 ${length1/2}" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="${length1}" radius="${radius1}"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${length1/2}" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="${length1}" radius="${radius1}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 ${length1/2}" rpy="0 0 0"/>
+      <mass value="${mass1}"/>
+      <inertia
+        ixx="${mass1 / 12.0 * (2*radius1*2*radius1 + length1*length1)}" ixy="0.0" ixz="0.0"
+        iyy="${mass1 / 12.0 * (length1*length1 + 2*radius1*2*radius1)}" iyz="0.0"
+        izz="${mass1 / 12.0 * (2*radius1*2*radius1 + 2*radius1*2*radius1)}"/>
+    </inertial>
+  </link>
+
+  <!--Cuboidal link_1-->
+  <xacro:if value="${link_type == 'cuboidal'}">
+    <link name="link_1">
+      <visual>
+        <origin xyz="0 0 ${length2/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${2*radius2} ${2*radius2} ${length2}"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0.0 0.8 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 ${length2/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${2*radius2} ${2*radius2} ${length2}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 ${length2/2}" rpy="0 0 0"/>
+        <mass value="${mass2}"/>
+        <inertia
+          ixx="${mass2 / 12.0 * (2*radius2*2*radius2 + length2*length2)}" ixy="0.0" ixz="0.0"
+          iyy="${mass2 / 12.0 * (length2*length2 + 2*radius2*2*radius2)}" iyz="0.0"
+          izz="${mass2 / 12.0 * (2*radius2*2*radius2 + 2*radius2*2*radius2)}"/>
+      </inertial>
+    </link>
+  </xacro:if>
+
+  <!--Cylindrical link_1-->
+  <xacro:if value="${link_type == 'cylindrical'}">
+    <link name="link_1">
+      <visual>
+        <origin xyz="0 0 ${length2/2}" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="${length2}" radius="${radius2}"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.0 0.0 0.8 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 ${length2/2}" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="${length2}" radius="${radius2}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 ${length2/2}" rpy="0 0 0"/>
+        <mass value="${mass2}"/>
+        <inertia
+          ixx="${mass2 / 12.0 * (2*radius2*2*radius2 + length2*length2)}" ixy="0.0" ixz="0.0"
+          iyy="${mass2 / 12.0 * (length2*length2 + 2*radius2*2*radius2)}" iyz="0.0"
+          izz="${mass2 / 12.0 * (2*radius2*2*radius2 + 2*radius2*2*radius2)}"/>
+      </inertial>
+    </link>
+  </xacro:if>
+
+  <!--Cuboidal link_2-->
+  <xacro:if value="${link_type == 'cuboidal'}">
+    <link name="link_2">
+      <visual>
+        <origin xyz="0 0 ${length3/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${2*radius3} ${2*radius3} ${length3}"/>
+        </geometry>
+        <material name="white">
+          <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 ${length3/2}" rpy="0 0 0"/>
+        <geometry>
+          <box size="${2*radius3} ${2*radius3} ${length3}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 ${length3/2}" rpy="0 0 0"/>
+        <mass value="${mass3}"/>
+        <inertia
+          ixx="${mass3 / 12.0 * (2*radius3*2*radius3 + length3*length3)}" ixy="0.0" ixz="0.0"
+          iyy="${mass3 / 12.0 * (length3*length3 + 2*radius3*2*radius3)}" iyz="0.0"
+          izz="${mass3 / 12.0 * (2*radius3*2*radius3 + 2*radius3*2*radius3)}"/>
+      </inertial>
+    </link>
+  </xacro:if>
+
+  <!--Cylindrical link_2-->
+  <xacro:if value="${link_type == 'cylindrical'}">
+    <link name="link_2">
+      <visual>
+        <origin xyz="0 0 ${length3/2}" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="${length3}" radius="${radius3}"/>
+        </geometry>
+        <material name="white">
+          <color rgba="1.0 1.0 1.0 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 ${length3/2}" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="${length3}" radius="${radius3}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 ${length3/2}" rpy="0 0 0"/>
+        <mass value="${mass3}"/>
+        <inertia
+          ixx="${mass3 / 12.0 * (2*radius3*2*radius3 + length3*length3)}" ixy="0.0" ixz="0.0"
+          iyy="${mass3 / 12.0 * (length3*length3 + 2*radius3*2*radius3)}" iyz="0.0"
+          izz="${mass3 / 12.0 * (2*radius3*2*radius3 + 2*radius3*2*radius3)}"/>
+      </inertial>
+    </link>
+  </xacro:if>
+
+  <!--camera_link-->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!--mesh filename="package://simple_arm/meshes/camera.dae"/-->
+        <sphere radius="${camera_size}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!--mesh filename="package://simple_arm/meshes/camera.dae"/-->
+        <sphere radius="${camera_size}"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0 0 1.0"/>
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <!--Joints-->
+  <joint name="fixed_base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+  <joint name="joint_1" type="continuous">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0 0 ${length1}" rpy="0 0 0"/>
+    <limit effort="30" velocity="1.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+  </joint>
+
+  <joint name="joint_2" type="continuous">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0 1 0"/>
+    <origin xyz="0 ${2*radius2} ${length2-radius2}" rpy="0 0 0"/>
+    <limit effort="30" velocity="1.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5" />
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 0 1" />
+    <origin xyz="0 0 ${length3}" rpy="0 -${PI/2} 0"/>
+    <parent link="link_2"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <!--Transmission and actuators-->
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+</robot>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot>
+
+  <!-- Link0 -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Grey</material>
+    <mu1>2</mu1>
+    <mu2>2</mu2>
+  </gazebo>
+
+  <!-- Link1 -->
+  <gazebo reference="link_1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+
+  <!-- Link2 -->
+  <gazebo reference="link_2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+
+  <!-- Link3 -->
+  <gazebo reference="link_3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+
+
+  <!-- Link4 -->
+  <gazebo reference="link_4">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+
+  <!-- Link5 -->
+  <gazebo reference="link_5">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+
+  <!-- Link6 -->
+  <gazebo reference="link_6">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+
+  <!-- Gripper -->
+  <gazebo reference="gripper_link">
+    <material>Gazebo/Grey</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="left_gripper_finger_link">
+    <material>Gazebo/Grey</material>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>30.0</mu1>
+    <mu2>30.0</mu2>
+  </gazebo>
+  <gazebo reference="right_gripper_finger_link">
+    <material>Gazebo/Grey</material>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>30.0</mu1>
+    <mu2>30.0</mu2>
+  </gazebo>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/kuka_arm</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <!-- grasp plugin -->
+  <gazebo>
+    <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+      <arm>
+        <arm_name>kuka_arm</arm_name>
+        <palm_link>link_6</palm_link>
+        <gripper_link>right_gripper_finger_link</gripper_link>
+        <gripper_link>left_gripper_finger_link</gripper_link>
+      </arm>
+      <forces_angle_tolerance>100</forces_angle_tolerance>
+      <update_rate>4</update_rate>
+      <grip_count_threshold>4</grip_count_threshold>
+      <max_grip_count>8</max_grip_count>
+      <release_tolerance>0.003</release_tolerance>
+      <disable_collisions_on_attach>false</disable_collisions_on_attach>
+      <contact_topic>__default_topic__</contact_topic>
+    </plugin>
+  </gazebo>
+
+</robot>

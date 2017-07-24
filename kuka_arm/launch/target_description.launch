@@ -1,0 +1,13 @@
+<launch>
+  <!--by default we spawn at a random shelf location-->
+  <arg name="spawn_location" default="0" />
+  <!--send target urdf to param server-->
+  <param name="target_description" command="$(find xacro)/xacro --inorder $(find kuka_arm)/urdf/target.urdf.xacro" />
+
+  <!--run node to select a random spawn location-->
+  <node name="target_spawn" pkg="kuka_arm" type="target_spawn.py" output="screen">
+    <!--Value of this param decides spawn location in the shelf; 0=random-->
+    <param name="select_target_spawn" value="$(arg spawn_location)"  type="int"/>
+  </node>
+
+</launch>

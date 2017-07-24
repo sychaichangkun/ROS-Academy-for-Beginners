@@ -1,0 +1,28 @@
+<robot name="target_box">
+  <link name="target_link_1">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.05" />
+      <inertia  ixx="0.006" ixy="0"  ixz="0"  iyy="0.006"  iyz="0"  izz="0.002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.25"/>
+        <!--box size="0.10 0.10 0.25"/-->
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.05" length="0.25"/>
+        <!--box size="0.10 0.10 0.25"/-->
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="target_link_1">
+    <material>Gazebo/Blue</material>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+</robot>

@@ -1,0 +1,10 @@
+<launch>
+  <!--Load the joint controllers to param server-->
+  <rosparam file="$(find simple_arm)/config/controllers.yaml" command="load"/>
+
+  <!--Load controllers-->
+  <node name="spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/simple_arm" args="joint_state_controller
+    joint_1_position_controller
+    joint_2_position_controller"/>
+</launch>

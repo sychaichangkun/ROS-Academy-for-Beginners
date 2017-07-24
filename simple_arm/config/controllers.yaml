@@ -1,0 +1,14 @@
+simple_arm:
+    #list of controllers
+    joint_state_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 50
+
+    joint_1_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: joint_1
+      pid: {p: 100.0, i: 0.01, d: 10.0}
+    joint_2_position_controller:
+      type: effort_controllers/JointPositionController
+      joint: joint_2
+      pid: {p: 100.0, i: 0.01, d: 10.0}

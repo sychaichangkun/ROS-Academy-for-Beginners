@@ -1,0 +1,56 @@
+kuka_arm:
+    #list of controllers
+    joint_state_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 50
+
+    #r_gripper_controller:
+      #type: "position_controllers/JointPositionController"
+      #joint: right_gripper_finger_joint
+      #pid: {p: 10, i: 0.01, d: 10}
+
+    #l_gripper_controller:
+      #type: "position_controllers/JointPositionController"
+      #joint: left_gripper_finger_joint
+      #pid: {p: 10, i: 0.01, d: 10}
+      #gains:
+        #right_gripper_finger_joint: {p: 10, i: 0, d: 0}
+        #left_gripper_finger_joint: {p: 10, i: 0, d: 0}
+    gripper_controller:
+      type: "effort_controllers/JointTrajectoryController"
+      joints:
+        - right_gripper_finger_joint
+        - left_gripper_finger_joint
+      gains:
+        right_gripper_finger_joint: {p: 100, i: 1, d: 10, i_clamp: 1.0}
+        left_gripper_finger_joint: {p: 100, i: 1, d: 10, i_clamp: 1.0}
+      constraints:
+        goal_time: 3.0
+        right_gripper_finger_joint:
+          goal: 0.02
+        left_gripper_finger_joint:
+          goal: 0.02
+
+    arm_controller:
+      type: "position_controllers/JointTrajectoryController"
+      joints:
+        - joint_1
+        - joint_2
+        - joint_3
+        - joint_4
+        - joint_5
+        - joint_6
+      gains:
+        joint_1: {p: 100, i: 0.01, d: 1}
+        joint_2: {p: 100, i: 0.01, d: 1}
+        joint_3: {p: 100, i: 0.01, d: 1}
+        joint_4: {p: 100, i: 0.01, d: 1}
+        joint_5: {p: 100, i: 0.01, d: 1}
+        joint_6: {p: 100, i: 0.01, d: 1}
+
+      constraints:
+        goal_time: 10.0                  # Override default
+
+      state_publish_rate:  50            # Override default
+      action_monitor_rate: 30            # Override default
+      stop_trajectory_duration: 0        # Override default

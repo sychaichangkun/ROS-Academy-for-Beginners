@@ -1,0 +1,23 @@
+digraph G {
+"base_link" -> "link_1"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.203 Hz\nMost recent transform: 1130.276 ( 0.031 sec old)\nBuffer length: 4.920 sec\n"];
+"link_1" -> "link_2"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.203 Hz\nMost recent transform: 1130.276 ( 0.031 sec old)\nBuffer length: 4.920 sec\n"];
+"link_2" -> "link_3"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.203 Hz\nMost recent transform: 1130.276 ( 0.031 sec old)\nBuffer length: 4.920 sec\n"];
+"link_3" -> "link_4"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.203 Hz\nMost recent transform: 1130.276 ( 0.031 sec old)\nBuffer length: 4.920 sec\n"];
+"link_4" -> "link_5"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.203 Hz\nMost recent transform: 1130.276 ( 0.031 sec old)\nBuffer length: 4.920 sec\n"];
+"link_5" -> "link_6"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.203 Hz\nMost recent transform: 1130.276 ( 0.031 sec old)\nBuffer length: 4.920 sec\n"];
+"gripper_link" -> "left_gripper_finger_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.203 Hz\nMost recent transform: 1130.276 ( 0.031 sec old)\nBuffer length: 4.920 sec\n"];
+"gripper_link" -> "right_gripper_finger_link"[label="Broadcaster: /robot_state_publisher\nAverage rate: 50.203 Hz\nMost recent transform: 1130.276 ( 0.031 sec old)\nBuffer length: 4.920 sec\n"];
+"world" -> "base_footprint"[label="Broadcaster: /link1_broadcaster\nAverage rate: 10.200 Hz\nMost recent transform: 1130.356 ( -0.049 sec old)\nBuffer length: 4.804 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1130.307"[ shape=plaintext ] ;
+ }->"base_link";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1130.307"[ shape=plaintext ] ;
+ }->"gripper_link";
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1130.307"[ shape=plaintext ] ;
+ }->"world";
+}

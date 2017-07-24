@@ -1,0 +1,432 @@
+<?xml version="1.0"?>
+<robot name="kuka_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--Define constants-->
+  <xacro:property name="pi" value="3.141592654"/>
+  <xacro:property name="deg" value="0.017453293"/><!--degrees to radians-->
+  <xacro:property name="mass0" value="150" />
+  <xacro:property name="mass1" value="138" />
+  <xacro:property name="mass2" value="95" />
+  <xacro:property name="mass3" value="71" />
+  <xacro:property name="mass4" value="17" />
+  <xacro:property name="mass5" value="7" />
+  <xacro:property name="mass6" value="0.5" />
+  <xacro:property name="gripper_mass" value="0.3" />
+  <xacro:property name="finger_mass" value="0.1" />
+  <xacro:property name="gripper_type" value="two_finger" /><!--value="vacuum" or "two_finger"-->
+  <xacro:property name="vacuum_gripper_radius" value="0.1" />
+
+  <!--Import gazebo elements-->
+  <xacro:include filename="$(find kuka_arm)/urdf/kr210.gazebo.xacro" />
+
+  <!--Links-->
+  <link name="base_footprint"/>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${mass0}"/>
+      <inertia ixx="60" ixy="0" ixz="0" iyy="70" iyz="0" izz="100"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="${-pi/2} 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/visual/base_link.dae"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="${-pi/2} 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/collision/base_link.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <inertial>
+      <origin xyz="0 0 0.4" rpy="0 0 0"/>
+      <mass value="${mass1}"/>
+      <inertia ixx="30" ixy="0" ixz="0" iyy="50" iyz="0" izz="50"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/visual/link_1.dae"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/collision/link_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_2">
+    <inertial>
+      <origin xyz="0 0 0.44751" rpy="0 0 0"/>
+      <mass value="${mass2}"/>
+      <inertia ixx="40" ixy="0" ixz="0" iyy="40" iyz="0" izz="10"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="${-pi/2} 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/visual/link_2.dae"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/collision/link_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_3">
+    <inertial>
+      <origin xyz="0.18842 0.18344 -0.042799" rpy="0 0 0"/>
+      <mass value="${mass3}"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 -0.184 0" rpy="${-pi/2} 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/visual/link_3.dae"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.184 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/collision/link_3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_4">
+    <inertial>
+      <origin xyz="0.27146 -0.007326 0" rpy="0 0 0"/>
+      <mass value="${mass4}"/>
+      <inertia ixx="0.18" ixy="0" ixz="0" iyy="0.55" iyz="0" izz="0.64"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="${-pi/2} 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/visual/link_4.dae"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/collision/link_4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${mass5}"/>
+      <inertia ixx="0.04" ixy="0" ixz="0" iyy="0.068" iyz="0" izz="0.068"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="${-pi/2} 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/visual/link_5.dae"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/collision/link_5.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${mass6}"/>
+      <inertia ixx="0.004" ixy="0" ixz="0" iyy="0.003" iyz="0" izz="0.003"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/visual/link_6.dae"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/kr210l150/collision/link_6.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!--Gripper links-->
+  <!--Vacuum gripper-->
+  <xacro:if value="${gripper_type == 'vacuum'}">
+  <link name="gripper_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${gripper_mass}"/>
+      <inertia ixx="0.005" ixy="0" ixz="0" iyy="0.00" iyz="0" izz="0.00"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="${vacuum_gripper_radius}"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="${vacuum_gripper_radius}"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_joint" type="fixed">
+    <parent link="link_6"/>
+    <child link="gripper_link"/>
+    <origin xyz="0.0375 0 0" rpy="0 0 0"/>
+  </joint>
+  </xacro:if>
+
+  <!--Two-finger gripper-->
+  <xacro:if value="${gripper_type == 'two_finger'}">
+  <link name="gripper_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${gripper_mass}"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0002" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/gripper/gripper_base.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/gripper/gripper_base.dae"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="right_gripper_finger_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${finger_mass}"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.0002" iyz="0" izz="0.0002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/gripper/finger_right.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/gripper/finger_right_collision.dae"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="left_gripper_finger_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${finger_mass}"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.0002" iyz="0" izz="0.0002"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/gripper/finger_left.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_arm/meshes/gripper/finger_left_collision.dae"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_gripper_finger_joint" type="prismatic">
+    <origin rpy="0 0 0" xyz="0.15 -0.0725 0" />
+    <parent link="gripper_link" />
+    <child link="right_gripper_finger_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="100" lower="-0.01" upper="0.06" velocity="0.05" />
+    <dynamics damping="0.7" />
+  </joint>
+  <joint name="left_gripper_finger_joint" type="prismatic">
+    <origin rpy="0 0 0" xyz="0.15 0.0725 0" />
+    <parent link="gripper_link" />
+    <child link="left_gripper_finger_link" />
+    <axis xyz="0 -1 0" />
+    <limit effort="100" lower="-0.01" upper="0.06" velocity="0.05" />
+    <dynamics damping="0.7" />
+  </joint>
+  <joint name="gripper_joint" type="fixed">
+    <parent link="link_6"/>
+    <child link="gripper_link"/>
+    <origin xyz="0.11 0 0" rpy="0 0 0"/><!--0.087-->
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_gripper_finger_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_gripper_finger_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor8">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  </xacro:if>
+
+  <!-- joints -->
+  <joint name="fixed_base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="joint_1" type="revolute">
+    <origin xyz="0 0 0.33" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="${-185*deg}" upper="${185*deg}" effort="300" velocity="${123*deg}"/>
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <origin xyz="0.35 0 0.42" rpy="0 0 0"/>
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="${-45*deg}" upper="${85*deg}" effort="300" velocity="${115*deg}"/>
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <origin xyz="0 0 1.25" rpy="0 0 0"/>
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="${-210*deg}" upper="${(155-90)*deg}" effort="300" velocity="${112*deg}"/>
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <origin xyz="0.96 0 -0.054" rpy="0 0 0"/>
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="${-350*deg}" upper="${350*deg}" effort="300" velocity="${179*deg}"/>
+  </joint>
+  <joint name="joint_5" type="revolute">
+    <origin xyz="0.54 0 0" rpy="0 0 0"/>
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="${-125*deg}" upper="${125*deg}" effort="300" velocity="${172*deg}"/>
+  </joint>
+  <joint name="joint_6" type="revolute">
+    <origin xyz="0.193 0 0" rpy="0 0 0"/>
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="${-350*deg}" upper="${350*deg}" effort="300" velocity="${219*deg}"/>
+  </joint>
+
+  <!--Transmission and actuators-->
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>

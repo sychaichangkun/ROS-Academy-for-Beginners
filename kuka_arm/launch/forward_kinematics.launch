@@ -1,0 +1,16 @@
+<launch>
+  <!--Load urdf to param server-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find kuka_arm)/urdf/kr210.urdf.xacro'"/>
+
+  <!--GUI used to send fake joint values-->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="true"/>
+  </node>
+
+  <!--Publish robot state to TF-->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <!--rviz-->
+  <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false"
+    output="screen" args="-d $(find kuka_arm)/config/forward_kinematics.rviz"/>
+</launch>

@@ -1,0 +1,26 @@
+<launch>
+  <!--Include description and control launch files-->
+  <include file="$(find kuka_arm)/launch/robot_description.launch"/>
+  <include file="$(find kuka_arm)/launch/robot_control.launch"/>
+  <!--include file="$(find kr210_claw_moveit)/launch/move_group.launch"/-->
+
+  <!--Launch a gazebo world-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--arg name="world_name" value="$(find kuka_arm)/worlds/cafe.world"/-->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!--spawn a robot in gazebo world-->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false"
+    output="screen" args="-urdf -param
+    robot_description -x 0 -y 3 -z 0 -R 0 -P 0 -Y 0 -model kr210"/>
+
+  <!--rviz-->
+  <!--node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false"
+    output="screen"/-->
+
+</launch>

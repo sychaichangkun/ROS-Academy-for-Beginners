@@ -1,0 +1,12 @@
+<launch>
+  <!--Load urdf to param server-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find kuka_arm)/urdf/kr210.urdf.xacro'"/>
+
+  <!--Publish robot state to TF-->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <remap from="/joint_states" to="/kuka_arm/joint_states" />
+  </node>
+
+  <node name="joint_state_relay" pkg="topic_tools" type="relay"
+    args="/kuka_arm/joint_states /joint_states"/>
+</launch>

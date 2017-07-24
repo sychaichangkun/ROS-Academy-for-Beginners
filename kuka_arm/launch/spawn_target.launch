@@ -1,0 +1,4 @@
+<launch>
+  <!--spawn target in gazebo world-->
+  <node name="target_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" launch-prefix="/bin/bash -c '$* `rosparam get /target_description_argument`' --"/>
+</launch>
