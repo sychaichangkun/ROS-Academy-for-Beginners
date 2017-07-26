@@ -79,52 +79,6 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <model name='Gas Station'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://gas_station/meshes/gas_station.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://gas_station/meshes/gas_station.dae</uri>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://gas_station/materials/scripts</uri>
-              <uri>model://gas_station/materials/textures</uri>
-              <name>GasStation/Diffuse</name>
-            </script>
-            <shader type='normal_map_object_space'>
-              <normal_map>GasStation_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-1.48679 7.52315 0 0 -0 0</pose>
-    </model>
     <model name='polaris_ranger_ev'>
       <link name='chassis'>
         <inertial>
@@ -1696,15 +1650,15 @@
       <pose frame=''>7.44 -0.552424 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>134 335000000</sim_time>
-      <real_time>135 377240456</real_time>
-      <wall_time>1500906564 167491395</wall_time>
-      <iterations>134335</iterations>
+      <sim_time>232 195000000</sim_time>
+      <real_time>98 973168241</real_time>
+      <wall_time>1501065877 633283858</wall_time>
+      <iterations>97860</iterations>
       <model name='Gas Station'>
-        <pose frame=''>-1.48679 7.52315 0 0 -0 0</pose>
+        <pose frame=''>-0.551747 6.00718 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-1.48679 7.52315 0 0 -0 0</pose>
+          <pose frame=''>-0.551747 6.00718 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1721,79 +1675,101 @@
         </link>
       </model>
       <model name='polaris_ranger_ev'>
-        <pose frame=''>7.30031 -0.55006 0.000365 -5e-06 2.7e-05 3.12489</pose>
+        <pose frame=''>6.20714 -0.526592 0.000266 -9.5e-05 6.3e-05 3.12276</pose>
         <scale>1 1 1</scale>
         <link name='FNR_switch'>
-          <pose frame=''>6.74069 -0.520715 1.08035 -5e-06 0.167852 3.12489</pose>
-          <velocity>-0.008758 0.000318 -0.005763 -0.000183 0.001859 -3.2e-05</velocity>
-          <acceleration>-0.000366 3.4e-05 7e-06 -5.2e-05 -0.000978 -3e-06</acceleration>
-          <wrench>-3.7e-05 3e-06 1e-06 0 -0 0</wrench>
+          <pose frame=''>5.64755 -0.496152 1.08023 -9.5e-05 -0.013843 3.12276</pose>
+          <velocity>0.002823 0.003509 -0.006048 -0.004572 0.001834 -0.000265</velocity>
+          <acceleration>8.3e-05 2e-06 -1e-06 -1.3e-05 -0.000273 -7e-06</acceleration>
+          <wrench>8e-06 0 0 0 -0 0</wrench>
         </link>
         <link name='brake_pedal'>
-          <pose frame=''>6.58728 -0.80819 0.539185 -6e-06 2.8e-05 3.12489</pose>
-          <velocity>-0.009773 0.000225 -0.005416 -0.000212 0.001944 -2.9e-05</velocity>
-          <acceleration>-0.00037 1.6e-05 1.8e-05 -3.5e-05 6e-06 -3e-06</acceleration>
-          <wrench>-3.7e-05 2e-06 2e-06 0 -0 0</wrench>
+          <pose frame=''>5.49355 -0.783251 0.539036 -9.6e-05 6.5e-05 3.12276</pose>
+          <velocity>0.001758 0.001076 -0.004436 -0.004617 0.001952 -0.000268</velocity>
+          <acceleration>8.4e-05 -2e-06 1e-06 -8e-06 -1e-06 1e-06</acceleration>
+          <wrench>8e-06 0 0 0 -0 0</wrench>
         </link>
         <link name='chassis'>
-          <pose frame=''>7.30031 -0.55006 0.000365 -5e-06 2.7e-05 3.12489</pose>
-          <velocity>-0.010777 0.000103 -0.006817 -0.000181 0.001859 -3.2e-05</velocity>
-          <acceleration>-0.000371 9e-06 5e-06 -3.5e-05 7e-06 -2e-06</acceleration>
-          <wrench>-0.266853 0.006649 0.003599 0 -0 0</wrench>
+          <pose frame=''>6.20714 -0.526592 0.000266 -9.5e-05 6.3e-05 3.12276</pose>
+          <velocity>0.000824 -0.001553 -0.006955 -0.004529 0.001833 -0.000263</velocity>
+          <acceleration>8.4e-05 -3e-06 -1e-06 -8e-06 0 7e-06</acceleration>
+          <wrench>0.060425 -0.001868 -0.000654 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel'>
-          <pose frame=''>6.26006 -1.13276 0.320385 -1.51475 0.440917 -3.13827</pose>
-          <velocity>-0.010216 0.000107 -0.008451 -0.00175 -0.03188 0.001692</velocity>
-          <acceleration>-0.000372 1.5e-05 -2e-06 -4.2e-05 -0.00058 9.5e-05</acceleration>
-          <wrench>-0.004462 0.00018 -2.8e-05 0 -0 0</wrench>
+          <pose frame=''>5.16233 -1.10699 0.320227 1.50533 -0.71942 -0.011902</pose>
+          <velocity>0.001272 0.000828 -0.011217 -0.004342 0.004009 -0.000196</velocity>
+          <acceleration>8.5e-05 -3e-06 -7e-06 2e-06 0.000133 -1.5e-05</acceleration>
+          <wrench>0.001021 -3.6e-05 -8.5e-05 0 -0 0</wrench>
         </link>
         <link name='front_left_wheel_steering_block'>
-          <pose frame=''>6.26209 -1.03278 0.3204 1.57079 2.7e-05 3.12134</pose>
-          <velocity>-0.010219 0.000111 -0.009512 -0.000159 0.001854 -1e-06</velocity>
-          <acceleration>-0.000372 1.5e-05 -1.5e-05 -3.3e-05 6e-06 4e-06</acceleration>
-          <wrench>-0.000372 1.5e-05 -1.5e-05 0 -0 0</wrench>
+          <pose frame=''>5.16789 -1.00714 0.32026 1.57071 6e-05 3.08596</pose>
+          <velocity>0.001278 0.000837 -0.014156 -0.004212 0.001812 -0.000108</velocity>
+          <acceleration>8.5e-05 -3e-06 -1.1e-05 -8e-06 -1e-06 2e-06</acceleration>
+          <wrench>8.5e-05 -3e-06 -1.1e-05 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel'>
-          <pose frame=''>6.28029 0.067052 0.320388 1.51474 0.440888 3.10306</pose>
-          <velocity>-0.010173 0.000353 -0.008137 0.000262 -0.031814 -0.001751</velocity>
-          <acceleration>-0.000369 1.4e-05 3.6e-05 -3.4e-05 -0.000575 -0.000104</acceleration>
-          <wrench>-0.004425 0.000173 0.000432 0 -0 0</wrench>
+          <pose frame=''>5.19153 0.092568 0.320275 -1.50547 -0.712572 -0.091458</pose>
+          <velocity>0.001628 0.001074 -0.006168 -0.002416 0.004914 -0.000261</velocity>
+          <acceleration>8.4e-05 -3e-06 2e-06 -1e-06 0.00013 2.1e-05</acceleration>
+          <wrench>0.001005 -3.5e-05 2e-05 0 -0 0</wrench>
         </link>
         <link name='front_right_wheel_steering_block'>
-          <pose frame=''>6.27879 -0.032936 0.320401 1.5708 2.7e-05 3.12664</pose>
-          <velocity>-0.010182 0.00035 -0.008995 -0.000195 0.001865 -6.2e-05</velocity>
-          <acceleration>-0.00037 1.4e-05 5.3e-05 -3.3e-05 6e-06 -9e-06</acceleration>
-          <wrench>-0.00037 1.4e-05 5.3e-05 0 -0 0</wrench>
+          <pose frame=''>5.18672 -0.007316 0.32027 1.5707 6.1e-05 3.09342</pose>
+          <velocity>0.00159 0.001079 -0.005228 -0.004278 0.00184 -0.000412</velocity>
+          <acceleration>8.4e-05 -3e-06 5e-06 -8e-06 -1e-06 0</acceleration>
+          <wrench>8.4e-05 -3e-06 5e-06 0 -0 0</wrench>
         </link>
         <link name='gas_pedal'>
-          <pose frame=''>6.61215 -0.638581 0.523778 -6e-06 2.8e-05 3.12489</pose>
-          <velocity>-0.009795 0.000221 -0.005497 -0.000194 0.001946 -3e-05</velocity>
-          <acceleration>-0.00037 1.5e-05 1.2e-05 -3.5e-05 6e-06 -3e-06</acceleration>
-          <wrench>-3.7e-05 1e-06 1e-06 0 -0 0</wrench>
+          <pose frame=''>5.51878 -0.613695 0.523645 -9.5e-05 6.5e-05 3.12276</pose>
+          <velocity>0.001773 0.000999 -0.005267 -0.004584 0.001927 -0.000265</velocity>
+          <acceleration>8.4e-05 -2e-06 -1e-06 -8e-06 -1e-06 1e-06</acceleration>
+          <wrench>8e-06 0 0 0 -0 0</wrench>
         </link>
         <link name='hand_brake'>
-          <pose frame=''>6.76918 -0.611203 1.05035 -5e-06 -0.081644 3.12489</pose>
-          <velocity>-0.008817 0.000311 -0.0058 -0.000183 0.001858 -3.2e-05</velocity>
-          <acceleration>-0.000367 3.3e-05 1e-05 -3.6e-05 6e-06 -5e-06</acceleration>
-          <wrench>-0.000183 1.7e-05 5e-06 0 -0 0</wrench>
+          <pose frame=''>5.67585 -0.586698 1.05023 -9.9e-05 -0.263329 3.12279</pose>
+          <velocity>0.002744 0.003365 -0.005686 -0.004574 0.001834 -0.000268</velocity>
+          <acceleration>8.3e-05 2e-06 -1e-06 -1e-05 -4e-06 -0</acceleration>
+          <wrench>4.2e-05 1e-06 0 0 -0 0</wrench>
         </link>
         <link name='rear_left_wheel'>
-          <pose frame=''>8.14016 -1.16417 0.320385 -1.51472 0.440888 -3.1347</pose>
-          <velocity>-0.010207 4.6e-05 -0.008264 -0.001432 -0.03185 0.001667</velocity>
-          <acceleration>-0.000373 8e-06 2.2e-05 5.6e-05 0.003457 -0.000612</acceleration>
-          <wrench>-0.004471 9.6e-05 0.000266 0 -0 0</wrench>
+          <pose frame=''>7.04567 -1.14252 0.320262 1.5053 -0.719211 0.024901</pose>
+          <velocity>0.001248 7e-05 -0.005503 -0.00106 0.003956 -0.000344</velocity>
+          <acceleration>8.5e-05 -1e-06 5e-06 0.000511 0.028028 -0.014178</acceleration>
+          <wrench>0.001017 -1.4e-05 6.2e-05 0 -0 0</wrench>
         </link>
         <link name='rear_right_wheel'>
-          <pose frame=''>8.16016 0.035659 0.320383 1.51471 0.440983 3.10129</pose>
-          <velocity>-0.010168 0.000281 -0.008508 0.000458 -0.031789 -0.001725</velocity>
-          <acceleration>-0.00037 8e-06 -2.2e-05 -7.4e-05 -0.00462 -0.00063</acceleration>
-          <wrench>-0.004436 9.4e-05 -0.000267 0 -0 0</wrench>
+          <pose frame=''>7.06832 0.05727 0.320231 -1.50551 -0.712443 -0.062091</pose>
+          <velocity>0.001576 0.000276 -0.011254 0.000912 0.004782 -0.000113</velocity>
+          <acceleration>8.3e-05 -1e-06 -5e-06 -0.000555 -0.028502 0.005796</acceleration>
+          <wrench>0.000999 -1.4e-05 -6.2e-05 0 -0 0</wrench>
         </link>
         <link name='steering_wheel'>
-          <pose frame=''>6.95531 -0.844345 1.29035 0.00024 -0.869973 3.12457</pose>
-          <velocity>-0.008375 0.000349 -0.006106 -0.000181 0.001873 -3e-05</velocity>
-          <acceleration>-0.000366 4.1e-05 1.7e-05 -3.9e-05 6e-06 1e-05</acceleration>
-          <wrench>-0.000366 4.1e-05 1.7e-05 0 -0 0</wrench>
+          <pose frame=''>5.86153 -0.819685 1.29015 0.327619 -0.821529 2.6881</pose>
+          <velocity>0.003125 0.004413 -0.004964 -0.004546 0.001849 -0.000243</velocity>
+          <acceleration>8.4e-05 4e-06 1e-06 -6e-06 9e-06 4e-06</acceleration>
+          <wrench>8.4e-05 4e-06 1e-06 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='simple_arm'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='base_link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 0 -4e-06</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='link_1'>
+          <pose frame=''>0 0 0.2 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='link_2'>
+          <pose frame=''>0 0.2 1.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -1802,10 +1778,352 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>24.9929 -6.92823 11.9612 0 0.367643 2.55219</pose>
+        <pose frame=''>27.5639 -21.3873 12.0371 -5e-06 0.289261 2.41028</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
+    <model name='simple_arm'>
+      <link name='base_link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <mass>50</mass>
+          <inertia>
+            <ixx>1.66667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.66667</iyy>
+            <iyz>0</iyz>
+            <izz>3</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.2</length>
+              <radius>0.3</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose frame=''>0 0 0.1 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.2</length>
+              <radius>0.3</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='fixed_base_joint' type='revolute'>
+        <child>base_link</child>
+        <parent>world</parent>
+        <axis>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+          </limit>
+          <dynamics>
+            <damping>0</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+          <xyz>0 0 1</xyz>
+        </axis>
+      </joint>
+      <link name='link_1'>
+        <pose frame=''>0 0 0.2 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.5 0 -0 0</pose>
+          <mass>10</mass>
+          <inertia>
+            <ixx>0.866667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.866667</iyy>
+            <iyz>0</iyz>
+            <izz>0.0666667</izz>
+          </inertia>
+        </inertial>
+        <collision name='link_1_collision'>
+          <pose frame=''>0 0 0.5 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='link_1_visual'>
+          <pose frame=''>0 0 0.5 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Orange</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_1' type='revolute'>
+        <child>link_1</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='link_2'>
+        <pose frame=''>0 0.2 1.1 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0.375004 0 -0 0</pose>
+          <mass>1.00001</mass>
+          <inertia>
+            <ixx>0.0502107</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0502107</iyy>
+            <iyz>0</iyz>
+            <izz>0.00666767</izz>
+          </inertia>
+        </inertial>
+        <collision name='link_2_collision'>
+          <pose frame=''>0 0 0.375 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.75</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+                <mu2>0.2</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='link_2_fixed_joint_lump__camera_link_collision_1'>
+          <pose frame=''>0 0 0.75 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <sphere>
+              <radius>0.05</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='link_2_visual'>
+          <pose frame=''>0 0 0.375 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.75</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='link_2_fixed_joint_lump__camera_link_visual_1'>
+          <pose frame=''>0 0 0.75 3.14159 -1.57079 3.14159</pose>
+          <geometry>
+            <sphere>
+              <radius>0.05</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay/>
+        <velocity_decay/>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <sensor name='rgb_camera' type='camera'>
+          <update_rate>30</update_rate>
+          <camera name='rgb_camera'>
+            <horizontal_fov>1.4</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>300</far>
+            </clip>
+          </camera>
+          <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>rgb_camera</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>camera_link</frameName>
+            <hackBaseline>0.0</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose frame=''>0 0 0.75 3.14159 -1.57079 3.14159</pose>
+        </sensor>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='joint_2' type='revolute'>
+        <child>link_2</child>
+        <parent>link_1</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <static>0</static>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/simple_arm</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      </plugin>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </model>
+    <model name='Gas Station'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://gas_station/meshes/gas_station.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://gas_station/meshes/gas_station.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://gas_station/materials/scripts</uri>
+              <uri>model://gas_station/materials/textures</uri>
+              <name>GasStation/Diffuse</name>
+            </script>
+            <shader type='normal_map_object_space'>
+              <normal_map>GasStation_Normal.png</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.551747 6.00718 0 0 -0 0</pose>
+    </model>
   </world>
 </sdf>
