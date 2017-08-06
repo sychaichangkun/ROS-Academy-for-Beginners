@@ -1,3 +1,0 @@
-geometry_msgs/Pose[] poses
----
-trajectory_msgs/JointTrajectoryPoint[] points
