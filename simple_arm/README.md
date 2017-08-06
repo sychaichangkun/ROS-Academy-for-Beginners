@@ -1,7 +1,7 @@
 # simple_arm
 A mini-project to better explain pub-sub architecture in ROS
 
-![demo_pic](/worlds/ROS-Academy.png "ROS Academy World")
+![demo_pic](./worlds/ROS-Academy.png "ROS Academy World")
 
 -### How to Launch the simulation?
 Make sure you have all the required ROS packages installed, and that this package is in your ROS workspace (assumed ot be `~/catkin_ws`.
