@@ -8,9 +8,13 @@ project(simple_arm)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+    roscpp 
+    rospy
 	std_msgs
 	message_generation
 	controller_manager
+	gazebo_ros
+    
 )
 
 ## System dependencies are found with CMake's conventions
@@ -102,7 +106,6 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
 #  LIBRARIES simple_arm
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
@@ -129,7 +132,11 @@ catkin_package(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/simple_arm_node.cpp)
+ add_executable(simple_mover_c src/simple_mover_c.cpp)
+ add_dependencies(simple_mover_c ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(simple_mover_c
+  ${catkin_LIBRARIES}
+)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
