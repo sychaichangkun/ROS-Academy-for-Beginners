@@ -8,6 +8,8 @@ project(simple_arm)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+	roscpp
+	rospy
 	std_msgs
 	message_generation
 	controller_manager
@@ -150,6 +152,11 @@ catkin_package(
 #############
 ## Install ##
 #############
+ add_executable(simple_mover_c src/simple_mover_c.cpp)
+ add_dependencies(simple_mover_c ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(simple_mover_c
+  ${catkin_LIBRARIES}
+)
 
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
