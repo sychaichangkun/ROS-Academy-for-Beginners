@@ -52,6 +52,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 # add_message_files(
 #   FILES
+   
 #   Message1.msg
 #   Message2.msg
 # )
@@ -107,7 +108,7 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES simple_arm
+  LIBRARIES simple_arm
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )

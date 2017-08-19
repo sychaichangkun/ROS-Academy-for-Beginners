@@ -4,18 +4,22 @@
 
 import sys
 import rospy
-from simple_arm.srv import TakePhotoCommand
+from simple_arm.srv import *
 
-def keyboard_photo_client2(command):
+def keyboard_photo_client():
+
+    rospy.init_node("take_photo_client")
     rospy.wait_for_service('take_photo')
-    try:
-        take_photo_client = rospy.ServiceProxy('take_photo',TakePhotoCommand)
-        resp = take_photo_client(command)
-        print resp.feedback
-
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
+    while not rospy.is_shutdown():
+        try:
+            command = raw_input('Please input command:')
+            take_photo_client = rospy.ServiceProxy('take_photo',TakePhotoCommand)
+            resp = take_photo_client(command)
+            print resp.feedback
+        except rospy.ServiceException, e:
+            print "Service call failed: %s"%e
+            
+        rospy.spin()
 
 if __name__ == "__main__":
-    command = raw_input('Please input command:')
-    keyboard_photo_client2(command)
+    keyboard_photo_client()
