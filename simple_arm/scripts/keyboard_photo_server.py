@@ -12,15 +12,15 @@ import matplotlib.pyplot as plt
 import rospy
 from simple_arm.srv import *
 
-def callback_topic(img_msg):
-    try:
-        bridge = CvBridge()
-        cv_image = bridge.imgmsg_to_cv2(img_msg,'bgr8')
-        plt.imshow(cv_image)
-        plt.show(block=False)
-        plt.close()
-    except CvBridgeError as e:
-        print(e)
+#def callback_topic(img_msg):
+#    try:
+#        bridge = CvBridge()
+#        cv_image = bridge.imgmsg_to_cv2(img_msg,'bgr8')
+#        plt.imshow(cv_image)
+#        plt.show(block=False)
+#        plt.close()
+#    except CvBridgeError as e:
+#        print(e)
 
 def handle_function(req):
 
@@ -31,11 +31,20 @@ def handle_function(req):
     if srv_command == "c":
         
         # 定义图片topic，并注册到其上，接收到消息后调用callback_topic
-        img_topic = "/rgb_camera/image_raw"
-        img_sub = rospy.Subscriber(img_topic, Image, callback_topic)
+        image_topic = "/rgb_camera/image_raw"
+        img_msg = rospy.wait_for_message(image_topic, Image)
+        bridge = CvBridge()
+        cv_image = bridge.imgmsg_to_cv2(img_msg, 'bgr8')
+        plt.imshow(cv_image)
+        plt.ion()
+        plt.show()
+        plt.close('all')
+        #img_sub = rospy.Subscriber(img_topic, Image, callback_topic)
 
         # return the feedback configuration, response
         return TakePhotoCommandResponse("Photo taken configuration!")
+    else:
+        return TakePhotoCommandResponse("Please push 'c' to take photo")
 
 def take_photo_server():
     rospy.init_node("take_photo_server")
