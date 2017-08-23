@@ -34,7 +34,7 @@
 	import rospy
 	from nav_msgs.msg import Odometry
 
-很像C ++发行商代码，其中包括rospy库，并从 **nav_msgs.msg** 导入 **Odometry** 消息类型。要了解有关特定消息类型的更多信息，可以访问[http://docs.ros.org](http://docs.ros.org)查看它的定义，例如，我们使用http://docs.ros.org/api/nav_msgs/html/msg/Odometry.html。下一个代码块导入pygame库并设置显示的初始条件。
+很像C ++发行商代码，其中包括rospy库，并从 **nav_msgs.msg** 导入 **Odometry** 消息类型。要了解有关特定消息类型的更多信息，可以访问[http://docs.ros.org](http://docs.ros.org)查看它的定义，例如，我们使用 http://docs.ros.org/api/nav_msgs/html/msg/Odometry.html 。下一个代码块导入pygame库并设置显示的初始条件。
 
 	def odomCB(msg)
 
