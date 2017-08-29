@@ -12,15 +12,8 @@ import matplotlib.pyplot as plt
 import rospy
 from simple_arm.srv import *
 
-#def callback_topic(img_msg):
-#    try:
-#        bridge = CvBridge()
-#        cv_image = bridge.imgmsg_to_cv2(img_msg,'bgr8')
-#        plt.imshow(cv_image)
-#        plt.show(block=False)
-#        plt.close()
-#    except CvBridgeError as e:
-#        print(e)
+
+COUNT=0
 
 def handle_function(req):
 
@@ -29,27 +22,50 @@ def handle_function(req):
 
     # 若request为'c', 则接收并显示图像，实现拍照功能
     if srv_command == "c":
-        
+        print("I got c")
         # 定义图片topic，并注册到其上，接收到消息后调用callback_topic
-        image_topic = "/rgb_camera/image_raw"
-        img_msg = rospy.wait_for_message(image_topic, Image)
-        bridge = CvBridge()
-        cv_image = bridge.imgmsg_to_cv2(img_msg, 'bgr8')
-        plt.imshow(cv_image)
-        plt.ion()
-        plt.show()
-        plt.close('all')
+        img_topic = "/rgb_camera/image_raw"
+        print "image topic OK"
         #img_sub = rospy.Subscriber(img_topic, Image, callback_topic)
+	img_msg = rospy.wait_for_message(img_topic, Image)
 
-        # return the feedback configuration, response
+        print type(img_msg)
+
+        try:
+            global COUNT 
+            COUNT = COUNT+1
+            bridge = CvBridge()
+            print "Hello 0"
+            cv_image = bridge.imgmsg_to_cv2(img_msg,'bgr8')
+            print "Hello 1", cv_image.shape, cv_image.dtype
+            cv2.imwrite("image%s.png",cv_image)%COUNT
+            cv2.imshow("Image", cv_image)
+            print "Hello 2"
+            cv2.waitKey(0)
+            print "Hello 3"
+	    cv2.destroyWindow("Image")
+            cv2.waitKey(1)
+            cv2.waitKey(1)
+            cv2.waitKey(1)
+            cv2.waitKey(1)
+            cv2.waitKey(1)
+            cv2.waitKey(1)
+            print "Hello 4"
+
+        except CvBridgeError as e:
+            print(e)
+
         return TakePhotoCommandResponse("Photo taken configuration!")
     else:
-        return TakePhotoCommandResponse("Please push 'c' to take photo")
+        return TakePhotoCommandResponse("Please input 'c'")
 
 def take_photo_server():
     rospy.init_node("take_photo_server")
+    print "Hello 10"
     s = rospy.Service('take_photo', TakePhotoCommand, handle_function)
+    print "Hello 11"
     rospy.spin()
+    print "Hello 12"
 
 if __name__ == "__main__":
     take_photo_server()
