@@ -4,7 +4,7 @@
 # 整体思路：首先，本例为service示例，从client端接收到request，判断是否是拍照命令
 # 'c'，如果是，则从/rgb_camera/image_raw这个相机图片topic中接收一张图片，然后显示
 # 出来
-
+import os
 import cv2
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
@@ -24,11 +24,12 @@ def handle_function(req):
         img_topic = "/rgb_camera/image_raw"
 	img_msg = rospy.wait_for_message(img_topic, Image)
         try:
+            BASE_DIR = os.path.dirname()
             global COUNT 
             COUNT = COUNT+1
             bridge = CvBridge()
             cv_image = bridge.imgmsg_to_cv2(img_msg,'bgr8')
-            cv2.imwrite("images/image%s.png"%COUNT,cv_image)
+            cv2.imwrite("image%s.png"%COUNT,cv_image)
             cv2.waitKey(0)
 
         except CvBridgeError as e:
