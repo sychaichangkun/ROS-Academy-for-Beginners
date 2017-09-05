@@ -1,14 +1,13 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(simple_arm)
+project(service_client_demo)
 
-find_package(catkin REQUIRED COMPONENTS
-	roscpp
-	rospy
-	std_msgs
-	message_generation
-	controller_manager
-	gazebo_ros
-)
+## Compile as C++11, supported in ROS Kinetic and newer
+# add_compile_options(-std=c++11)
+
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
+find_package(catkin REQUIRED rospy)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -46,7 +45,6 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 # add_message_files(
 #   FILES
-   
 #   Message1.msg
 #   Message2.msg
 # )
@@ -54,20 +52,54 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate services in the 'srv' folder
 add_service_files(
    FILES
-   GoToPosition.srv
-   TakePhotoCommand.srv
+   SERVICE_DEMO.srv
 )
 
+## Generate actions in the 'action' folder
+# add_action_files(
+#   FILES
+#   Action1.action
+#   Action2.action
+# )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-   DEPENDENCIES
-   std_msgs  # Or other packages containing msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs  # Or other packages containing msgs
+# )
 
+################################################
+## Declare ROS dynamic reconfigure parameters ##
+################################################
+
+## To declare and build dynamic reconfigure parameters within this
+## package, follow these steps:
+## * In the file package.xml:
+##   * add a build_depend and a run_depend tag for "dynamic_reconfigure"
+## * In this file (CMakeLists.txt):
+##   * add "dynamic_reconfigure" to
+##     find_package(catkin REQUIRED COMPONENTS ...)
+##   * uncomment the "generate_dynamic_reconfigure_options" section below
+##     and list every .cfg file to be processed
+
+## Generate dynamic reconfigure parameters in the 'cfg' folder
+# generate_dynamic_reconfigure_options(
+#   cfg/DynReconf1.cfg
+#   cfg/DynReconf2.cfg
+# )
+
+###################################
+## catkin specific configuration ##
+###################################
+## The catkin_package macro generates cmake config files for your package
+## Declare things to be passed to dependent projects
+## INCLUDE_DIRS: uncomment this if you package contains header files
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-  LIBRARIES simple_arm
+#  LIBRARIES service_client_demo
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -78,11 +110,14 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-# include_directories(include)
+include_directories(
+# include
+# ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/simple_arm.cpp
+#   src/${PROJECT_NAME}/service_client_demo.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -93,7 +128,7 @@ catkin_package(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/simple_arm_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/service_client_demo_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -113,11 +148,6 @@ catkin_package(
 #############
 ## Install ##
 #############
-# add_executable(simple_mover_c src/simple_mover_c.cpp)
-# add_dependencies(simple_mover_c ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-#target_link_libraries(simple_mover_c
-#  ${catkin_LIBRARIES}
-#)
 
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
@@ -155,12 +185,10 @@ catkin_package(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_simple_arm.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_service_client_demo.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
-include_directories(include ${catkin_INCLUDE_DIRS})
-add_executable(simple_mover_c src/simple_mover_c.cpp)
-add_dependencies(simple_mover_c ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(simple_mover_c  ${catkin_LIBRARIES})
 
+## Add folders to be run by python nosetests
+# catkin_add_nosetests(test)

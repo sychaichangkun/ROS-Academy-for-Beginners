@@ -61,9 +61,9 @@ def mover_service():
 
 if __name__ == '__main__':
     j1_publisher = rospy.Publisher('/simple_arm/joint_1_position_controller/command',
-                                   Float64, queue_size=10)
+                                   Float64, queue_size=1)
     j2_publisher = rospy.Publisher('/simple_arm/joint_2_position_controller/command',
-                                   Float64, queue_size=10)
+                                   Float64, queue_size=1)
 
     try:
         mover_service()
