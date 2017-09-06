@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # coding:utf-8
 
-from sevice_client_demo.srv import *
 import rospy
+from service_client_demo.srv import *
 
 def client_srv():
     rospy.wait_for_service("greetings")
     try:
-        greetings_client = rospy.ServiceProxy("greetings",SERVICE_DEMO)
+        greetings_client = rospy.ServiceProxy("greetings",Service_demo)
         resp = greetings_client("HAN",20)
-        return resp.response
+        print "Message From server:%s"%resp.response
     except rospy.ServiceException, e:
         print "Service call failed: %s"%e
 

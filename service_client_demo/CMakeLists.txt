@@ -7,7 +7,7 @@ project(service_client_demo)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED rospy)
+find_package(catkin REQUIRED rospy roscpp std_msgs message_generation)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -52,7 +52,7 @@ find_package(catkin REQUIRED rospy)
 ## Generate services in the 'srv' folder
 add_service_files(
    FILES
-   SERVICE_DEMO.srv
+   Service_demo.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -63,10 +63,10 @@ add_service_files(
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs  # Or other packages containing msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -99,8 +99,8 @@ add_service_files(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES service_client_demo
-#  CATKIN_DEPENDS other_catkin_pkg
+  LIBRARIES service_client_demo
+  CATKIN_DEPENDS message_runtime
 #  DEPENDS system_lib
 )
 
