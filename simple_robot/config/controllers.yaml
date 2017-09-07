@@ -1,4 +1,4 @@
-simple_arm:
+simple_robot:
     #list of controllers
     joint_state_controller:
       type: joint_state_controller/JointStateController

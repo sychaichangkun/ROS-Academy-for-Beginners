@@ -26,7 +26,7 @@
 **`$ cd ~/catkin_ws/src`** **`$ git clone https://github.com/buaaerhan/ROS-Academy-for-Beginners.git`**
 **`$ cd ~/catkin_ws`** **`$ catkin_make`**
 
-**注：**如果编译出错，请删除kuka-arm包后再编译运行simple-arm中的可执行文件：**`$ roslaunch simple_arm robot_spawn.launch`** **`$ rosrun simple_arm simple_mover$ rqt_plot`**
+**注：**如果编译出错，请删除kuka-arm包后再编译运行simple-arm中的可执行文件：**`$ roslaunch simple_robot robot_spawn.launch`** **`$ rosrun simple_robot simple_mover$ rqt_plot`**
 
 运行结果如果，由于未添加topic，当前界面空白
 
@@ -54,7 +54,7 @@
 
 运行方式：**`$rqt_graph`**
 
-仍以上面的simple_arm包为例，编译并运行**`$ roslaunch simple_arm robot_spawn.launch $ rosrun simple_arm simple_mover $ rqt_graph`**
+仍以上面的simple_arm包为例，编译并运行**`$ roslaunch simple_robot robot_spawn.launch $ rosrun simple_robot simple_mover $ rqt_graph`**
 
 运行结果如下图：
 
@@ -74,7 +74,7 @@
 
 仍以上面的simple_arm包为例，编译并运行
 
-**`$ roslaunch simple_arm robot_spawn.launch $ rosrun simple_arm simple_mover $ rqt_console`**
+**`$ roslaunch simple_robot robot_spawn.launch $ rosrun simple_robot simple_mover $ rqt_console`**
 
 当用Ctrl+c终止launch程序时，结果如下图：
 
@@ -101,7 +101,7 @@
 运行方式：**`$gazebo`**
 
 运行simple_arm，会自动调用gazebo仿真
-**`$ roslaunch simple_arm robot_spawn.launch $ rosrun simple_arm simple_mover`**
+**`$ roslaunch simple_robot robot_spawn.launch $ rosrun simple_robot simple_mover`**
 
 显示结果如图所示：
 
@@ -115,7 +115,7 @@
 
 在运行前面的simple_arm包中两个可执行文件的基础上，运行rviz，结果如下图：
 
-**`$ roslaunch simple_arm robot_spawn.launch $ rosrun simple_arm simple_mover $ rviz`**
+**`$ roslaunch simple_robot robot_spawn.launch $ rosrun simple_robot simple_mover $ rviz`**
 
 但出现错误，且未能显示机器人模型，why?
 

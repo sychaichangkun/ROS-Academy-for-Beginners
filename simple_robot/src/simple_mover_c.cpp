@@ -10,8 +10,8 @@ int main(int argc, char **argv)
     //实例化句柄
     ros::NodeHandle n;
     //发布话题
-    ros::Publisher pub_j1 = n.advertise<std_msgs::Float64>("/simple_arm/joint_1_position_controller/command", 10);
-    ros::Publisher pub_j2 = n.advertise<std_msgs::Float64>("/simple_arm/joint_2_position_controller/command", 10);
+    ros::Publisher pub_j1 = n.advertise<std_msgs::Float64>("/simple_robot/joint_1_position_controller/command", 10);
+    ros::Publisher pub_j2 = n.advertise<std_msgs::Float64>("/simple_robot/joint_2_position_controller/command", 10);
     //设置发布的频率
     ros::Rate loop_rate(10);
     //获取当前时间，单位秒

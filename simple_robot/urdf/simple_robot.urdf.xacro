@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="simple_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="simple_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!--Define constants-->
   <xacro:property name="link_type" value="cuboidal" />
@@ -16,7 +16,7 @@
   <xacro:property name="camera_size" value="0.05" />
 
   <!--Import gazebo elements-->
-  <xacro:include filename="$(find simple_arm)/urdf/simple_arm.gazebo.xacro" />
+  <xacro:include filename="$(find simple_robot)/urdf/simple_robot.gazebo.xacro" />
 
   <!--Links-->
   <link name="world"/>
@@ -168,14 +168,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <!--mesh filename="package://simple_arm/models/meshes/camera.dae"/-->
+        <!--mesh filename="package://simple_robot/models/meshes/camera.dae"/-->
         <sphere radius="${camera_size}"/>
       </geometry>
     </collision>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <!--mesh filename="package://simple_arm/models/meshes/camera.dae"/-->
+        <!--mesh filename="package://simple_robot/models/meshes/camera.dae"/-->
         <sphere radius="${camera_size}"/>
       </geometry>
       <material name="red">

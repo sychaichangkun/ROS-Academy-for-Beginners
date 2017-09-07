@@ -5,9 +5,9 @@ import rospy
 from std_msgs.msg import Float64
 
 def mover():
-    pub_j1 = rospy.Publisher('/simple_arm/joint_1_position_controller/command',
+    pub_j1 = rospy.Publisher('/simple_robot/joint_1_position_controller/command',
                              Float64, queue_size=10)
-    pub_j2 = rospy.Publisher('/simple_arm/joint_2_position_controller/command',
+    pub_j2 = rospy.Publisher('/simple_robot/joint_2_position_controller/command',
                              Float64, queue_size=10)
     rospy.init_node('arm_mover')
     rate = rospy.Rate(10)

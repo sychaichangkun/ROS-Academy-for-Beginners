@@ -4,7 +4,22 @@
 ROS入门课程目的是让学生理解ROS的系统结构和工作原理，掌握常用的操作指令，具有ROS编程和调试的基本能力。
 
 ---
+## 运行方法
 
+1. 克隆或下载ROS-Academy-for-Beginners教学包到工作空间的`/src`目录下，例如 `~/catkin_ws/src`
+
+2. 安装教学包所需的依赖
+```sh
+$ cd ~/catkin_ws
+$ rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
+```
+
+3. 编译
+```sh
+$ catkin_make
+```
+
+---
 ## 课程大纲
 
 ### 一．ROS介绍与安装

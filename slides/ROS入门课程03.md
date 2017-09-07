@@ -33,7 +33,7 @@
 >文件包查找指令：**rospack**
 
 * 最常见指令：**`$rospack find pkg_name`**
-* 例如查找simple_arm包，输入指令：**`$rospack find simple_arm`**
+* 例如查找simple_arm包，输入指令：**`$rospack find simple_robot`**
 * 查看rospack使用帮助，输入指令：**`$rospack help`**
 
 ![图3](https://i.loli.net/2017/08/11/598d2f3914ba5.png)
@@ -43,7 +43,7 @@
 >进入ros文件目录：**roscd**
 
 * 使用方法：**`$roscd pkg_name`**
-* 例如进入rospy_tutorials包目录，输入指令：**`roscd simple_arm`**
+* 例如进入rospy_tutorials包目录，输入指令：**`roscd simple_robot`**
 
 **注意使用可以结合Tab键的补全功能**
 
@@ -56,7 +56,7 @@
 * 第一种用法：作为建议的ls指令**`$rosls dir_name`**
 * 举例：列出主目录下文件和目录**`$rosls`**
 * 第二种用法：直接跟ros包名：**`$rosls package_name`**
-* 举例：查找simple_arm包，睡指令：**`$rosls simple_arm`**
+* 举例：查找simple_arm包，睡指令：**`$rosls simple_robot`**
 
 ![图5](https://i.loli.net/2017/08/11/598d32a122b8a.png)
 
@@ -74,7 +74,7 @@
 >运行指定ros包下的launch文件：**roslaunch**
 
 * 用法：**`$roslaunch package file.launch`**
-* 运行mypackage包下的mylaunch文件**`$roslaunch simple_arm robot_spawn.launch`**
+* 运行mypackage包下的mylaunch文件**`$roslaunch simple_robot robot_spawn.launch`**
 
 **注意运行launch文件时不需要运行roscore，默认运行**
 
@@ -90,7 +90,7 @@
 
 1. launch文件中找到gazebo ros 的package，包含empty world.launch**`<include file="$(find gazebo_ros)/launch/empty_world.launch">`**
 2. 启动urdf_spawner节点、并且配置相应的参数**`<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"`**
-**`args="-urdf -param robot_description -x 3.0 -y 0 -z 0 -R 0 -P 0 -Y 0 -model simple_arm"/>`**
+**`args="-urdf -param robot_description -x 3.0 -y 0 -z 0 -R 0 -P 0 -Y 0 -model simple_robot"/>`**
 
 ![图8](https://i.loli.net/2017/08/11/598d38cc8f978.png)
 

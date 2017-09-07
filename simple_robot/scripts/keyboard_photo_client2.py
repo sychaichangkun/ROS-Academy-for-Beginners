@@ -4,7 +4,7 @@
 
 import sys
 import rospy
-from simple_arm.srv import *
+from simple_robot.srv import *
 
 def keyboard_photo_client():
 

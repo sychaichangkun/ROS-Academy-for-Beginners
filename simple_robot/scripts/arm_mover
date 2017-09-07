@@ -4,7 +4,7 @@ import math
 import rospy
 from std_msgs.msg import Float64
 from sensor_msgs.msg import JointState
-from simple_arm.srv import *
+from simple_robot.srv import *
 
 def at_goal(pos_j1, goal_j1, pos_j2, goal_j2):
     tolerance = .05
@@ -39,7 +39,7 @@ def move_arm(pos_j1, pos_j2):
     j2_publisher.publish(pos_j2)
 
     while True:
-        joint_state = rospy.wait_for_message('/simple_arm/joint_states', JointState)
+        joint_state = rospy.wait_for_message('/simple_robot/joint_states', JointState)
         if at_goal(joint_state.position[0], pos_j1, joint_state.position[1], pos_j2):
             time_elapsed = joint_state.header.stamp - time_elapsed
             break
@@ -60,9 +60,9 @@ def mover_service():
     rospy.spin()
 
 if __name__ == '__main__':
-    j1_publisher = rospy.Publisher('/simple_arm/joint_1_position_controller/command',
+    j1_publisher = rospy.Publisher('/simple_robot/joint_1_position_controller/command',
                                    Float64, queue_size=1)
-    j2_publisher = rospy.Publisher('/simple_arm/joint_2_position_controller/command',
+    j2_publisher = rospy.Publisher('/simple_robot/joint_2_position_controller/command',
                                    Float64, queue_size=1)
 
     try:

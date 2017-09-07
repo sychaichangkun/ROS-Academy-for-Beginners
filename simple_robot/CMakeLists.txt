@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(simple_arm)
+project(simple_robot)
 
 find_package(catkin REQUIRED COMPONENTS
 	roscpp
@@ -67,7 +67,7 @@ generate_messages(
 
 catkin_package(
 #  INCLUDE_DIRS include
-  LIBRARIES simple_arm
+  LIBRARIES simple_robot
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -82,7 +82,7 @@ catkin_package(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/simple_arm.cpp
+#   src/${PROJECT_NAME}/simple_robot.cpp
 # )
 
 ## Add cmake target dependencies of the library
