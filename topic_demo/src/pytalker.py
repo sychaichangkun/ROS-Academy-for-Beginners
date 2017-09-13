@@ -2,7 +2,7 @@
 #coding=utf-8
 import rospy
 #倒入自定义的数据类型
-from publish_subscribe_demo.msg import gps
+from topic_demo.msg import gps
 def talker():
     #Publisher 函数第一个参数是话题名称，第二个参数 数据类型，现在就是我们定义的msg 最后一个是缓冲区的大小
     #queue_size: None（不建议）  #这将设置为阻塞式同步收发模式！

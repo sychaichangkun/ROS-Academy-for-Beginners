@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>publish_subscribe_demo</name>
+  <name>topic_demo</name>
   <version>0.0.0</version>
   <description>The publish_subscribe_demo package</description>
 

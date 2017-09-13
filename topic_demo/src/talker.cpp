@@ -3,7 +3,7 @@
 #include <string>
 
 // 包含ROS的msg机制产生的头文件
-#include <publish_subscribe_demo/gps.h>
+#include <topic_demo/gps.h>
 
 int main(int argc, char **argv)
 {
@@ -12,7 +12,7 @@ int main(int argc, char **argv)
   //实例化句柄
   ros::NodeHandle nh;
   //实例化自定义msg
-   publish_subscribe_demo::gps msg;
+   topic_demo::gps msg;
 
   //! 发布消息
   ros::Publisher pub_;
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
   //! msg 的状态
   std::string state("working");
 
-  pub_ = nh.advertise<publish_subscribe_demo::gps>("chatter", 10);
+  pub_ = nh.advertise<topic_demo::gps>("chatter", 10);
   //定义发布的频率 
   ros::Rate loop_rate(1);
 
@@ -43,8 +43,8 @@ int main(int argc, char **argv)
     ROS_INFO("Talker: GPS: x = %f, y = %f ",  msg.x ,msg.y);
   //以1Hz的频率发布msg
     pub_.publish(msg);
-    ros::spinOnce();
-    loop_rate.sleep();
+    ros::spinOnce();//不是必需的，但是保持增加这个调用，是好习惯。
+    loop_rate.sleep();//根据前面的定义的loop_rate,设置1s的暂停
   }
 
   return 0;
