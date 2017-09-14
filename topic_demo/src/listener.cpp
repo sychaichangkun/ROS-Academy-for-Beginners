@@ -3,8 +3,8 @@
 // 包含计算距离的目录
 #include <cmath>
 //包含ROS的msg机制产生的头文件
-#include <publish_subscribe_demo/gps.h>
-void chatterCallback( const publish_subscribe_demo::gps::ConstPtr &msg)
+#include <topic_demo/gps.h>
+void chatterCallback( const topic_demo::gps::ConstPtr &msg)
 {  
     //计算离原点的距离
     float x=msg->x;

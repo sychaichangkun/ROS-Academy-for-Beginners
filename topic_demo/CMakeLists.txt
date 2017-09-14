@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(publish_subscribe_demo)
+project(topic_demo)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -152,9 +152,12 @@ include_directories(
 # )
 
 add_executable(talker src/talker.cpp )
+#必须添加add_dependencies，否则找不到自定义的msg产生的头文件
+add_dependencies(talker topic_demo generate_messages_cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 
 add_executable(listener src/listener.cpp )
+add_dependencies(listener topic_demo_generate_messages_cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 
 #############

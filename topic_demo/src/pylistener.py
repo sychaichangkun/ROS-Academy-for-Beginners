@@ -3,7 +3,7 @@
 import rospy
 import math
 #导入mgs到pkg中
-from publish_subscribe_demo.msg import gps
+from topic_demo.msg import gps
 #回调函数输入的应该是msg
 def callback(gps):
      distance=math.sqrt(math.pow(gps.x-1,2)+math.pow(gps.y-2,2)) 
