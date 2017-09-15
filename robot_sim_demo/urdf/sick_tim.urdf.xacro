@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<robot xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+  xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+  xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="sick_tim310" params="name ros_topic">
+    <xacro:sick_tim name="${name}" ros_topic="${ros_topic}"
+      length="0.06" width="0.06" height="0.079" mass="0.150" z_offset="0.05595"
+      min_range="0.05" max_range="4.0"
+      mesh="package://robot_sim_demo/meshes/sick_tim310.stl" />
+  </xacro:macro>
+
+  <xacro:macro name="sick_tim551" params="name ros_topic">
+    <xacro:sick_tim name="${name}" ros_topic="${ros_topic}" 
+      length="0.06" width="0.06" height="0.086" mass="0.250" z_offset="0.06296"
+      min_range="0.05" max_range="10.0"
+      mesh="package://robot_sim_demo/meshes/sick_tim551.stl" />
+  </xacro:macro>
+
+  <xacro:macro name="sick_tim571" params="name ros_topic">
+    <xacro:sick_tim name="${name}" ros_topic="${ros_topic}" 
+      length="0.06" width="0.06" height="0.086" mass="0.250" z_offset="0.02"
+      min_range="0.05" max_range="25.0"
+      mesh="package://robot_sim_demo/meshes/sick_tim571.stl" />
+  </xacro:macro>
+
+  <xacro:macro name="sick_tim" params="name ros_topic length width height mass z_offset min_range max_range mesh">
+    <!-- z_offset: distance between base plate and laser center (= center of mesh) -->
+
+    <joint name="${name}_joint" type="fixed">
+      <parent link="${name}_mount_link" />
+      <child link="${name}" />
+      <origin rpy="0 0 0" xyz="0 0 ${z_offset}"/>
+    </joint>
+
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <mesh filename="${mesh}" />
+        </geometry>
+        <material name="lightblue">
+          <color rgba=".5 .5 .7 .8" />
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="${mesh}" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${mass}" />
+        <origin xyz="0 0 -0.026" />
+        <inertia ixx="${0.0833333 * mass * (width * width + height * height)}" ixy="0.0" ixz="0.0"
+          iyy="${0.0833333 * mass * (length * length + height * height)}" iyz="0.0"
+          izz="${0.0833333 * mass * (length * length + width * width)}" />
+      </inertial>
+    </link>
+    <xacro:sick_tim_laser_gazebo_v0 name="${name}" link="${name}" ros_topic="${ros_topic}" 
+    update_rate="15.0" min_angle="-2.357" max_angle="2.357" min_range="${min_range}" max_range="${max_range}"/>
+    <!--update_rate=15.0-->
+  </xacro:macro>
+
+
+  <xacro:macro name="sick_tim_laser_gazebo_v0" params="name link ros_topic update_rate min_angle max_angle min_range max_range">
+    <gazebo reference="${link}">
+      <material value="Gazebo/LightWood" />
+      <sensor type="gpu_ray" name="${name}">
+        <always_on>true</always_on>
+        <update_rate>${update_rate}</update_rate>
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>810</samples>  <!-- 810 -->
+              <resolution>1</resolution>
+              <min_angle>${min_angle}</min_angle>
+              <max_angle>${max_angle}</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>${min_range}</min>
+            <max>${max_range}</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <plugin name="gazebo_ros_${name}_controller" filename="libgazebo_ros_gpu_laser.so">
+          <gaussianNoise>0.01</gaussianNoise>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>${update_rate}</updateRate>
+          <topicName>${ros_topic}</topicName>
+          <frameName>${link}</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+</robot>
