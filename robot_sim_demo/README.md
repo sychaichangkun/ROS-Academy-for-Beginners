@@ -15,6 +15,16 @@ $ roslaunch robot_sim_demo robot_spawn.launch
 ```
 
 ### 注意事项
+如果你是用的是VMware虚拟机，运行Gazebo可能会出现`vmw_ioctl_command`错误，解决办法：
+```sh
+$ export SVGA_VGPU10=0
+```
+也可以将其追加到.bashrc文件中
+```sh
+$ echo “export SVGA_VGPU10=0” >> ~/.bashrc
+```
+
+
 如果gazebo出现错误，比如无法查看摄像头换面，你需要升级gazebo到gazebo7及以上版本:
 ```sh
 $ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
