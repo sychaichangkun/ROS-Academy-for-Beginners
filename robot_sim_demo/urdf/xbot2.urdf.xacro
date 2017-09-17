@@ -15,20 +15,51 @@
 
   <link name="base_link">
     <inertial>
-      <origin  xyz="0 0 0.13" rpy="0 0 0" />
-      <mass value="25.0" />
-      <inertia ixx=".734" ixy="0" ixz="0" iyy=".734" iyz=".0" izz=".156" />
+      <origin  xyz="0.001 0 0.007" rpy="0 0 0" />
+      <mass value="30.0" />
+      <inertia ixx="1.734" ixy="0" ixz="0" iyy="1.734" iyz=".0" izz="1.0" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/base_link.dae" />
+        <mesh filename="package://xbot2_description/meshes/base_link.dae" />
       </geometry>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+
+    <collision name="front_omniwheel">
+      <origin xyz="0.18 0 0.02" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/base_link.dae" />
+        <sphere radius="0.019"/>
+      </geometry>
+    </collision>
+    <collision name="back_omniwheel">
+      <origin xyz="-0.18 0 0.02" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.019"/>
+      </geometry>
+    </collision>
+    <collision name="collision1">
+      <origin xyz="0.0 0 0.135" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.15" radius="0.25"/>
+      </geometry>
+    </collision>
+    <collision name="collision2">
+      <origin xyz="0.03 0 0.25" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.08" radius="0.15"/>
+      </geometry>
+    </collision>
+    <collision name="collision3">
+      <origin xyz="0 0 0.68" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.8" radius="0.08"/>
+      </geometry>
+    </collision>
+    <collision name="collision4">
+      <origin xyz="0 0 1.135" rpy="0 0 0" />
+      <geometry>
+        <box size="0.04 0.17 0.09"/>
       </geometry>
     </collision>
   </link>
@@ -44,19 +75,19 @@
 
   <link name="left_wheel">
     <collision name="collision">
-      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
       <geometry>
-        <cylinder radius="0.095" length="0.04"/>
+        <cylinder radius="0.095" length="0.05"/>
       </geometry>
     </collision>
     <visual name="left_wheel_visual">
-      <origin xyz="0 0 0" rpy="0 0 -1.5708"/>
+      <origin xyz="0 0 0" rpy="0 0 -1.570796"/>
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/wheel.dae" />
+        <mesh filename="package://xbot2_description/meshes/wheel.dae" />
       </geometry>
     </visual>
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 -1.5708"/>
+      <origin xyz="0 0 0" rpy="0 0 -1.570796"/>
       <mass value="1.5"/>
       <inertia ixx=".001" ixy="0" ixz="0" iyy=".001" iyz="0" izz=".001" />
     </inertial>
@@ -67,25 +98,25 @@
     <origin xyz="0 0.245 .095" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <limit effort="5.2" velocity="21.05"/>
+    <limit effort="100000" velocity="1000"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
   <link name="right_wheel">
     <collision name="collision">
-      <origin xyz="0 0 0" rpy="-1.5708  0 0"/>
+      <origin xyz="0 0 0" rpy="-1.570796  0 0"/>
       <geometry>
-        <cylinder radius="0.095" length="0.04"/>
+        <cylinder radius="0.095" length="0.05"/>
       </geometry>
     </collision>
     <visual name="right_wheel_visual">
-      <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+      <origin xyz="0 0 0" rpy="0 0 1.570796"/>
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/wheel.dae" />
+        <mesh filename="package://xbot2_description/meshes/wheel.dae" />
       </geometry>
     </visual>
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+      <origin xyz="0 0 0" rpy="0 0 1.570796"/>
       <mass value="1.5"/>
       <inertia ixx=".001" ixy="0" ixz="0" iyy=".001" iyz="0" izz=".001" />
     </inertial>
@@ -96,7 +127,7 @@
     <origin xyz="0 -0.245 .095" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="right_wheel"/>
-    <limit effort="5.2" velocity="21.05"/>
+    <limit effort="100000" velocity="1000"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
@@ -107,16 +138,16 @@
       <inertia ixx="0.000826" ixy="0" ixz="0" iyy="0.0009211" iyz="0" izz="0.0002601" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 1.5708" />
+      <origin xyz="0 0 0" rpy="0 0 1.570796" />
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/yaw_platform.stl" />
+        <mesh filename="package://xbot2_description/meshes/yaw_platform.stl" />
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 1.5708" />
+      <origin xyz="0 0 0" rpy="0 0 1.570796" />
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/yaw_platform.stl" />
+        <box size="0.0 0.0 0.0"/>
       </geometry>
     </collision>
   </link>
@@ -139,14 +170,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/pitch_platform.stl" />
+        <mesh filename="package://xbot2_description/meshes/pitch_platform.stl" />
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/pitch_platform.stl" />
+        <box size="0.0 0.0 0.0"/>
       </geometry>
     </collision>
   </link>
@@ -165,13 +196,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/xtion_pro_camera.dae" />
+        <box size="0.0 0.0 0.0"/>
       </geometry>
     </collision>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_sim_demo/meshes/xtion_pro_camera.dae" />
+        <mesh filename="package://xbot2_description/meshes/xtion_pro_camera.dae" />
       </geometry>
       <material name="gray"/>
     </visual>

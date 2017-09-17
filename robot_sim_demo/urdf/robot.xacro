@@ -5,16 +5,16 @@
   xmlns:xacro="http://ros.org/wiki/xacro"
   name="sick_tim">
   
-  <xacro:include filename="$(find robot_sim_demo)/urdf/sick_tim.urdf.xacro" />
+  <xacro:include filename="$(find xbot2_description)/urdf/sick_tim.urdf.xacro" />
   <xacro:sick_tim571 name="laser" ros_topic="scan"   />
   
-  <xacro:include filename="$(find robot_sim_demo)/urdf/materials.xacro" />
-  <xacro:include filename="$(find robot_sim_demo)/urdf/xbot2.urdf.xacro" />
-  <xacro:include filename="$(find robot_sim_demo)/urdf/xbot2.gazebo" />
+  <xacro:include filename="$(find xbot2_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find xbot2_description)/urdf/xbot2.urdf.xacro" />
+  <xacro:include filename="$(find xbot2_description)/urdf/xbot2.gazebo" />
   <xacro:xbot2_base/>
 
 
 
-  <!--xacro:include filename="$(find robot_sim_demo)/urdf/sick_tim.gazebo.xacro" /-->
+  <!--xacro:include filename="$(find xbot2_description)/urdf/sick_tim.gazebo.xacro" /-->
   
 </robot>

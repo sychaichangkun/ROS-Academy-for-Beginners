@@ -57,10 +57,10 @@
   </gazebo>
 
   <gazebo reference="base_link">
-    <mu>.03</mu>
-    <mu2>.03</mu2>
-    <kp>1000000</kp>
-    <kd>1</kd>
+    <mu>0</mu>
+    <mu2>0</mu2>
+    <kp>100000000.0</kp>
+    <kd>10000.0</kd>   
   </gazebo>
 
   <gazebo reference="laser">
@@ -68,13 +68,17 @@
   </gazebo>
 
   <gazebo reference="right_wheel">
-    <mu>0.68</mu>
-    <mu2>0.68</mu2>
+    <mu>10</mu>
+    <mu2>10</mu2>
+    <kp>100000000.0</kp>
+    <kd>10000.0</kd>    
   </gazebo>
 
   <gazebo reference="left_wheel">
-    <mu>0.68</mu>
-    <mu2>0.68</mu2>
+    <mu>10</mu>
+    <mu2>10</mu2>
+    <kp>100000000.0</kp>
+    <kd>10000.0</kd>   
   </gazebo>
 
   <gazebo reference="yaw_platform">

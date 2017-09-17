@@ -1,4 +1,0 @@
-<launch>
-	<node name="take_photo_server" pkg="simple_robot" type="keyboard_photo_server.py" output="screen"/>
-	<node name="take_photo_client" pkg="simple_robot" type="keyboard_photo_client2.py" output="screen"/>
-</launch>

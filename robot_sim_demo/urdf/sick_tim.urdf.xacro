@@ -8,21 +8,21 @@
     <xacro:sick_tim name="${name}" ros_topic="${ros_topic}"
       length="0.06" width="0.06" height="0.079" mass="0.150" z_offset="0.05595"
       min_range="0.05" max_range="4.0"
-      mesh="package://robot_sim_demo/meshes/sick_tim310.stl" />
+      mesh="package://xbot2_description/meshes/sick_tim310.stl" />
   </xacro:macro>
 
   <xacro:macro name="sick_tim551" params="name ros_topic">
     <xacro:sick_tim name="${name}" ros_topic="${ros_topic}" 
       length="0.06" width="0.06" height="0.086" mass="0.250" z_offset="0.06296"
       min_range="0.05" max_range="10.0"
-      mesh="package://robot_sim_demo/meshes/sick_tim551.stl" />
+      mesh="package://xbot2_description/meshes/sick_tim551.stl" />
   </xacro:macro>
 
   <xacro:macro name="sick_tim571" params="name ros_topic">
     <xacro:sick_tim name="${name}" ros_topic="${ros_topic}" 
       length="0.06" width="0.06" height="0.086" mass="0.250" z_offset="0.02"
       min_range="0.05" max_range="25.0"
-      mesh="package://robot_sim_demo/meshes/sick_tim571.stl" />
+      mesh="package://xbot2_description/meshes/sick_tim571.stl" />
   </xacro:macro>
 
   <xacro:macro name="sick_tim" params="name ros_topic length width height mass z_offset min_range max_range mesh">

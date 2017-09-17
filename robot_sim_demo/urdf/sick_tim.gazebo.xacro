@@ -1,0 +1,43 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sick_tim" >
+
+  <!-- SICK TIM571 (25m Range) -->
+  <gazebo reference="laser">
+    <sensor type="ray" name="base_laser">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>15</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>662</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.91986</min_angle>
+            <max_angle>1.91986</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.05</min>
+          <max>25.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <!-- Noise parameters based on spec for SICK TIM571 (25m version) -->
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.02</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_base_sick_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>laser_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Color the estop -->
+  <gazebo reference="estop_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+
+</robot>
