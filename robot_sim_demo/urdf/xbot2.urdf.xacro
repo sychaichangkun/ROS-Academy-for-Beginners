@@ -22,7 +22,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://xbot2_description/meshes/base_link.dae" />
+        <mesh filename="package://robot_sim_demo/meshes/base_link.dae" />
       </geometry>
     </visual>
 
@@ -83,7 +83,7 @@
     <visual name="left_wheel_visual">
       <origin xyz="0 0 0" rpy="0 0 -1.570796"/>
       <geometry>
-        <mesh filename="package://xbot2_description/meshes/wheel.dae" />
+        <mesh filename="package://robot_sim_demo/meshes/wheel.dae" />
       </geometry>
     </visual>
     <inertial>
@@ -112,7 +112,7 @@
     <visual name="right_wheel_visual">
       <origin xyz="0 0 0" rpy="0 0 1.570796"/>
       <geometry>
-        <mesh filename="package://xbot2_description/meshes/wheel.dae" />
+        <mesh filename="package://robot_sim_demo/meshes/wheel.dae" />
       </geometry>
     </visual>
     <inertial>
@@ -140,7 +140,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 1.570796" />
       <geometry>
-        <mesh filename="package://xbot2_description/meshes/yaw_platform.stl" />
+        <mesh filename="package://robot_sim_demo/meshes/yaw_platform.stl" />
       </geometry>
       <material name="grey"/>
     </visual>
@@ -170,7 +170,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://xbot2_description/meshes/pitch_platform.stl" />
+        <mesh filename="package://robot_sim_demo/meshes/pitch_platform.stl" />
       </geometry>
       <material name="grey"/>
     </visual>
@@ -202,7 +202,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://xbot2_description/meshes/xtion_pro_camera.dae" />
+        <mesh filename="package://robot_sim_demo/meshes/xtion_pro_camera.dae" />
       </geometry>
       <material name="gray"/>
     </visual>
