@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>service_client_demo</name>
+  <name>service_demo</name>
   <version>0.0.0</version>
-  <description>The service_client_demo package</description>
+  <description>The service_demo package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

@@ -3,12 +3,12 @@
 
 // 加载必要文件，注意Service_demo的加载方式
 # include "ros/ros.h"
-# include "service_client_demo/Service_demo.h"
+# include "service_demo/Service_demo.h"
 # include<string>
 
 // 定义请求处理函数
-bool handle_function(service_client_demo::Service_demo::Request &req,
-					service_client_demo::Service_demo::Response &res)
+bool handle_function(service_demo::Service_demo::Request &req,
+					service_demo::Service_demo::Response &res)
 {
 	// 此处我们对请求直接输出
 	ROS_INFO("Hi server,I'm client, my name is %s and I'm %ld years old!", req.name.c_str(), req.age);

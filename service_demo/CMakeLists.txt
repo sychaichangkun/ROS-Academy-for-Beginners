@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(service_client_demo)
+project(service_demo)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -99,7 +99,7 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 		#INCLUDE_DIRS include
-  LIBRARIES service_client_demo
+  LIBRARIES service_demo
   CATKIN_DEPENDS message_runtime
   #  DEPENDS system_lib
 )
