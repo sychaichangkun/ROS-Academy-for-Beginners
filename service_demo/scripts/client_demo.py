@@ -5,7 +5,7 @@
 
 # 加载所需模块
 import rospy
-from service_client_demo.srv import *
+from service_demo.srv import *
 
 def client_srv():
 

@@ -6,7 +6,7 @@
 # 加载必需模块，注意service模块的加载方式，from 包名.srv import *
 # 其中srv指的是在包根目录下的srv文件夹，也即srv模块
 import rospy
-from service_client_demo.srv import *
+from service_demo.srv import *
 
 def server_srv():
     # 初始化节点，命名为 "greetings_server"
