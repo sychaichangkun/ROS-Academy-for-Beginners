@@ -3,8 +3,9 @@
 int main(int argc, char **argv){
 	ros::init(argc, argv, "param_demo");
 	ros::NodeHandle nh;
-	int init_parameter = 20;
-	ros::param::set("/Param_demo",init_parameter);
+	int init_parameter;
+	ros::param::get("/Param_demo", init_parameter);
+	//ros::param::set("/Param_demo",init_parameter);
 	ros::Rate rate(1);
 
 	while(ros::ok()){

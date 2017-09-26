@@ -1,0 +1,6 @@
+<launch>
+	
+	<param name="/Param_demo" value="100" />
+	<node pkg="param_demo" type="param_demo" name="param_demo" output="screen"/>
+
+</launch>
