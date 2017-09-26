@@ -1,4 +1,0 @@
-<launch>
-	<node pkg="param_demo" type="param_set.py" name="param_set" output="screen"/>
-	<node pkg="param_demo" type="param_get.py" name="param_get" output="screen"/>
-</launch>
