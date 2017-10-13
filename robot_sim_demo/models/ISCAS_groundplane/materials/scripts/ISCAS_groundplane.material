@@ -1,0 +1,21 @@
+material ISCAS_groundplane/Image
+{
+  technique
+  {
+    pass
+    {
+      ambient .8 .8 .8 1.000000
+      diffuse .5 .5 .5 1.000000
+      specular 1 1 1 5.00000 
+      emissive 0.01 0.01 0.01  1.000000
+
+      texture_unit
+      {
+        texture ISCAS_groundplane.png
+	      filtering trilinear
+	      max_anisotropy 16
+	      scale 0.12 0.12
+      }
+    }
+  }
+}

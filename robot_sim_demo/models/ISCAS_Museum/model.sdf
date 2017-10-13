@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
-  <model name="test_zone">
+  <model name="ISCAS_Museum">
     <link name="link">
       <inertial>
         <mass>15</mass>
@@ -10,22 +10,22 @@
           <ixz>0.0</ixz>
           <iyy>0.0</iyy>
           <iyz>0.0</iyz>
-          <izz>0.1</izz>
+          <izz>0.0</izz>
         </inertia>
       </inertial>
       <collision name="collision">
-        <pose>-8.12 8.8 0 1.57 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://test_zone/meshes/building.dae</uri>
+            <uri>model://ISCAS_Museum/meshes/ISCAS_museum2.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
-        <pose>-8.12 8.8 0 1.57 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://test_zone/meshes/building.dae</uri>
+            <uri>model://ISCAS_Museum/meshes/ISCAS_museum2.dae</uri>
           </mesh>
         </geometry>
       </visual>
