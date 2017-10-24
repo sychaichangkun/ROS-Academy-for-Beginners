@@ -27,7 +27,6 @@
   <!-- camera -->
     <gazebo reference="camera_link">  
       <sensor type="depth" name="camera">
-
         <plugin name="kinect_camera_controller" filename="libgazebo_ros_openni_kinect.so">
           <cameraName>camera</cameraName>
           <alwaysOn>true</alwaysOn>

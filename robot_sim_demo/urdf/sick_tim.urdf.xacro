@@ -65,7 +65,7 @@
   <xacro:macro name="sick_tim_laser_gazebo_v0" params="name link ros_topic update_rate min_angle max_angle min_range max_range">
     <gazebo reference="${link}">
       <material value="Gazebo/LightWood" />
-      <sensor type="gpu_ray" name="${name}">
+      <sensor type="ray" name="${name}">
         <always_on>true</always_on>
         <update_rate>${update_rate}</update_rate>
         <pose>0 0 0 0 0 0</pose>
@@ -85,7 +85,7 @@
             <resolution>0.01</resolution>
           </range>
         </ray>
-        <plugin name="gazebo_ros_${name}_controller" filename="libgazebo_ros_gpu_laser.so">
+        <plugin name="gazebo_ros_${name}_controller" filename="libgazebo_ros_laser.so">
           <gaussianNoise>0.01</gaussianNoise>
           <alwaysOn>true</alwaysOn>
           <updateRate>${update_rate}</updateRate>
