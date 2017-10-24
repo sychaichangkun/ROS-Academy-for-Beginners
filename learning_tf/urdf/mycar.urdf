@@ -1,0 +1,74 @@
+<robot name="test_robot">  
+  <link name="base_link">  
+    <visual>  
+       <geometry>  
+          <cylinder length=".06" radius="0.27"></cylinder>  
+       </geometry>  
+       <origin rpy="0 0 0" xyz="0 0 0.1"/>  
+       <material name="white">  
+         <color rgba="1 1 1 1"/>  
+       </material>  
+    </visual>  
+  </link>  
+  
+  <link name="right">  
+    <visual>  
+      <geometry>  
+        <cylinder length="0.04" radius="0.07"/>  
+      </geometry>  
+      <origin rpy="0  0  0" xyz="0 0 0"/>  
+      <material name="black">  
+        <color rgba="0 0 0 1"/>  
+      </material>  
+    </visual>  
+  </link>  
+  
+  <link name="left">  
+    <visual>  
+      <geometry>  
+        <cylinder length="0.04" radius="0.07"/>  
+      </geometry>  
+      <origin rpy="0  0  0" xyz="0 0 0"/>  
+      <material name="black"/>  
+    </visual>  
+  </link>  
+  
+  <joint name="right" type="continuous"> 
+    <origin rpy="1.57075  0  0" xyz="0 -0.2 0.07"/>   
+    <parent link="base_link"/>  
+    <child link="right"/>  
+  </joint>  
+  
+  <joint name="left" type="continuous">  
+    <origin rpy="-1.57075 0 0" xyz="0 0.2 0.07"/>
+    <parent link="base_link"/>  
+    <child link="left"/>   
+  </joint>  
+ 
+ <link name="rplidar">
+    <inertial>
+      <mass value="1e-5"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://p3dx_description/meshes/lms100.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length=".04" radius="0.035"></cylinder>  
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rplidar_joint" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin xyz="0.2 0 0.12"/>
+    <parent link="base_link"/>
+    <child link="rplidar"/>
+  </joint>
+
+</robot>  
