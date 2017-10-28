@@ -1,45 +1,44 @@
-// ROS 包含的目录.
+//ROS头文件
 #include <ros/ros.h>
-#include <string>
-// 包含ROS的msg机制产生的头文件
+//自定义msg产生的头文件
 #include <topic_demo/gps.h>
+//ROS标准msg文件
 #include <std_msgs/Float32.h>
-//ROS当中
+
 int main(int argc, char **argv)
 {
-  // 初始化
+  //初始化
   ros::init(argc, argv, "talker");
+
   //实例化句柄
   ros::NodeHandle nh;
-  //实例化自定义msg
-   topic_demo::gps msg;
-  //! 发布消息
-  ros::Publisher pub_;
-  //! msg 的x值.
-  std_msgs::Float32 x;
-  //! msg 的y值
-  std_msgs::Float32 y;
-  std::string state("working");
-  x.data=1.0000;
-  y.data=1.0000;
-  //! msg 的状态
-  pub_ = nh.advertise<topic_demo::gps>("chatter", 10);
+
+  //自定义gps msg
+  topic_demo::gps msg;
+  msg.x = 1.0;
+  msg.y = 1.0;
+  msg.state = "working";
+
+  //创建publisher
+  ros::Publisher pub;
+  pub = nh.advertise<topic_demo::gps>("gps_info", 10);
+
   //定义发布的频率 
   ros::Rate loop_rate(1);
+
+  //循环发布msg
   while (ros::ok())
   {
-    msg.x = x.data;
-    msg.y = y.data;
-  //线性比例变换，每隔1秒更新一次
-    x.data=1.03*x.data;
-    y.data=1.01*y.data;
-    msg.state=state.c_str();
+    //以指数增长，每隔1秒更新一次
+    msg.x = 1.03 * msg.x ;
+    msg.y = 1.01 * msg.y;
     ROS_INFO("Talker: GPS: x = %f, y = %f ",  msg.x ,msg.y);
-  //以1Hz的频率发布msg
-    pub_.publish(msg);
-    ros::spinOnce();//不是必需的，但是保持增加这个调用，是好习惯。
+    //以1Hz的频率发布msg
+    pub.publish(msg);
+    //ros::spinOnce();//用于调用可触发的回调函数，此处不是必需的
     loop_rate.sleep();//根据前面的定义的loop_rate,设置1s的暂停
   }
+
   return 0;
 } 
 

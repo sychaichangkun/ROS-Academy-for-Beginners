@@ -153,7 +153,7 @@ include_directories(
 
 add_executable(talker src/talker.cpp )
 #必须添加add_dependencies，否则找不到自定义的msg产生的头文件
-add_dependencies(talker topic_demo generate_messages_cpp)
+add_dependencies(talker topic_demo_generate_messages_cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 
 add_executable(listener src/listener.cpp )
