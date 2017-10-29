@@ -1,12 +1,22 @@
-# <center>ROS入门教程</center>
-## 课程介绍
-本课程介绍ROS机器人操作系统的基本概念、原理和应用。从ROS的产生条件与发展历程讲起，由浅入深，介绍ROS的基本框架、文件系统、常用指令，进一步编写ROS程序，实现基本通信，最后介绍ROS的坐标转换系统、图形化显示和调试功能。
-ROS入门课程目的是让学生理解ROS的系统结构和工作原理，掌握常用的操作指令，具有ROS编程和调试的基本能力。
+# <center>ROS入门教程代码示例</center>
+
+## 示例介绍
+本仓库为ROS入门教程的代码示例，包括以下ROS软件包:
+* **robot_sim_demo**: 机器人仿真程序，大部分内容会用到这个软件包
+* **topic_demo**: topic通信，自定义msg，分别以C++和python两种语言实现
+* **service_demo**: service通信，自定义srv，分别以C++和python两种语言实现
+* **param_demo**: param操作，分别以C++和python两种语言实现
+* **tf_demo**: tf和urdf的操作演示，分别以C++和python两种语言实现
+* **navigation_sim_demo**: TODO
 
 ---
-## 运行方法
+## 下载和编译
 
 1. 克隆或下载ROS-Academy-for-Beginners教学包到工作空间的`/src`目录下，例如 `~/catkin_ws/src`
+```sh
+$ cd ~/catkin_ws/src
+$ git clone https://github.com/sychaichangkun/ROS-Academy-for-Beginners.git
+```
 
 2. 安装教学包所需的依赖
 ```sh
@@ -14,123 +24,68 @@ $ cd ~/catkin_ws
 $ rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
 ```
 
-3. 编译
+3. 编译并刷新环境
 ```sh
 $ catkin_make
+$ source ~/catkin_ws/devel/setup.bash
 ```
 
+4. 运行示例
+
 ---
-## 课程大纲
+## 运行须知
+1. 运行robot_sim_demo前，确认Gazebo版本在**7.0以上**。
 
-### 一．ROS介绍与安装
-**内容介绍**
+  查看Gazebo版本
+  ```sh
+  $ gazebo -v   #确认7.0以上
+  ```
+  如果低于7.0，请升级Gazebo
+  ```sh
+  $ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+  $ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+  $ sudo apt-get update
+  $ sudo apt-get install gazebo7
+  ```
+2. 建议在**本地Ubuntu**下运行仿真程序。虚拟机对Gazebo的兼容性存在问题，可能会有错误或卡顿。
 
-机器人是复杂的系统工程，涉及机械、电子、控制、软件等许多学科，机器人的运行离不开一个可靠的操作系统。本节课将介绍ROS的基本概念、发展历程、系统特点，演示和介绍搭载了ROS系统的xbot机器人，让学生对ROS有感性认识。另外再介绍系列课程所要讲授的内容。最后演示ROS的安装配置过程。
+---
+## 课程介绍
+本课程介绍ROS机器人操作系统的基本概念、原理和应用。教学内容包括视频、教材和演示代码。本仓库为ROS入门教程配套的软件包。
 
-**知识点**
-
-- 为什么要用ROS
-- 什么是ROS
-- ROS发展史
-- ROS特点
-- ROS效果演示：xbot室内自主导航
-- 课程介绍
-- 安装过程
-
-
-### 二．ROS基本架构
-**内容介绍**
-
-本节课介绍ROS的基本架构。首先以pr2机器人为例提出问题，如何组织和调度松散的各个元器件，引出ROS架构这一主题。先从宏观上介绍ROS系统的结构，然后重点介绍和演示master、node、topic、msg等概念。
-
-**知识点**
-
-- ROS框架
-- 节点管理器(master)
-- 节点(node)
-- 主题(topic)
-- 消息(message)
-
-### 三．ROS文件系统
-**内容介绍**
-
-本节课介绍ROS文件系统。由大到小依次讲解工作空间、编译系统、包的组织结构、launch文件结构。让学生对具体的ROS文件和编译有更深的认识。
-
-**知识点**
-
-- ROS工作空间
-- catkin文件编译系统
-- 包(package)
-- launch文件
-
-
-### 四．ROS常用工具
-**内容介绍**
-
-TODO
-
-
-**知识点**
-
-- rqt_plot
-- rqt_graph
-- rqt_console
-- rviz
-- gazebo
-
-### 五．ROS编程实现publisher和subscriber
-**内容介绍**
-
-本节课程将带领学生编写C++程序，设计两个node，实现publisher和subscriber之间的通信。让学生掌握ROS C++编程的基本要领，理解topic通信的实现方法。
-
-**知识点**
-
-- QT环境配置
-- roscpp客户端
-- ROS C++编程实现小海龟画五角星
-
-### 六．ROS编程实现request和reply
-**内容介绍**
-
-本节课用python编写ROS程序，设计两个node，实现request与reply通信。讲解ROS python编程的技巧，从原理上演示service的通信方式。
-
-**知识点**
-
-- 开发环境配置
-- rospy客户端
-- Python编写程序实现...
-
-
-### 七．ROS 坐标转换系统与urdf模型
-**内容介绍**
-
-机器人有着各式各样的形态，在ROS中需要掌握各个关节和机构的坐标，因此就有了TF。本节课程将介绍TF的原理和命令，以xbot2机器人作为演示，并介绍介绍urdf文件与机器人模型。
-
-**知识点**
-
-- TF坐标转换系统
-- Urdf文件与机器人模型
-
-
-### 八．ROS的调试
-**内容介绍**
-
-调试是每一个ROS开发者不可避免的问题，由于ROS系统庞大复杂，可能会出现各种问题。本节课将讲解ROS的调试工具、调试方法、常见错误和调试技巧。将实际工程项目中积累的经验和方法教给学生。
-
-**知识点**
-
-- ROS bag
-- Rqt
-- roswtf
-- 常见错误与调试技巧
-
-
-### 九．项目作业+平台推广
-**内容介绍**
-
-课程最后是一个需要学生独立完成的项目作业，完成该作业需要用到本课程讲授的大部分内容，部分知识点需要自主学习。睿思学院提供代码审阅服务。
-
-
+课程安排和知识点为：
+1. ROS介绍与安装
+  - 欢迎      
+  - 什么是ROS
+  - Xbot机器人演示
+  - ROS安装和配置
+2. 工程结构
+  - catkin工作空间   
+  - package
+  - 操作演示
+3. 通信架构（上）
+  - master和node
+  - 操作演示
+  - topic和msg
+  - 操作演示
+4. 通信架构（下）
+  - service和srv
+  - parameter server
+  - 操作演示
+5. 常用工具
+  - gazebo
+  - rviz
+  - rqt
+6. 客户端库-roscpp
+  - TODO
+7. 客户端库-rospy
+  - TODO
+8. tf和urdf
+  - TODO
+9. 导航入门
+  - TODO
+10. 常见问题和小技巧
+  - TODO
 
 ---
 ## Copyright
