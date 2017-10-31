@@ -2,12 +2,10 @@
 #include <ros/ros.h>
 //自定义msg产生的头文件
 #include <topic_demo/gps.h>
-//ROS标准msg文件
-#include <std_msgs/Float32.h>
 
 int main(int argc, char **argv)
 {
-  //初始化
+  //初始化node
   ros::init(argc, argv, "talker");
 
   //实例化句柄
@@ -21,10 +19,10 @@ int main(int argc, char **argv)
 
   //创建publisher
   ros::Publisher pub;
-  pub = nh.advertise<topic_demo::gps>("gps_info", 10);
+  pub = nh.advertise<topic_demo::gps>("gps_info", 1);
 
   //定义发布的频率 
-  ros::Rate loop_rate(1);
+  ros::Rate loop_rate(1.0);
 
   //循环发布msg
   while (ros::ok())
