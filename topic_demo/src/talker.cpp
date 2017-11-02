@@ -5,10 +5,10 @@
 
 int main(int argc, char **argv)
 {
-  //初始化node
+  //用于解析ROS参数，第三个参数为本节点名
   ros::init(argc, argv, "talker");
 
-  //实例化句柄
+  //实例化句柄，初始化node
   ros::NodeHandle nh;
 
   //自定义gps msg
@@ -18,12 +18,10 @@ int main(int argc, char **argv)
   msg.state = "working";
 
   //创建publisher
-  ros::Publisher pub;
-  pub = nh.advertise<topic_demo::gps>("gps_info", 1);
+  ros::Publisher pub = nh.advertise<topic_demo::gps>("gps_info", 1);
 
   //定义发布的频率 
   ros::Rate loop_rate(1.0);
-
   //循环发布msg
   while (ros::ok())
   {
@@ -33,7 +31,7 @@ int main(int argc, char **argv)
     ROS_INFO("Talker: GPS: x = %f, y = %f ",  msg.x ,msg.y);
     //以1Hz的频率发布msg
     pub.publish(msg);
-    //ros::spinOnce();//用于调用可触发的回调函数，此处不是必需的
+    //根据前面定义的频率, sleep 1s
     loop_rate.sleep();//根据前面的定义的loop_rate,设置1s的暂停
   }
 

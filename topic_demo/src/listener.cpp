@@ -10,6 +10,7 @@ void gpsCallback(const topic_demo::gps::ConstPtr &msg)
     //计算离原点(0,0)的距离
     std_msgs::Float32 distance;
     distance.data = sqrt(pow(msg->x,2)+pow(msg->y,2));
+    //float distance = sqrt(pow(msg->x,2)+pow(msg->y,2));
     ROS_INFO("Listener: Distance to origin = %f, state: %s",distance.data,msg->state.c_str());
 }
 
