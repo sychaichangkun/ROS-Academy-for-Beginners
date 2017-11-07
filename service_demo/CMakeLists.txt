@@ -52,7 +52,7 @@ find_package(catkin REQUIRED rospy roscpp std_msgs message_generation)
 ## Generate services in the 'srv' folder
 add_service_files(
    FILES
-   Service_demo.srv
+   Greeting.srv
 )
 
 ## Generate actions in the 'action' folder

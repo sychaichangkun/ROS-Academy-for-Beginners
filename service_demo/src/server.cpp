@@ -3,18 +3,18 @@
 
 // 加载必要文件，注意Service_demo的加载方式
 # include "ros/ros.h"
-# include "service_demo/Service_demo.h"
-# include<string>
+# include "service_demo/Greeting.h"
+# include "string"
 
 // 定义请求处理函数
-bool handle_function(service_demo::Service_demo::Request &req,
-					service_demo::Service_demo::Response &res)
+bool handle_function(service_demo::Greeting::Request &req,
+					service_demo::Greeting::Response &res)
 {
 	// 此处我们对请求直接输出
-	ROS_INFO("Hi server,I'm client, my name is %s and I'm %ld years old!", req.name.c_str(), req.age);
+	ROS_INFO("Request from %s with age %d ", req.name.c_str(), req.age);
 	
 	// 返回一个反馈，将response设置为"..."
-	res.response = "Hi client, I'm server!";
+	res.feedback = "Hi " + req.name + ". I'm server!";
 	return true;
 }
 
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle nh;
 	ros::ServiceServer service = nh.advertiseService("greetings", handle_function);
 	
-	// 阻止程序结束
+	// 调用可
 	ros::spin();
 
 	return 0;
