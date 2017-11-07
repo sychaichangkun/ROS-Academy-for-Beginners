@@ -1,6 +1,6 @@
 <launch>
 	
-	<param name="/Param_demo" value="200" />
+	<param name="param1" value="200" />
 	<node pkg="param_demo" type="param_demo.py" name="param_demo" output="screen"/>
 
 </launch>
