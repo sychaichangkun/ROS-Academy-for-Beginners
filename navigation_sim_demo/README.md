@@ -1,4 +1,4 @@
-# navigation_demo
+# navigation_sim_demo
 
 睿思学院ROS入门课程 导航演示功能包
 
@@ -41,11 +41,11 @@ $ sudo apt-get install gazebo7
 
 再运行建图程序gmapping
 
-	roslaunch navigation_demo gmapping_demo.launch
+	roslaunch navigation_sim_demo gmapping_demo.launch
 
 最后，启动rviz可视化工具，这里添加了一些必须模块，如LaserScan，Map等等
 
-	roslaunch navigation_demo view_navigation.launch
+	roslaunch navigation_sim_demo view_navigation.launch
 
 然后用键盘控制小车运动，就能在rviz上看到地图的建立过程
 
