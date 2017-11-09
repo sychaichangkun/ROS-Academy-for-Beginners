@@ -1,7 +1,7 @@
 #!/usr/bin/env python  
 # -*- coding:utf-8 -*-  
 import roslib  
-roslib.load_manifest('learning_tf')  
+roslib.load_manifest('tf_demo')  
 import rospy  
 import math  
 import tf   
