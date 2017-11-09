@@ -1,4 +1,4 @@
-<robot name="test_robot">  
+<robot name="mycar">  
   <link name="base_link">  
     <visual>  
        <geometry>  
@@ -54,7 +54,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://p3dx_description/meshes/lms100.dae"/>
+        <mesh filename="package://tf_demo/urdf/rplidar.dae"/>
       </geometry>
     </visual>
     <collision>

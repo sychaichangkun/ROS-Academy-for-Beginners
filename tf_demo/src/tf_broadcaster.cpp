@@ -8,24 +8,27 @@ int main(int argc, char** argv){
   ros::NodeHandle node;
   static tf::TransformBroadcaster br;
   tf::Transform transform;
-  geometry_msgs::Quaternion qw;
+  //geometry_msgs::Quaternion qw;
   tf::Quaternion q;
   double roll,pitch,yaw,x,y,z;
-  while(ros::ok())
-  {
-  //输入一个相对原点的位置
+//输入一个相对原点的位置
   std::cout<<"输入相对于原点的位置：";
   std::cin>>x>>y>>z;
   std::cout<<"输入的欧拉角：roll,pitch,yaw:";
   std::cin>>roll>>pitch>>yaw;
+  ros::Rate rate(1);
+  while(ros::ok())
+  {
+  yaw+=0.1;//每经过一秒开始一次变换
   //输入欧拉角，转化成四元数在终端输出
   q.setRPY(roll,pitch,yaw);
-  qw=tf::createQuaternionMsgFromRollPitchYaw(roll,pitch,yaw);
+  //qw=tf::createQuaternionMsgFromRollPitchYaw(roll,pitch,yaw);方法2
   transform.setOrigin(tf::Vector3(x,y,z));
   transform.setRotation(q);
   br.sendTransform(tf::StampedTransform(transform,ros::Time::now(),"base_link","link1"));
-  std::cout<<"输出的四元数为：w="<<qw.w<<",x="<<qw.x<<",y="<<qw.y<<",z="<<qw.z<<std::endl;
-  //ROS_INFO("输出的四元数为：w=%d,x=%d,y=%d,z=%d"，q.w,q.x,q.y,q.z);
+  std::cout<<"输出的四元数为：w="<<q[3]<<",x="<<q[0]<<",y="<<q[1]<<",z="<<q[2]<<std::endl;
+  //  std::cout<<"输出的四元数为：w="<<qw.w<<",x="<<qw.x<<",y="<<qw.y<<",z="<<qw.z<<std::endl;
+  rate.sleep();
   ros::spinOnce();
   }
   return 0;
