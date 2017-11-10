@@ -7,7 +7,7 @@
 * **service_demo**: service通信，自定义srv，分别以C++和python两种语言实现
 * **param_demo**: param操作，分别以C++和python两种语言实现
 * **tf_demo**: tf和urdf的操作演示，分别以C++和python两种语言实现
-* **navigation_sim_demo**: TODO
+* **navigation_demo**: 导航演示工具包，在仿真环境下，分为建图和导航两部分
 
 ---
 ## 下载和编译
