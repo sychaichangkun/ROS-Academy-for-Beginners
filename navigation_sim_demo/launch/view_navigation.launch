@@ -1,5 +1,5 @@
 <!--
-  Used for visualising the turtlebot while building a map or navigating with the ros navistack.
+  Used for visualising the Xbot2 while building a map or navigating with the ros navistack.
  -->
 <launch>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_sim_demo)/rviz/navigation.rviz"/>
