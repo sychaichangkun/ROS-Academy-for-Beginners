@@ -15,17 +15,17 @@ DWAPlannerROS:
   #   do not set min_trans_vel to 0.0 otherwise dwa will always think translational velocities
   #   are non-negligible and small in place rotational velocities will be created.
 
-  max_rot_vel: 5.0  # choose slightly less than the base's capability
+  max_rot_vel: 2.0  # choose slightly less than the base's capability
   min_rot_vel: 0.4  # this is the min angular velocity when there is negligible translational velocity
   rot_stopped_vel: 0.4
   
   acc_lim_x: 1.0 # maximum is theoretically 2.0, but we 
-  acc_lim_theta: 2.0
+  acc_lim_theta: 1.0
   acc_lim_y: 0.0      # diff drive robot
 
 # Goal Tolerance Parameters
   yaw_goal_tolerance: 0.3  # 0.05
-  xy_goal_tolerance: 0.15  # 0.10
+  xy_goal_tolerance: 0.5  # 0.10
   # latch_xy_goal_tolerance: false
 
 # Forward Simulation Parameters
