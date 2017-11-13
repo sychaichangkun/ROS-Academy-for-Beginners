@@ -1,6 +1,6 @@
 <launch>
   <!-- Map server -->
-  <arg name="map_file" default="$(find navigation_sim_demo)/maps/test_map.yaml"/>
+  <arg name="map_file" default="$(find navigation_sim_demo)/maps/map_default.yaml"/>
   <arg name="3d_sensor" default="asus_xtion_pro"/>  <!-- r200, kinect, asus_xtion_pro -->
 
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
