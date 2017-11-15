@@ -4,11 +4,11 @@
   <arg name="odom_frame"  default="odom"/>
 
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
-    <param name="base_frame" value="$(arg base_frame)"/>
-    <param name="odom_frame" value="$(arg odom_frame)"/>
-    <param name="map_update_interval" value="5.0"/>
-    <param name="maxUrange" value="6.0"/>
-    <param name="maxRange" value="8.0"/>
+    <param name="base_frame" value="$(arg base_frame)"/>   <!--底盘坐标系-->
+    <param name="odom_frame" value="$(arg odom_frame)"/>   <!--里程计坐标系-->
+    <param name="map_update_interval" value="1.0"/>        <!--更新时间(s)，每多久更新一次地图，不是频率-->
+    <param name="maxUrange" value="20.0"/>                 <!--激光雷达最大可用距离，在此之外的数据截断不用-->
+    <param name="maxRange" value="25.0"/>                  <!--激光雷达最大距离-->
     <param name="sigma" value="0.05"/>
     <param name="kernelSize" value="1"/>
     <param name="lstep" value="0.05"/>
@@ -27,17 +27,10 @@
     <param name="temporalUpdate" value="-1.0"/>
     <param name="resampleThreshold" value="0.5"/>
     <param name="particles" value="80"/>
-  <!--
-    <param name="xmin" value="-50.0"/>
-    <param name="ymin" value="-50.0"/>
-    <param name="xmax" value="50.0"/>
-    <param name="ymax" value="50.0"/>
-  make the starting size small for the benefit of the Android client's memory...
-  -->
-    <param name="xmin" value="-1.0"/>
-    <param name="ymin" value="-1.0"/>
-    <param name="xmax" value="1.0"/>
-    <param name="ymax" value="1.0"/>
+    <param name="xmin" value="-25.0"/>
+    <param name="ymin" value="-25.0"/>
+    <param name="xmax" value="25.0"/>
+    <param name="ymax" value="25.0"/>
 
     <param name="delta" value="0.05"/>
     <param name="llsamplerange" value="0.01"/>
