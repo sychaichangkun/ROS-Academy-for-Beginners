@@ -98,7 +98,7 @@
     <origin xyz="0 0.245 .095" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <limit effort="100000" velocity="1000"/>
+    <limit effort="5.2" velocity="2.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
@@ -127,7 +127,7 @@
     <origin xyz="0 -0.245 .095" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="right_wheel"/>
-    <limit effort="100000" velocity="1000"/>
+    <limit effort="5.2" velocity="2.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
