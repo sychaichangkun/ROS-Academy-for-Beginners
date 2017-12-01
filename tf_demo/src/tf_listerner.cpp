@@ -12,6 +12,7 @@ int main(int argc, char** argv){
     try{
       listener.lookupTransform("/base_link", "/link1",
                                ros::Time(0), transform);
+                               //ros::Time(0)表示最近的一帧坐标变换，不能写成ros::Time::now()
     }
     catch (tf::TransformException &ex) {
       ROS_ERROR("%s",ex.what());

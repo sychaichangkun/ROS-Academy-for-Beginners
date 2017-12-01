@@ -17,8 +17,9 @@ def client_srv():
 
         # 向server端发送请求，发送的request内容为name和age,其值分别为"HAN", 20
         # 注意，此处发送的request内容与service文件中定义的request部分的属性是一致的
-        resp = greetings_client("HAN",20)
-        
+        #resp = greetings_client("HAN",20)
+        resp = greetings_client.call("HAN",20)
+
         # 打印处理结果，注意调用response的方法，类似于从resp对象中调取response属性
         rospy.loginfo("Message From server:%s"%resp.feedback)
     except rospy.ServiceException, e:

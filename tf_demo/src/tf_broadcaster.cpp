@@ -10,12 +10,8 @@ int main(int argc, char** argv){
   tf::Transform transform;
   //geometry_msgs::Quaternion qw;
   tf::Quaternion q;
-  double roll,pitch,yaw,x,y,z;
-//输入一个相对原点的位置
-  std::cout<<"输入相对于原点的位置：";
-  std::cin>>x>>y>>z;
-  std::cout<<"输入的欧拉角：roll,pitch,yaw:";
-  std::cin>>roll>>pitch>>yaw;
+  //定义初始坐标和角度
+  double roll=0,pitch=0,yaw=0,x=1.0,y=2.0,z=3.0;
   ros::Rate rate(1);
   while(ros::ok())
   {

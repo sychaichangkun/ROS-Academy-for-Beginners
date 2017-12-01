@@ -1,7 +1,6 @@
 #!/usr/bin/env python  
 # -*- coding:utf-8 -*-  
-import roslib  
-roslib.load_manifest('tf_demo')  
+
 import rospy  
 import math  
 import tf   
@@ -10,10 +9,10 @@ if __name__ == '__main__':
     rospy.init_node('py_tf_turtle')  
   
     listener = tf.TransformListener() #TransformListener创建后就开始接受tf广播信息，最多可以缓存10s  目前存在的问题，是四个数值的顺序我还有点问题
-    rate = rospy.Rate(10.0)  
+    rate = rospy.Rate(1.0)  
     while not rospy.is_shutdown():  
         try:  
-            (trans,rot) = listener.lookupTransform('/base_link', '/link1', rospy.Time(0))  
+            (trans,rot) = listener.lookupTransform('/base_link', '/link1', rospy.Time(0)) #rospy.Time(0)不表示0时刻的tf，而是指最近一帧tf 
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):  
             continue  
         
