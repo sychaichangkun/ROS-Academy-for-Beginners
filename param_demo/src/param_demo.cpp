@@ -14,7 +14,7 @@ int main(int argc, char **argv){
 	
 	//③ ros::NodeHandle::param()类似于①和②
 	//但如果get不到指定的param，它可以给param指定一个默认值(如33333)
-    bool ifget3 = nh.param("param3", parameter3, 33333);
+        nh.param("param3", parameter3, 33333);
 	
 	if(ifget1)
 		ROS_INFO("Get param1 = %d", parameter1);
@@ -24,7 +24,7 @@ int main(int argc, char **argv){
 		ROS_INFO("Get param2 = %d", parameter2);
 	else
 		ROS_WARN("Didn't retrieve param2");
-	if(ifget3)
+	if(nh.hasParam("param3"))
 		ROS_INFO("Get param3 = %d", parameter3);
 	else
 		ROS_WARN("Didn't retrieve param3");
