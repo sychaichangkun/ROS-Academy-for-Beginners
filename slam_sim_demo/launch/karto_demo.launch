@@ -1,7 +1,7 @@
 <launch>
 
   <node pkg="slam_karto" type="slam_karto" name="slam_karto" output="screen">
-    <rosparam command="load" file="$(find slam_sim_demo)/param/mapper_params.yaml" />
+    <rosparam command="load" file="$(find slam_sim_demo)/param/karto_params.yaml" />
     <param name="map_update_interval" value="1"/>
     <param name="resolution" value="0.05"/>
   </node>

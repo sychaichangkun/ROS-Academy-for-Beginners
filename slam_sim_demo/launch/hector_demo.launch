@@ -1,0 +1,30 @@
+<launch>
+    <node pkg="hector_mapping" type="hector_mapping" name="hector_height_mapping" output="screen">
+      <param name="scan_topic" value="scan" />
+    <param name="base_frame" value="base_link" />
+    <param name="odom_frame" value="odom" />
+
+    <param name="output_timing" value="false"/>
+    <param name="advertise_map_service" value="true"/>
+    <param name="use_tf_scan_transformation" value="true"/>
+    <param name="use_tf_pose_start_estimate" value="false"/>
+    <param name="pub_map_odom_transform" value="true"/>
+    <param name="map_with_known_poses" value="false"/>
+
+    <param name="map_pub_period" value="1"/>
+    <param name="update_factor_free" value="0.45"/>
+
+    <param name="map_update_distance_thresh" value="0.1"/>
+    <param name="map_update_angle_thresh" value="0.05"/>
+
+    <param name="map_resolution" value="0.05"/>
+    <param name="map_size" value="1024"/>
+    <param name="map_start_x" value="0"/>
+    <param name="map_start_y" value="0"/>
+
+  </node>
+
+  <!-- Move base -->
+ <include file="$(find navigation_sim_demo)/launch/include/move_base.launch.xml"/>
+
+</launch>

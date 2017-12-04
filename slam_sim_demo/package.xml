@@ -31,5 +31,6 @@
   <run_depend>slam_karto</run_depend>
   <run_depend>amcl</run_depend>
   <run_depend>gmapping</run_depend>
+  <run_depend>hector_mapping</run_depend>
 
 </package>

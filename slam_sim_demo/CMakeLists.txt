@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
 	slam_karto
 	gmapping
 	amcl
+	hector_mapping
 )
 
 catkin_package(

@@ -7,7 +7,7 @@
   <arg name="initial_pose_x" default="5.0"/>
   <arg name="initial_pose_y" default="0.0"/>
   <arg name="initial_pose_a" default="-2.0"/>
-  <arg name="custom_amcl_launch_file" default="$(find slam_sim_demo)/launch/include/asus_xtion_pro_amcl.launch.xml"/> 
+  <arg name="custom_amcl_launch_file" default="$(find slam_sim_demo)/launch/include/robot_amcl.launch.xml"/> 
 
   <include file="$(arg custom_amcl_launch_file)">
     <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
