@@ -30,5 +30,9 @@
   <run_depend>robot_state_publisher</run_depend>
   <run_depend>message_runtime</run_depend>
   <run_depend>xacro</run_depend>
-  <run_depend>navigation</run_depend>
+  <run_depend>move_base</run_depend>
+  <run_depend>map_server</run_depend>  
+  <run_depend>amcl</run_depend>
+  <run_depend>gmapping</run_depend>
+  <run_depend>dwa_local_planner</run_depend>
 </package>

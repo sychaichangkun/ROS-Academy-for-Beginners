@@ -1,0 +1,30 @@
+<package>
+    <name>ros_academy_for_beginners</name>
+    <version>17.12.4</version>
+    <description>
+        --------------------------------------------------------------------------
+        A ROS tutorial for beginner level learners. This metapacakge includes some
+        demos of topic, service, parameter server, tf, urdf, navigation, SLAM...
+        It tries to explain the basic concepts and usages of ROS.
+        --------------------------------------------------------------------------
+    </description>
+    <maintainer email="chaichangkun@163.com">Chai Changkun</maintainer>
+    <author>Chai Changkun</author>
+    <license>BSD</license>  
+    <url>http://rosacademy.cn</url>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <run_depend>navigation_sim_demo</run_depend>
+    <run_depend>param_demo</run_depend>
+    <run_depend>robot_sim_demo</run_depend>
+    <run_depend>service_demo</run_depend>
+    <run_depend>slam_sim_demo</run_depend>
+    <run_depend>tf_demo</run_depend>
+    <run_depend>topic_demo</run_depend>
+
+    <export>
+        <metapackage/>
+    </export>
+</package>
+
