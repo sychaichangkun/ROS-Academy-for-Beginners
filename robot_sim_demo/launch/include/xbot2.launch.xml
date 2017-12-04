@@ -6,7 +6,7 @@
   <arg name="yaw" default="-2.0" />
 
   <!-- Setup controllers -->
-  <!-- rosparam file="$(find fetch_gazebo)/config/freight_controllers.yaml" command="load" / -->
+  <!-- rosparam file="$(find fetch_gazebo)/param/freight_controllers.yaml" command="load" / -->
 
   <!-- URDF and TF support -->
   <param name="robot_description" command="$(find xacro)/xacro.py $(find robot_sim_demo)/urdf/robot.xacro" />
@@ -19,7 +19,7 @@
   </node-->
 
   <!--Load the joint controllers to param server-->
-  <rosparam file="$(find robot_sim_demo)/config/xbot2_control.yaml" command="load"/>
+  <rosparam file="$(find robot_sim_demo)/param/xbot2_control.yaml" command="load"/>
 
   <!--Load controllers-->
   <node name="spawner" pkg="controller_manager" type="spawner" respawn="false"
