@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
 	message_generation
 	controller_manager
 	gazebo_ros
+	navigation
 )
 
 catkin_package(
