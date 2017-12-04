@@ -7,7 +7,8 @@
 * **service_demo**: service通信，自定义srv，分别以C++和python两种语言实现
 * **param_demo**: param操作，分别以C++和python两种语言实现
 * **tf_demo**: tf和urdf的操作演示，分别以C++和python两种语言实现
-* **navigation_demo**: 导航演示工具包，在仿真环境下，分为建图和导航两部分
+* **navigation_sim_demo**: 导航演示工具包，在仿真环境下的路径规划与运动控制
+* **slam_sim_demo**: 同步定位与建图演示，包括gmapping,karto,amcl,cartographer等SLAM演示
 
 ---
 ## 下载和编译
@@ -48,6 +49,9 @@ $ source ~/catkin_ws/devel/setup.bash
   $ sudo apt-get install gazebo7
   ```
 2. 建议在**本地Ubuntu**下运行仿真程序。虚拟机对Gazebo的兼容性存在问题，可能会有错误或卡顿。
+
+3. 确保所有依赖都已安装，如`gazebo_ros`, `gmapping`, `slam_karto`, `amcl`。
+
 
 ---
 ## 课程介绍
