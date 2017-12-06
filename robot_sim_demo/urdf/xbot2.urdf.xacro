@@ -72,6 +72,13 @@
     <origin rpy="0 3.1416 3.1416" xyz=".148 0 .253"/>
   </joint>
 
+  <link name="imu_link"/>
+  <joint name="base_to_imu" type="fixed">
+    <axis rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin rpy="0 0 0" xyz="0 0 .2"/>
+  </joint>
 
   <link name="left_wheel">
     <collision name="collision">
