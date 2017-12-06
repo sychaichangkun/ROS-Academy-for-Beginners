@@ -1,0 +1,41 @@
+<launch>
+  <!--param name="/use_sim_time" value="true" /-->
+
+  <node name="cartographer_node" pkg="cartographer_ros"
+        type="cartographer_node" args="
+          -configuration_directory  $(find slam_sim_demo)/param
+          -configuration_basename cartographer_params.lua"
+      output="screen">
+    <remap from="scan" to="/scan" />
+    <remap from="points2" to="/camera/depth/points"/>
+  </node>
+
+  <!--node name="flat_world_imu_node" pkg="cartographer_turtlebot"
+      type="cartographer_flat_world_imu_node" output="screen">
+    <remap from="imu_in" to="/mobile_base/sensors/imu_data_raw" />
+    <remap from="imu_out" to="/imu" />
+  </node-->
+
+
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find slam_sim_demo)/rviz/cartographer.rviz" />
+
+
+
+  <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
+      type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+</launch>
+
+<launch>
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find cartographer_ros)/configuration_files
+          -configuration_basename xbot2.lua"
+      output="screen">
+    <remap from="scan" to="/scan" />
+  </node>
+
+  <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
+      type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+
+</launch>
