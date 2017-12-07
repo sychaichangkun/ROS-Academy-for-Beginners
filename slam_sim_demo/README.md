@@ -1,6 +1,12 @@
-# slam_sim_demo
+# slam\_sim\_demo
 
-睿思学院ROS入门课程 导航演示功能包
+睿思学院ROS入门课程 SLAM演示功能包，本演示包包含以下内容：
+
+* **gmapping_demo**: gmapping SLAM演示
+* **karto_demo**: karto SLAM演示
+* **hector_demo**: hector SLAM演示
+* **cartographer_demo**: Google catographer演示
+
 
 ### gmapping示例运行方法
 
@@ -23,25 +29,30 @@
 然后用键盘控制小车运动，就能在rviz上看到地图的建立过程
 
 
-### amcl示例运行方法
+### karto示例运行方法
 
-首先运行gazebo仿真场景
+与gmapping启动方法类似
 
 	roslaunch robot_sim_demo robot_spawn.launch
-
-然后运行键盘控制程序
-
 	rosrun robot_sim_demo robot_keyboard_teleop.py
-
-再运行建图程序gmapping
-
-	roslaunch slam_sim_demo amcl_demo.launch
-
-最后，启动rviz可视化工具
-
+	roslaunch slam_sim_demo karto_demo.launch
 	roslaunch slam_sim_demo view_navigation.launch
 
-然后用键盘控制小车运动，就能在rviz上看到机器人定位的过程
+### hector示例运行方法
+
+	roslaunch robot_sim_demo robot_spawn.launch
+	rosrun robot_sim_demo robot_keyboard_teleop.py
+	roslaunch slam_sim_demo hector_demo.launch
+	roslaunch slam_sim_demo view_navigation.launch
+
+### cartopgrapher示例运行方法
+
+**本demo需要安装cartographer和cartographer-ros，仅供测试使用**
+
+	roslaunch robot_sim_demo robot_spawn.launch
+	rosrun robot_sim_demo robot_keyboard_teleop.py
+	roslaunch slam_sim_demo cartographer_demo.launch
+	roslaunch slam_sim_demo view_navigation.launch
 
 
 ### 注意事项
@@ -51,13 +62,4 @@ $ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `
 $ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 $ sudo apt-get update
 $ sudo apt-get install gazebo7
-```
-
-如果你是用的是VMware虚拟机，运行Gazebo可能会出现`vmw_ioctl_command`错误，解决办法：
-```sh
-$ export SVGA_VGPU10=0
-```
-也可以将其追加到.bashrc文件中
-```sh
-$ echo “export SVGA_VGPU10=0” >> ~/.bashrc
 ```

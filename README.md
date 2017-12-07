@@ -6,9 +6,9 @@
 * **topic_demo**: topic通信，自定义msg，分别以C++和python两种语言实现
 * **service_demo**: service通信，自定义srv，分别以C++和python两种语言实现
 * **param_demo**: param操作，分别以C++和python两种语言实现
-* **tf_demo**: tf和urdf的操作演示，分别以C++和python两种语言实现
-* **navigation_sim_demo**: 导航演示工具包，在仿真环境下的路径规划与运动控制
-* **slam_sim_demo**: 同步定位与建图演示，包括gmapping,karto,amcl,cartographer等SLAM演示
+* **tf_demo**: TF和URDF的操作演示，分别以C++和python两种语言实现
+* **navigation_sim_demo**: 导航演示工具包，包括AMCL, Odometry Navigation等演示
+* **slam_sim_demo**: 同步定位与建图演示，包括Gmapping, Karto, Hector, Cartographer等SLAM演示
 
 ---
 ## 下载和编译
