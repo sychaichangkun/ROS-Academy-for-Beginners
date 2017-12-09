@@ -1,0 +1,22 @@
+<robot name="mycar">  
+  <link name="base_link" />  
+  <link name="right" />  
+  <link name="left" />  
+  <link name="rplidar"/>
+
+  <joint name="right" type="continuous"> 
+    <parent link="base_link"/>  
+    <child link="right"/>  
+  </joint>  
+  
+  <joint name="left" type="continuous">  
+    <parent link="base_link"/>  
+    <child link="left"/>   
+  </joint>  
+ 
+  <joint name="rplidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rplidar"/>
+  </joint>
+
+</robot>  

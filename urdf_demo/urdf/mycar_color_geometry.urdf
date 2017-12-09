@@ -54,7 +54,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tf_demo/urdf/rplidar.dae"/>
+        <mesh filename="package://urdf_demo/urdf/rplidar.dae"/>
       </geometry>
     </visual>
     <collision>
