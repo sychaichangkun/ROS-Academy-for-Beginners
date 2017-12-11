@@ -1,0 +1,25 @@
+<robot name="mycar">  
+  <link name="base_link" />  
+  <link name="right" />  
+  <link name="left" />  
+  <link name="rplidar"/>
+
+  <joint name="right" type="continuous"> 
+    <origin rpy="1.57075  0  0" xyz="0 -0.2 0.07"/>   
+    <parent link="base_link"/>  
+    <child link="right"/>  
+  </joint>  
+  
+  <joint name="left" type="continuous">  
+    <origin rpy="-1.57075 0 0" xyz="0 0.2 0.07"/>
+    <parent link="base_link"/>  
+    <child link="left"/>   
+  </joint>  
+ 
+  <joint name="rplidar_joint" type="fixed">
+    <origin xyz="0.2 0 0.12"/>
+    <parent link="base_link"/>
+    <child link="rplidar"/>
+  </joint>
+
+</robot>  
