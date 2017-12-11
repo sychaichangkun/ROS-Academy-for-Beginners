@@ -1,8 +1,7 @@
-
 GlobalPlanner:                                  # Also see: http://wiki.ros.org/global_planner
   old_navfn_behavior: false                     # Exactly mirror behavior of navfn, use defaults for other boolean parameters, default false
   use_quadratic: true                           # Use the quadratic approximation of the potential. Otherwise, use a simpler calculation, default true
-  use_dijkstra: true                            # Use dijkstra's algorithm. Otherwise, A*, default true
+  use_dijkstra: false                            # Use dijkstra's algorithm. Otherwise, A*, default true
   use_grid_path: false                          # Create a path that follows the grid boundaries. Otherwise, use a gradient descent method, default false
   
   allow_unknown: true                           # Allow planner to plan through unknown space, default true

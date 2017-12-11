@@ -14,7 +14,7 @@
     <param name="odom_model_type"           value="diff"/>
     <param name="odom_alpha5"               value="0.1"/>
     <param name="gui_publish_rate"          value="10.0"/>
-    <param name="laser_max_beams"             value="60"/>
+    <param name="laser_max_beams"             value="810"/>
     <param name="laser_max_range"           value="-1"/>
     <param name="min_particles"             value="500"/>
     <param name="max_particles"             value="5000"/>

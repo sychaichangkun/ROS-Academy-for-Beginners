@@ -10,7 +10,6 @@
   <arg name="global_frame_id" default="map"/>
   <arg name="odom_topic" default="odom" />
   <arg name="laser_topic" default="scan" />
-  <arg name="custom_param_file" default="$(find navigation_sim_demo)/param/dummy.yaml"/>
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <rosparam file="$(find navigation_sim_demo)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
@@ -21,8 +20,6 @@
     <rosparam file="$(find navigation_sim_demo)/param/move_base_params.yaml" command="load" />
     <rosparam file="$(find navigation_sim_demo)/param/global_planner_params.yaml" command="load" />
     <rosparam file="$(find navigation_sim_demo)/param/navfn_global_planner_params.yaml" command="load" />
-    <!-- external params file that could be loaded into the move_base namespace -->
-    <rosparam file="$(arg custom_param_file)" command="load" />
     
     <!-- reset frame_id parameters using user input data -->
     <param name="global_costmap/global_frame" value="$(arg global_frame_id)"/>

@@ -1,56 +1,49 @@
 DWAPlannerROS:
 
-# Robot Configuration Parameters - Xbot2
-  max_vel_x: 0.5  # 0.55
-  min_vel_x: 0.0 
+# Robot Configuration Parameters
+  max_vel_x: 0.5
+  min_vel_x: 0.0
 
-  max_vel_y: 0.0  # diff drive robot
-  min_vel_y: 0.0  # diff drive robot
+  max_vel_y: 0.0
+  min_vel_y: 0.0
 
-  max_trans_vel: 0.5 # choose slightly less than the base's capability
-  min_trans_vel: 0.1  # this is the min trans velocity when there is negligible rotational velocity
+  # The velocity when robot is moving in a straight line
+  max_trans_vel:  0.55
+  min_trans_vel:  0.1
   trans_stopped_vel: 0.1
 
-  # Warning!
-  #   do not set min_trans_vel to 0.0 otherwise dwa will always think translational velocities
-  #   are non-negligible and small in place rotational velocities will be created.
+  max_rot_vel: 5.0
+  min_rot_vel: 0.8
+  rot_stopped_vel: 0.8
 
-  max_rot_vel: 1.0  # choose slightly less than the base's capability
-  min_rot_vel: -1.0  # this is the min angular velocity when there is negligible translational velocity
-  rot_stopped_vel: 0.2
-  
-  acc_lim_x: 0.3 # maximum is theoretically 2.0, but we 
+  acc_lim_x: 1.0
   acc_lim_theta: 2.0
-  acc_lim_y: 0.0      # diff drive robot
+  acc_lim_y: 0.0
 
-# Goal Tolerance Parameters
-  yaw_goal_tolerance: 0.2  # 0.05
-  xy_goal_tolerance: 0.2  # 0.10
+# Goal Tolerance Parametes
+  yaw_goal_tolerance: 0.3
+  xy_goal_tolerance: 0.15
   # latch_xy_goal_tolerance: false
 
 # Forward Simulation Parameters
-  sim_time: 2.0       # 1.7
-  vx_samples: 10       # 3
-  vy_samples: 1       # diff drive robot, there is only one sample
-  vtheta_samples: 20  # 20
+  sim_time: 4.0
+  vx_samples: 20
+  vy_samples: 0
+  vtheta_samples: 40
 
 # Trajectory Scoring Parameters
-  path_distance_bias: 64.0      # 32.0   - weighting for how much it should stick to the global path plan
-  goal_distance_bias: 24.0      # 24.0   - wighting for how much it should attempt to reach its goal
-  occdist_scale: 0.05            # 0.01   - weighting for how much the controller should avoid obstacles
-  forward_point_distance: 0.45 # 0.325  - how far along to place an additional scoring point
-  stop_time_buffer: 0.2         # 0.2    - amount of time a robot must stop in before colliding for a valid traj.
-  scaling_speed: 0.25           # 0.25   - absolute velocity at which to start scaling the robot's footprint
-  max_scaling_factor: 0.2       # 0.2    - how much to scale the robot's footprint when at speed.
+  path_distance_bias: 32.0
+  goal_distance_bias: 24.0
+  occdist_scale: 0.1
+  forward_point_distance: 0.325
+  stop_time_buffer: 0.2
+  scaling_speed: 0.25
+  max_scaling_factor: 0.2
 
 # Oscillation Prevention Parameters
-  oscillation_reset_dist: 0.05  # 0.05   - how far to travel before resetting oscillation flags
+  oscillation_reset_dist: 0.05
 
 # Debugging
   publish_traj_pc : true
   publish_cost_grid_pc: true
   global_frame_id: odom
-
-
-# Differential-drive robot configuration - necessary?
-#  holonomic_robot: false

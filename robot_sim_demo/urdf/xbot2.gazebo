@@ -12,8 +12,9 @@
       <leftJoint>left_wheel_hinge</leftJoint>
       <rightJoint>right_wheel_hinge</rightJoint>
       <wheelSeparation>0.49</wheelSeparation>
-      <wheelDiameter>0.095</wheelDiameter>
+      <wheelDiameter>0.19</wheelDiameter>
       <torque>10.4</torque>
+      <wheelAcceleration>1</wheelAcceleration>
       <robotBaseFrame>base_footprint</robotBaseFrame>
       <publishWheelTF>true</publishWheelTF>
       <publishWheelJointState>true</publishWheelJointState>
