@@ -7,6 +7,7 @@
 * **service_demo**: service通信，自定义srv，分别以C++和python两种语言实现
 * **param_demo**: param操作，分别以C++和python两种语言实现
 * **tf_demo**: TF和URDF的操作演示，分别以C++和python两种语言实现
+* **urdf_demo**: 创建机器人urdf模型，在RViz中显示
 * **navigation_sim_demo**: 导航演示工具包，包括AMCL, Odometry Navigation等演示
 * **slam_sim_demo**: 同步定位与建图演示，包括Gmapping, Karto, Hector, Cartographer等SLAM演示
 
@@ -35,7 +36,7 @@ $ source ~/catkin_ws/devel/setup.bash
 
 ---
 ## 运行须知
-1. 运行robot_sim_demo前，确认Gazebo版本在**7.0以上**。
+1. 运行robot\_sim\_demo前，确认Gazebo版本在**7.0以上**。
 
   查看Gazebo版本
   ```sh
@@ -80,15 +81,27 @@ $ source ~/catkin_ws/devel/setup.bash
   - gazebo
   - rviz
   - rqt
+  - rosbag
 6. 客户端库-roscpp
-  - TODO
+  - roscpp
+  - topic\_demo
+  - service\_demo
+  - param\_demo 
 7. 客户端库-rospy
-  - TODO
+  - rospy
+  - topic\_demo
+  - service\_demo
+  - param\_demo
 8. tf和urdf
-  - TODO
-9. 导航入门
-  - TODO
-10. 常见问题和小技巧
+  - Transform
+  - tf in roscpp
+  - tf in rospy
+9. SLAM入门
+  - SLAM与地图
+  - Gmapping
+  - Karto
+  - Hector
+10. Navigation入门
   - TODO
 
 ---
