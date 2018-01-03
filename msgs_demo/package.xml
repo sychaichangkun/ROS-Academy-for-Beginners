@@ -1,0 +1,20 @@
+<package>
+  <name>msgs_demo</name>
+  <version>0.1.2</version>
+  <description>
+      Actally it's Xbot message and service types: custom messages and services for Xbot robot.
+  </description>
+  <author email="chaichangkun@163.com">Chai Changkun</author>
+  <maintainer email="chaichangkun@163.com">Chai Changkun</maintainer>
+  <license>BSD</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>std_msgs</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+
+  <run_depend>std_msgs</run_depend>
+  <run_depend>actionlib_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+</package>
