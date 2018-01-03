@@ -5,7 +5,7 @@
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
-      <commandTopic>cmd_vel</commandTopic>
+      <commandTopic>cmd_vel_mux/input/navi</commandTopic>
       <legacyMode>false</legacyMode>
       <alwaysOn>true</alwaysOn>
       <updateRate>50</updateRate>

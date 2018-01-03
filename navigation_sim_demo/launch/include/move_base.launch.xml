@@ -28,8 +28,9 @@
     <param name="local_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
     <param name="DWAPlannerROS/global_frame_id" value="$(arg odom_frame_id)"/>
 
-    <!--remap from="cmd_vel" to="navigation_velocity_smoother/raw_cmd_vel"/-->
     <remap from="odom" to="$(arg odom_topic)"/>
     <remap from="scan" to="$(arg laser_topic)"/>
+    <remap from="cmd_vel" to="/cmd_vel_mux/input/navi"/>
+
   </node>
 </launch>
