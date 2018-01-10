@@ -63,7 +63,7 @@ if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
     
     rospy.init_node('robot_teleop')
-    pub = rospy.Publisher('cmd_vel_mux/input/navi', Twist, queue_size=5)
+    pub = rospy.Publisher('/cmd_vel_mux/input/teleop', Twist, queue_size=5)
 
     x = 0
     th = 0

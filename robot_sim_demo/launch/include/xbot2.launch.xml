@@ -39,9 +39,17 @@
     <param name="lazy" type="bool" value="True"/>
   </node-->
 
-  <!-- Start a mux between application and teleop -->
-  <!--node pkg="topic_tools" type="mux" name="cmd_vel_mux" respawn="true" args="base_controller/command /cmd_vel /teleop/cmd_vel">
-    <remap from="mux" to="cmd_vel_mux" />
-  </node-->
+  <!-- Start a mux between application and teleop, but the switch must be called by service rather than automatically -->
+  <!--<node pkg="topic_tools" type="mux" name="cmd_vel_mux" respawn="true" args="/cmd_vel /cmd_vel_mux/input/teleop /cmd_vel_mux/input/navi">
+    <remap from="mux" to="cmd_vel_mux"/>
+  </node>-->
+
+  <!-- To make the interface of simulation identical to real XBot -->
+  <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"/>
+  <node pkg="nodelet" type="nodelet" name="cmd_vel_mux"  args="load yocs_cmd_vel_mux/CmdVelMuxNodelet mobile_base_nodelet_manager">
+    <param name="yaml_cfg_file" value="$(find robot_sim_demo)/param/mux.yaml"/>
+    <remap from="cmd_vel_mux/output/cmd_vel" to="cmd_vel"/>
+  </node>
+
 
 </launch>
