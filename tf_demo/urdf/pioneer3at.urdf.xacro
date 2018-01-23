@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+
+<robot xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro"
+name="pioneer3at">
+
+<!-- Chassis -->
+	<link name="pioneer3at_link">
+
+
+		<!--  For pointers on inertial and gazebo-related parameters see
+		       * http://wiki.ros.org/urdf/Tutorials/Adding%20Physical%20and%20Collision%20Properties%20to%20a%20URDF%20Model
+                       * http://answers.gazebosim.org/question/4372/the-inertia-matrix-explained/
+		       * http://gazebosim.org/tutorials?tut=inertia&cat=build_robot, and 
+                       * http://gazebosim.org/tutorials/?tut=ros_urdf
+                       * http://en.wikipedia.org/wiki/List_of_moment_of_inertia_tensors  
+                -->
+		<inertial>
+			<mass value="31.5"/> <!-- P3AT 18.6kg plus three batteries @ 2.4kg each  minus four wheels @ 1.4 kg ea and top plate @ 0.1 kg-->
+			<origin xyz="-0.1 0 0.177"/>
+			 <inertia ixx="0.3338" ixy="0.0" ixz="0.0" iyy="0.4783" iyz="0.0" izz="0.3338"/>
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0.177" rpy="0 0 0"/>
+			<geometry name="pioneer_geom">
+				<mesh filename="package://tf_demo/meshes/p3at_meshes/chassis.stl"/>
+			</geometry>
+			<material name="ChassisRed">
+				<color rgba="0.851 0.0 0.0 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0.177" rpy="0 0 0"/>
+				<geometry>
+					<mesh filename="package://tf_demo/meshes/p3at_meshes/chassis.stl"/>
+				</geometry>
+		</collision>
+	</link>
+	<gazebo reference="pioneer3at_link">
+		<material value="Gazebo/Red"/>
+	</gazebo>
+
+<!-- Top -->
+	<link name="top_plate">
+		<inertial>
+			<mass value="0.1"/>	
+			<origin xyz="-0.025 0 -0.223"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+				 iyy="1.0" iyz="0.0"
+ 				izz="1.0"/>
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry name="pioneer_geom">
+				<mesh filename="package://tf_demo/meshes/p3at_meshes/top.stl"/>
+			</geometry>
+			<material name="TopBlack">
+					<color rgba="0.038 0.038 0.038 1.0"/>
+			</material>
+		</visual>
+
+	</link>
+	<gazebo reference="top_plate">
+    <material>Gazebo/Black</material>
+	</gazebo>
+
+	<joint name="base_top_joint" type="fixed">
+		<origin xyz="0.003 0 0.274" rpy="0 0 0"/>
+		<parent link="pioneer3at_link"/>
+		<child link="top_plate"/>
+	</joint>
+<!-- Front + Back Sonar -->
+	<link name="front_sonar">
+		<inertial>
+			<mass value="0.1"/>	
+			<origin xyz="0 0 0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+				 iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry name="pioneer_geom">
+				<mesh filename="package://tf_demo/meshes/p3at_meshes/front_sonar.stl"/>
+			</geometry>
+			<material name="SonarYellow">
+				<color rgba="0.715 0.583 0.210 1.0"/>
+			</material>
+		</visual>
+	</link>
+	<gazebo reference="front_sonar">
+		<material value="Gazebo/Yellow"/>
+	</gazebo>
+
+	<joint name="base_front_joint" type="fixed">
+		<origin xyz="0.193 0 0.25" rpy="0 0 0"/>
+		<parent link="pioneer3at_link"/>
+		<child link="front_sonar"/>
+	</joint>
+
+	<link name="back_sonar">
+		<inertial>
+			<mass value="0.1"/>	
+			<origin xyz="0 0 0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+				 iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry name="pioneer_geom">
+				<mesh filename="package://tf_demo/meshes/p3at_meshes/back_sonar.stl"/>
+			</geometry>
+			<material name="SonarYellow">
+				<color rgba="0.715 0.583 0.210 1.0"/>
+			</material>
+		</visual>
+	</link>
+	<gazebo reference="back_sonar">
+		<material value="Gazebo/Yellow"/>
+	</gazebo>
+
+	<joint name="base_back_joint" type="fixed">
+		<origin xyz="-0.187 0 0.247" rpy="0 0 0"/>
+		<parent link="pioneer3at_link"/>
+		<child link="back_sonar"/>
+	</joint>
+
+<xacro:macro name="p3at_drive_side" params="side reflect">
+
+  <!-- Front Axles + Wheels + Hubcaps -->
+	<link name="p3at_front_${side}_axle">
+		<inertial>
+			<mass value="0.1"/>	
+			<origin xyz="0 0 0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+				 iyy="1.0" iyz="0.0" izz="1.0"/>
+  	 	</inertial>
+	<visual>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry name="pioneer_geom">
+			<mesh filename="package://tf_demo/meshes/p3at_meshes/axle.stl"/>
+		</geometry>
+		<material name="AxleGrey">
+			<color rgba="0.5 0.5 0.5 1"/>
+		</material>
+	</visual>
+	</link>
+	<gazebo reference="p3at_front_${side}_axle">
+		<material value="Gazebo/Grey"/>
+	</gazebo>
+
+	<joint name="base_front_${side}_axle_joint" type="fixed">
+		<origin xyz="0.135 ${reflect*0.156} 0.111" rpy="0 0 0"/>
+		<parent link="pioneer3at_link"/>
+		<child link="p3at_front_${side}_axle"/>
+	</joint>
+
+	<link name="p3at_front_${side}_hub">
+		<inertial>
+			<mass value="0.1"/>	
+			<origin xyz="0 0 0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+				 iyy="1.0" iyz="0.0" izz="1.0"/>
+  	 	</inertial>
+	<visual>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry name="pioneer_geom">
+			<mesh filename="package://tf_demo/meshes/p3at_meshes/${side}_hubcap.stl"/>
+		</geometry>
+		<material name="HubcapYellow">
+			<color rgba="1.0 0.811 0.151 1.0"/>
+		</material>
+	</visual>
+	</link>
+	<gazebo reference="p3at_front_${side}_hub">
+		<material value="Gazebo/Yellow"/>
+	</gazebo>
+
+	<joint name="base_front_${side}_hub_joint" type="fixed">
+		<origin xyz="0 ${reflect*0.041} 0" rpy="0 0 0"/>
+		<parent link="p3at_front_${side}_axle"/>
+		<child link="p3at_front_${side}_hub"/>
+	</joint>
+
+	<link name="p3at_front_${side}_wheel">
+		<inertial>
+			<mass value="1.2"/> <!-- 1.4 kg - axle 0.1 kg - hub 0.1 kg -->
+			<origin xyz="0 0 0"/>
+			<inertia ixx="0.012411765597" ixy="0" ixz="0"
+         iyy="0.015218160428" iyz="0" izz="0.011763977943"/>
+      </inertial>
+	<visual>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry name="pioneer_geom">
+			<mesh filename="package://tf_demo/meshes/p3at_meshes/wheel.stl"/>
+		</geometry>
+		<material name="WheelBlack">
+			<color rgba="0.117 0.117 0.117 1"/>
+		</material>
+	</visual>
+	<collision>
+		<origin xyz="0 0 0" rpy="${-3.1415927/2} 0 0"/>
+		<geometry>
+	    <!--mesh filename="package://amr_robots_description/meshes/p3at_meshes/wheel.stl"/-->
+	    <cylinder radius="0.111" length="0.075"/>
+		</geometry>
+	</collision>
+	</link>
+	<gazebo reference="p3at_front_${side}_wheel">
+		<material value="Gazebo/Black"/>
+	</gazebo>
+
+	<joint name="p3at_front_${side}_wheel_joint" type="continuous">
+  	<axis xyz="0 1 0"/>
+    <anchor xyz="0 0 0"/>
+    <limit effort="100" velocity="100" />
+    <joint_properties damping="0.7"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<parent link="p3at_front_${side}_hub"/>
+		<child link="p3at_front_${side}_wheel"/>
+	</joint>
+
+<!-- Back Axles + Wheels + Hubcaps -->
+	<link name="p3at_back_${side}_axle">
+		<inertial>
+			<mass value="0.1"/>	
+			<origin xyz="0 0 0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+				 iyy="1.0" iyz="0.0" izz="1.0"/>
+  	 	</inertial>
+	<visual>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry name="pioneer_geom">
+			<mesh filename="package://tf_demo/meshes/p3at_meshes/axle.stl"/>
+		</geometry>
+		<material name="AxleGrey">
+			<color rgba="0.5 0.5 0.5 1"/>
+		</material>
+	</visual>
+	<collision>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry>
+			<mesh filename="package://tf_demo/meshes/p3at_meshes/axle.stl"/>
+		</geometry>
+	</collision>
+	</link>
+	<gazebo reference="p3at_back_${side}_axle">
+		<material value="Gazebo/Grey"/>
+	</gazebo>
+
+	<joint name="p3at_back_${side}_axle_joint" type="fixed">
+		<origin xyz="-0.134 ${reflect*0.156} 0.111" rpy="0 0 0"/>
+		<parent link="pioneer3at_link"/>
+		<child link="p3at_back_${side}_axle"/>
+	</joint>
+
+
+	<link name="p3at_back_${side}_hub">
+		<inertial>
+			<mass value="0.1"/>	
+			<origin xyz="0 0 0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0"
+				 iyy="1.0" iyz="0.0" izz="1.0"/>
+  	 	</inertial>
+	<visual>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry name="pioneer_geom">
+			<mesh filename="package://tf_demo/meshes/p3at_meshes/${side}_hubcap.stl"/>
+		</geometry>
+		<material name="HubcapYellow"/>
+	</visual>
+	<collision>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry>
+			<mesh filename="package://tf_demo/meshes/p3at_meshes/${side}_hubcap.stl"/>
+		</geometry>
+	</collision>
+	</link>
+	<gazebo reference="p3at_back_${side}_hub">
+		<material value="Gazebo/Yellow"/>
+	</gazebo>
+
+	<joint name="p3at_back_${side}_hub_joint" type="fixed">
+		<origin xyz="-0 ${reflect*0.041} 0" rpy="0 0 0"/>
+		<parent link="p3at_back_${side}_axle"/>
+		<child link="p3at_back_${side}_hub"/>
+	</joint>
+
+	<link name="p3at_back_${side}_wheel">
+		<inertial>
+			<mass value="1.2"/>	
+			<origin xyz="0 0 0"/>
+			<inertia ixx="0.012411765597" ixy="0" ixz="0"
+                                                      iyy="0.015218160428" iyz="0" 
+                                                                           izz="0.011763977943"/>
+      </inertial>
+	<visual>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<geometry name="pioneer_geom">
+			<mesh filename="package://tf_demo/meshes/p3at_meshes/wheel.stl"/>
+		</geometry>
+		<material name="WheelBlack"/>
+	</visual>
+	<collision>
+		<origin xyz="0 0 0" rpy="${-3.1415927/2} 0 0"/>
+		<geometry>
+	    <!--mesh filename="package://amr_robots_description/meshes/p3at_meshes/wheel.stl"/-->
+	    <cylinder radius="0.111" length="0.075"/>
+		</geometry>
+	</collision>
+	</link>
+	<gazebo reference="p3at_back_${side}_wheel">
+		<material value="Gazebo/Black"/>
+	</gazebo>
+
+	<joint name="p3at_back_${side}_wheel_joint" type="continuous">
+	  <axis xyz="0 1 0"/>
+    <anchor xyz="0 0 0"/>
+    <limit effort="100" velocity="100" />
+    <joint_properties damping="0.7"/>
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<parent link="p3at_back_${side}_hub"/>
+		<child link="p3at_back_${side}_wheel"/>
+	</joint>
+	
+
+  <!-- see http://gazebosim.org/tutorials/?tut=ros_urdf -->
+
+  <gazebo reference="p3at_back_${side}_wheel">
+    <kp>1000000.0</kp> <!-- kp and kd for rubber -->
+    <kd>100.0</kd>
+    <mu1>1.0</mu1> <!-- was 10 -->
+    <mu2>1.0</mu2>
+      <!-- how to get these into <surface><friction><ode>... ?
+        slip1 0.5 /slip1 
+         slip2 0 /slip2 
+      -->
+    <!-- fdir1 0 1 0 /fdir1 --> <!-- see http://github.com/MobileRobots/amr-ros-config/issues/6 -->
+    <maxVel>1.0</maxVel>
+    <minDepth>0.00</minDepth>
+    <material value="Gazebo/Black" />
+  </gazebo>
+  
+  <gazebo reference="p3at_front_${side}_wheel">
+    <kp>1000000.0</kp> <!-- kp and kd for rubber -->
+    <kd>100.0</kd>
+    <mu1>1.0</mu1> <!-- was 10 -->
+    <mu2>1.0</mu2>
+      <!-- how to get these into <surface><friction><ode>... ?
+        slip1 0.5 /slip1 
+         slip2 0 /slip2 
+      -->
+    <!-- fdir1 0 1 0 /fdir1 --> <!-- see http://github.com/MobileRobots/amr-ros-config/issues/6 -->
+    <maxVel>1.0</maxVel>
+    <minDepth>0.00</minDepth>
+    <material value="Gazebo/Black" />
+  </gazebo>
+
+</xacro:macro>
+
+
+<xacro:macro name="p3at_gazebo_ext">
+
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>50.0</updateRate>
+    <robotNamespace>sim_p3at</robotNamespace>
+    <leftFrontJoint>p3at_front_left_wheel_joint</leftFrontJoint>
+    <rightFrontJoint>p3at_front_right_wheel_joint</rightFrontJoint>
+    <leftRearJoint>p3at_back_left_wheel_joint</leftRearJoint>
+    <rightRearJoint>p3at_back_right_wheel_joint</rightRearJoint>
+    <wheelSeparation>0.4</wheelSeparation>
+    <wheelDiameter>0.215</wheelDiameter>
+    <robotBaseFrame>pioneer3at_link</robotBaseFrame>
+    <MaxForce>5.0</MaxForce>
+    <torque>200</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>p3at_odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <broadcastTF>1</broadcastTF>
+  </plugin>
+</gazebo>
+
+
+</xacro:macro>
+
+<xacro:p3at_drive_side side="left" reflect="1"/>
+<xacro:p3at_drive_side side="right" reflect="-1"/>
+<xacro:p3at_gazebo_ext/>
+
+
+</robot>
