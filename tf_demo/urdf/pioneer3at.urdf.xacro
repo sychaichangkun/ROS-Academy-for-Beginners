@@ -202,7 +202,6 @@ name="pioneer3at">
 	<collision>
 		<origin xyz="0 0 0" rpy="${-3.1415927/2} 0 0"/>
 		<geometry>
-	    <!--mesh filename="package://amr_robots_description/meshes/p3at_meshes/wheel.stl"/-->
 	    <cylinder radius="0.111" length="0.075"/>
 		</geometry>
 	</collision>
@@ -305,7 +304,6 @@ name="pioneer3at">
 	<collision>
 		<origin xyz="0 0 0" rpy="${-3.1415927/2} 0 0"/>
 		<geometry>
-	    <!--mesh filename="package://amr_robots_description/meshes/p3at_meshes/wheel.stl"/-->
 	    <cylinder radius="0.111" length="0.075"/>
 		</geometry>
 	</collision>
