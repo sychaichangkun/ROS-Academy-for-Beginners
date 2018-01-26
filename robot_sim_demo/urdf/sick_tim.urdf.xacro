@@ -4,6 +4,14 @@
   xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
   xmlns:xacro="http://ros.org/wiki/xacro">
 
+
+  <xacro:macro name="rplidarA2" params="name ros_topic">
+    <xacro:sick_tim name="${name}" ros_topic="${ros_topic}"
+      length="0.06" width="0.06" height="0.079" mass="0.150" z_offset="0.05595"
+      min_range="0.2" max_range="8.0"
+      mesh="package://robot_sim_demo/models/meshes/rplidar.dae" />
+  </xacro:macro>
+
   <xacro:macro name="sick_tim310" params="name ros_topic">
     <xacro:sick_tim name="${name}" ros_topic="${ros_topic}"
       length="0.06" width="0.06" height="0.079" mass="0.150" z_offset="0.05595"

@@ -15,9 +15,9 @@
 
   <link name="base_link">
     <inertial>
-      <origin  xyz="0.001 0 0.007" rpy="0 0 0" />
-      <mass value="30.0" />
-      <inertia ixx="1.734" ixy="0" ixz="0" iyy="1.734" iyz=".0" izz="1.0" />
+      <origin rpy="0 0 0" xyz="-0.015 0.0 0.0014" />
+      <mass value="35" />
+      <inertia ixx="0.6125" ixy="0.00495" ixz="0.0031" iyy="0.6426" iyz="-0.0017" izz="0.494" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -69,7 +69,7 @@
     <axis rpy="0 0 0" xyz="0 0 0"/>
     <parent link="base_link"/>
     <child link="laser_mount_link"/>
-    <origin rpy="0 3.1416 3.1416" xyz=".148 0 .253"/>
+    <origin rpy="0 0 0" xyz=".114 0 .17"/>
   </joint>
 
   <link name="imu_link"/>
@@ -82,77 +82,76 @@
 
   <link name="left_wheel">
     <collision name="collision">
-      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <origin xyz="0 0 0" rpy="1.57079632 0 0"/>
       <geometry>
         <cylinder radius="0.095" length="0.05"/>
       </geometry>
     </collision>
     <visual name="left_wheel_visual">
-      <origin xyz="0 0 0" rpy="0 0 -1.570796"/>
+      <origin xyz="0 0 0" rpy="0 0 -1.57079632"/>
       <geometry>
         <mesh filename="package://robot_sim_demo/models/meshes/wheel.dae" />
       </geometry>
-    </visual>
+    </visual>    
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 -1.570796"/>
-      <mass value="1.5"/>
-      <inertia ixx=".001" ixy="0" ixz="0" iyy=".001" iyz="0" izz=".001" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="4.3542" />
+      <inertia ixx="0.0045" ixy="0" ixz="0" iyy="0.005" iyz="0" izz="0.0045" />
     </inertial>
   </link>
 
   <joint type="continuous" name="left_wheel_hinge">
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <origin xyz="0 0.245 .095" rpy="0 0 0"/>
+    <origin xyz="0 0.23 .095" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <limit effort="5.2" velocity="2.0"/>
+    <limit effort="6" velocity="1.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
   <link name="right_wheel">
     <collision name="collision">
-      <origin xyz="0 0 0" rpy="-1.570796  0 0"/>
+      <origin xyz="0 0 0" rpy="-1.57079632  0 0"/>
       <geometry>
         <cylinder radius="0.095" length="0.05"/>
       </geometry>
     </collision>
     <visual name="right_wheel_visual">
-      <origin xyz="0 0 0" rpy="0 0 1.570796"/>
+      <origin xyz="0 0 0" rpy="0 0 1.57079632"/>
       <geometry>
         <mesh filename="package://robot_sim_demo/models/meshes/wheel.dae" />
       </geometry>
-    </visual>
+    </visual>    
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 1.570796"/>
-      <mass value="1.5"/>
-      <inertia ixx=".001" ixy="0" ixz="0" iyy=".001" iyz="0" izz=".001" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="4.3542" />
+      <inertia ixx="0.0045" ixy="0" ixz="0" iyy="0.005" iyz="0" izz="0.0045" />
     </inertial>
   </link>
 
   <joint type="continuous" name="right_wheel_hinge">
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <origin xyz="0 -0.245 .095" rpy="0 0 0"/>
+    <origin xyz="0 -0.23 .095" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="right_wheel"/>
-    <limit effort="5.2" velocity="2.0"/>
+    <limit effort="6" velocity="1.0"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
   <link name="yaw_platform">
     <inertial>
-      <origin  xyz="0 0 0" rpy="0 0 0" />
-      <mass value=".11" />
-      <inertia ixx="0.000826" ixy="0" ixz="0" iyy="0.0009211" iyz="0" izz="0.0002601" />
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 1.570796" />
+      <origin xyz="0 0 0" rpy="0 0 1.57079632" />
       <geometry>
-        <mesh filename="package://robot_sim_demo/models/meshes/yaw_platform.stl" />
+        <mesh filename="package://robot_sim_demo/models/meshes/yaw_platform.dae" />
       </geometry>
-      <material name="grey"/>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 1.570796" />
+      <origin xyz="0 0 0" rpy="0 0 1.57079632" />
       <geometry>
         <box size="0.1 0.1 0.1"/>
       </geometry>
@@ -163,23 +162,22 @@
     <axis xyz="0 0 1"/>
     <parent link="base_link"/>
     <child link="yaw_platform"/>
-    <origin rpy="0 0 0" xyz="0 0 1.07"/>
+    <origin rpy="0 0 0" xyz="0 0 1.305"/>
     <limit effort="100" velocity="100" lower="-1.57" upper="1.57" />
-    <dynamics damping="0.0" friction="5.0"/>
+    <dynamics damping="0.0" friction="10.0"/>
   </joint>
 
   <link name="pitch_platform">
     <inertial>
-      <origin  xyz="0 0 0" rpy="0 0 0" />
-      <mass value=".05" />
-      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.0001" />
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://robot_sim_demo/models/meshes/pitch_platform.stl" />
+        <mesh filename="package://robot_sim_demo/models/meshes/pitch_platform.dae" />
       </geometry>
-      <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -193,9 +191,9 @@
     <axis xyz="0 1 0"/>
     <parent link="yaw_platform"/>
     <child link="pitch_platform"/>
-    <origin rpy="0 0 0" xyz="0 0 .02"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
     <limit effort="100" velocity="100" lower="-1.57" upper="1.57" />
-    <dynamics damping="0.0" friction="5.0"/>
+    <dynamics damping="0.0" friction="10.0"/>
   </joint>
 
   <!-- Camera -->
@@ -209,9 +207,9 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://robot_sim_demo/models/meshes/xtion_pro_camera.dae" />
+        <!--<mesh filename="package://robot_sim_demo/models/meshes/xtion_pro_camera.dae" />-->
+        <mesh filename="package://robot_sim_demo/models/meshes/realsense.dae" />
       </geometry>
-      <material name="gray"/>
     </visual>
     <inertial>
       <mass value="1e-5" />
@@ -222,7 +220,7 @@
 
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 1 0" />
-    <origin xyz="0 0 .08" rpy="0 0 0"/>
+    <origin xyz="-0.005 0 .06" rpy="0 0 0"/>
     <parent link="pitch_platform"/>
     <child link="camera_link"/>
   </joint>

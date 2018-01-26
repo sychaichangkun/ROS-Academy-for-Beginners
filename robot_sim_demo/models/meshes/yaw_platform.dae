@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2017-09-11, commit time:10:43, hash:5bd8ac9abfa</authoring_tool>
+    </contributor>
+    <created>2018-01-25T13:47:36</created>
+    <modified>2018-01-25T13:47:36</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">49.13434</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <YF_dofdist sid="YF_dofdist" type="float">0</YF_dofdist>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Lamp-light" name="Lamp">
+      <technique_common>
+        <point>
+          <color sid="color">1 1 1</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0.00111109</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">8192</mode>
+          <gamma sid="blender_gamma" type="float">1</gamma>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
+          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
+          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
+          <energy sid="blender_energy" type="float">1</energy>
+          <dist sid="blender_dist" type="float">29.99998</dist>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <halo_intensity sid="blnder_halo_intensity" type="float">1</halo_intensity>
+          <att1 sid="att1" type="float">0</att1>
+          <att2 sid="att2" type="float">1</att2>
+          <falloff_type sid="falloff_type" type="int">2</falloff_type>
+          <clipsta sid="clipsta" type="float">1.000799</clipsta>
+          <clipend sid="clipend" type="float">30.002</clipend>
+          <bias sid="bias" type="float">1</bias>
+          <soft sid="soft" type="float">3</soft>
+          <compressthresh sid="compressthresh" type="float">0.04999995</compressthresh>
+          <bufsize sid="bufsize" type="int">2880</bufsize>
+          <samp sid="samp" type="int">3</samp>
+          <buffers sid="buffers" type="int">1</buffers>
+          <filtertype sid="filtertype" type="int">0</filtertype>
+          <bufflag sid="bufflag" type="int">0</bufflag>
+          <buftype sid="buftype" type="int">2</buftype>
+          <ray_samp sid="ray_samp" type="int">1</ray_samp>
+          <ray_sampy sid="ray_sampy" type="int">1</ray_sampy>
+          <ray_sampz sid="ray_sampz" type="int">1</ray_sampz>
+          <ray_samp_type sid="ray_samp_type" type="int">0</ray_samp_type>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+          <adapt_thresh sid="adapt_thresh" type="float">0.000999987</adapt_thresh>
+          <ray_samp_method sid="ray_samp_method" type="int">1</ray_samp_method>
+          <shadhalostep sid="shadhalostep" type="int">0</shadhalostep>
+          <sun_effect_type sid="sun_effect_type" type="int">0</sun_effect_type>
+          <skyblendtype sid="skyblendtype" type="int">1</skyblendtype>
+          <horizon_brightness sid="horizon_brightness" type="float">1</horizon_brightness>
+          <spread sid="spread" type="float">1</spread>
+          <sun_brightness sid="sun_brightness" type="float">1</sun_brightness>
+          <sun_size sid="sun_size" type="float">1</sun_size>
+          <backscattered_light sid="backscattered_light" type="float">1</backscattered_light>
+          <sun_intensity sid="sun_intensity" type="float">1</sun_intensity>
+          <atm_turbidity sid="atm_turbidity" type="float">2</atm_turbidity>
+          <atm_extinction_factor sid="atm_extinction_factor" type="float">1</atm_extinction_factor>
+          <atm_distance_factor sid="atm_distance_factor" type="float">1</atm_distance_factor>
+          <skyblendfac sid="skyblendfac" type="float">1</skyblendfac>
+          <sky_exposure sid="sky_exposure" type="float">1</sky_exposure>
+          <sky_colorspace sid="sky_colorspace" type="int">0</sky_colorspace>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_images/>
+  <library_effects>
+    <effect id="pasted__lambert19-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.3 0.3 0.3 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.1567903 0.1567903 0.1567903 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1631875 0.1631875 0.1631875 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="pasted__lambert19-material" name="pasted__lambert19">
+      <instance_effect url="#pasted__lambert19-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="pasted__nurbsToPolyShape383-mesh" name="pasted__nurbsToPolyShape383">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape383-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape383-mesh-positions-array" count="30">2.5 0 2.25 2.5 0 1.75 -2.5 0 1.75 -2.5 0 2.25 2.5 -0.25 2 2.5 -0.1767767 1.823223 2.5 -0.1767767 2.176777 -2.5 -0.25 2 -2.5 -0.1767767 1.823223 -2.5 -0.1767767 2.176777</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape383-mesh-positions-array" count="10" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape383-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape383-mesh-normals-array" count="15">0 0.3826816 0.9238803 0 0.7071068 0.7071068 0 1 0 0 0.7071068 -0.7071068 0 0.3826816 -0.9238803</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape383-mesh-normals-array" count="5" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape383-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape383-mesh-map-0-array" count="48">0.2055047 0.0802313 0.2809642 0.1073535 0.2055047 0.1073535 0.2809642 0.1073535 0.2055047 0.1344756 0.2055047 0.1073535 0.2809642 0.1615978 0.2055047 0.1887199 0.2055047 0.1615978 0.2809642 0.1615978 0.2055047 0.1344756 0.2809642 0.1344756 0.2055047 0.0802313 0.2809642 0.0802313 0.2809642 0.1073535 0.2809642 0.1073535 0.2809642 0.1344756 0.2055047 0.1344756 0.2809642 0.1615978 0.2809642 0.1887199 0.2055047 0.1887199 0.2809642 0.1615978 0.2055047 0.1615978 0.2055047 0.1344756</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape383-mesh-map-0-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape383-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape383-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="8">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape383-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape383-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape383-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 8 1 1 5 1 2 8 1 3 4 2 4 5 1 5 9 3 6 0 4 7 6 3 8 9 3 9 4 2 10 7 2 11 1 0 12 2 0 13 8 1 14 8 1 15 7 2 16 4 2 17 9 3 18 3 4 19 0 4 20 9 3 21 6 3 22 4 2 23</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape384-mesh" name="pasted__nurbsToPolyShape384">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape384-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape384-mesh-positions-array" count="30">2.5 0 1.75 2.5 0 2.25 -2.5 0 2.25 -2.5 0 1.75 2.5 0.25 2 2.5 0.1767767 2.176777 2.5 0.1767767 1.823223 -2.5 0.25 2 -2.5 0.1767767 2.176777 -2.5 0.1767767 1.823223</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape384-mesh-positions-array" count="10" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape384-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape384-mesh-normals-array" count="15">0 -1 0 0 -0.7071068 -0.7071068 0 -0.7071068 0.7071068 0 -0.3826816 0.9238803 0 -0.3826816 -0.9238803</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape384-mesh-normals-array" count="5" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape384-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape384-mesh-map-0-array" count="48">0.2809642 0.1344756 0.2055047 0.1073535 0.2809642 0.1073535 0.2809642 0.1615978 0.2055047 0.1344756 0.2809642 0.1344756 0.2809642 0.1887199 0.2055047 0.1615978 0.2809642 0.1615978 0.2809642 0.0802313 0.2055047 0.1073535 0.2055047 0.0802313 0.2809642 0.1344756 0.2055047 0.1344756 0.2055047 0.1073535 0.2809642 0.1615978 0.2055047 0.1615978 0.2055047 0.1344756 0.2809642 0.1887199 0.2055047 0.1887199 0.2055047 0.1615978 0.2809642 0.0802313 0.2809642 0.1073535 0.2055047 0.1073535</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape384-mesh-map-0-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape384-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape384-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="8">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape384-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape384-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape384-mesh-map-0" offset="2" set="0"/>
+          <p>7 0 0 5 1 1 8 1 2 9 2 3 4 0 4 7 0 5 3 3 6 6 2 7 9 2 8 2 4 9 5 1 10 1 4 11 7 0 12 4 0 13 5 1 14 9 2 15 6 2 16 4 0 17 3 3 18 0 3 19 6 2 20 2 4 21 8 1 22 5 1 23</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape385-mesh" name="pasted__nurbsToPolyShape385">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape385-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape385-mesh-positions-array" count="63">-2.5 2 1 -2.5 -2 1 -2.5 -2 3.7 -2.5 2 3.7 -2.5 0 1.75 -2.5 0 2.25 -2.5 -0.2971429 1 -2.5 -2 3.052 -2.5 -0.8914286 3.7 -2.5 0.8914286 3.7 -2.5 0.2971429 1 -2.5 -0.249998 1.999 -2.5 -0.1485714 1.798936 -2.5 -0.177053 1.8235 -2.5 -0.1485714 2.201063 -2.5 0.249998 1.999 -2.5 0.177053 1.8235 -2.5 0.1485714 2.201063 -2.5 0.1790243 2.1745 -2.5 0.2971429 3.7 -2.5 2 2.35</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape385-mesh-positions-array" count="21" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape385-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape385-mesh-normals-array" count="21">-1 0 0 -1 -4.80745e-6 0 -1 4.23446e-7 0 -1 -2.07348e-6 0 -1 2.58918e-7 0 -1 9.02947e-6 0 -1 -3.97455e-7 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape385-mesh-normals-array" count="7" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape385-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape385-mesh-map-0-array" count="126">0.2296903 0.138211 0.2161378 0.1332007 0.2305746 0.1357059 0.264927 0.1432213 0.2373611 0.1412297 0.2378411 0.1407161 0.2405323 0.1719343 0.2310185 0.1411964 0.2341898 0.1424264 0.2387254 0.138211 0.264927 0.1432213 0.2378411 0.1407161 0.2378411 0.1357059 0.264927 0.12318 0.2387254 0.138211 0.2532176 0.1044877 0.2378411 0.1357059 0.2341898 0.1339955 0.2161378 0.1044877 0.2341898 0.1339955 0.2310185 0.1352255 0.2161378 0.1332007 0.2310185 0.1352255 0.2305746 0.1357059 0.2310185 0.1411964 0.2161378 0.1432213 0.2296903 0.138211 0.2405323 0.1719343 0.2373611 0.1412297 0.264927 0.153242 0.2296903 0.138211 0.2161378 0.1432213 0.2161378 0.1332007 0.264927 0.1432213 0.264927 0.153242 0.2373611 0.1412297 0.2405323 0.1719343 0.2161378 0.1719343 0.2310185 0.1411964 0.2387254 0.138211 0.264927 0.12318 0.264927 0.1432213 0.2378411 0.1357059 0.264927 0.1044877 0.264927 0.12318 0.2532176 0.1044877 0.264927 0.1044877 0.2378411 0.1357059 0.2161378 0.1044877 0.2532176 0.1044877 0.2341898 0.1339955 0.2161378 0.1332007 0.2161378 0.1044877 0.2310185 0.1352255 0.2310185 0.1411964 0.2161378 0.1719343 0.2161378 0.1432213 0.264927 0.153242 0.264927 0.1719343 0.2405323 0.1719343 0.2405323 0.1719343 0.2341898 0.1424264 0.2373611 0.1412297</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape385-mesh-map-0-array" count="63" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape385-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape385-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="21">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape385-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape385-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape385-mesh-map-0" offset="2" set="0"/>
+          <p>4 0 0 6 0 1 12 0 2 19 1 3 18 1 4 17 1 5 20 2 6 16 2 7 15 2 8 5 3 9 19 3 10 17 3 11 14 0 12 8 0 13 5 0 14 7 4 15 14 4 16 11 4 17 1 0 18 11 0 19 13 0 20 6 5 21 13 5 22 12 5 23 16 0 24 10 0 25 4 0 26 20 0 27 18 0 28 9 0 29 4 0 30 10 0 31 6 0 32 19 0 33 9 0 34 18 0 35 20 0 36 0 0 37 16 0 38 5 0 39 8 0 40 19 0 41 14 0 42 2 0 43 8 0 44 7 6 45 2 6 46 14 6 47 1 0 48 7 0 49 11 0 50 6 0 51 1 0 52 13 0 53 16 0 54 0 0 55 10 0 56 9 0 57 3 0 58 20 0 59 20 0 60 15 0 61 18 0 62</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape386-mesh" name="pasted__nurbsToPolyShape386">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape386-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape386-mesh-positions-array" count="66">-2.5 -2 3.7 -1.5 -3 3.7 1.5 -3 3.7 2.5 -2 3.7 1.5 3 3.7 -1.5 3 3.7 -2.496795 -2.08 3.7 -1.56 -2.998198 3.7 -2.3 -2.6 3.7 -2.08 -2.814616 3.7 2.496795 -2.08 3.7 1.56 -2.998198 3.7 2.3 -2.6 3.7 2.08 -2.814616 3.7 -2.496795 2.08 3.7 -1.726787 2.998198 3.7 -2.3 2.6 3.7 -2.08 2.814616 3.7 2.496795 2.08 3.7 1.726787 2.998198 3.7 2.3 2.6 3.7 2.08 2.814616 3.7</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape386-mesh-positions-array" count="22" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape386-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape386-mesh-normals-array" count="15">0 0 1 -2.90774e-6 0 1 1.74919e-6 0 1 1.18293e-5 0 1 -7.11597e-6 0 1</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape386-mesh-normals-array" count="5" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape386-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape386-mesh-map-0-array" count="120">0.2608287 0.1698504 0.2551691 0.1719343 0.2202361 0.1698504 0.2648957 0.1615925 0.2161378 0.1157288 0.264927 0.1157288 0.2648957 0.1615925 0.2180894 0.1674379 0.2161691 0.1615925 0.2629754 0.1674379 0.2202361 0.1698504 0.2180894 0.1674379 0.2161691 0.1148295 0.2629754 0.1089842 0.2648957 0.1148295 0.2180894 0.1089842 0.2608287 0.1065716 0.2629754 0.1089842 0.2202361 0.1065716 0.2258956 0.1044877 0.2608287 0.1065716 0.2161378 0.1157288 0.2648957 0.1148295 0.264927 0.1157288 0.2253102 0.1719141 0.2202361 0.1698504 0.2258956 0.1719343 0.2608287 0.1698504 0.2557546 0.1719141 0.2551691 0.1719343 0.2551691 0.1719343 0.2258956 0.1719343 0.2202361 0.1698504 0.2648957 0.1615925 0.2161691 0.1615925 0.2161378 0.1157288 0.2648957 0.1615925 0.2629754 0.1674379 0.2180894 0.1674379 0.2629754 0.1674379 0.2608287 0.1698504 0.2202361 0.1698504 0.2161691 0.1148295 0.2180894 0.1089842 0.2629754 0.1089842 0.2180894 0.1089842 0.2202361 0.1065716 0.2608287 0.1065716 0.2557546 0.104508 0.2608287 0.1065716 0.2551691 0.1044877 0.2202361 0.1065716 0.2253102 0.104508 0.2258956 0.1044877 0.2258956 0.1044877 0.2551691 0.1044877 0.2608287 0.1065716 0.2161378 0.1157288 0.2161691 0.1148295 0.2648957 0.1148295</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape386-mesh-map-0-array" count="60" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape386-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape386-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="20">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape386-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape386-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape386-mesh-map-0" offset="2" set="0"/>
+          <p>21 0 0 4 0 1 17 0 2 18 0 3 0 0 4 3 0 5 18 0 6 16 0 7 14 0 8 20 0 9 17 0 10 16 0 11 6 0 12 12 0 13 10 0 14 8 0 15 13 0 16 12 0 17 9 0 18 1 0 19 13 0 20 0 0 21 10 0 22 3 0 23 15 1 24 17 1 25 5 1 26 21 2 27 19 2 28 4 2 29 4 0 30 5 0 31 17 0 32 18 0 33 14 0 34 0 0 35 18 0 36 20 0 37 16 0 38 20 0 39 21 0 40 17 0 41 6 0 42 8 0 43 12 0 44 8 0 45 9 0 46 13 0 47 11 3 48 13 3 49 2 3 50 9 4 51 7 4 52 1 4 53 1 0 54 2 0 55 13 0 56 0 0 57 6 0 58 10 0 59</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape387-mesh" name="pasted__nurbsToPolyShape387">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape387-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape387-mesh-positions-array" count="42">2.5 2 1 1.5 3 1 1.5 3 3.7 2.5 2 3.7 1.954505 2.890744 3.7 1.660583 2.987022 3.7 2.390744 2.454505 3.7 2.207107 2.707107 3.7 2.487022 2.160583 3.7 1.954505 2.890744 1 1.660583 2.987022 1 2.390744 2.454505 1 2.207107 2.707107 1 2.487022 2.160583 1</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape387-mesh-positions-array" count="14" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape387-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape387-mesh-normals-array" count="21">0.4551675 0.8904058 0 0.197278 0.9803476 0 0.0805397 0.9967515 0 0.8904058 0.4551675 0 0.7071068 0.7071068 0 0.9967515 0.0805397 0 0.9803476 0.197278 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape387-mesh-normals-array" count="7" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape387-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape387-mesh-map-0-array" count="72">0.2352089 0.1044877 0.2303222 0.1719343 0.2303222 0.1044877 0.2278472 0.1044877 0.2303222 0.1719343 0.2278472 0.1719343 0.2458559 0.1044877 0.2405323 0.1719343 0.2405323 0.1044877 0.2352089 0.1044877 0.2405323 0.1719343 0.2352089 0.1719343 0.2532176 0.1044877 0.2507426 0.1719343 0.2507426 0.1044877 0.2458559 0.1044877 0.2507426 0.1719343 0.2458559 0.1719343 0.2352089 0.1044877 0.2352089 0.1719343 0.2303222 0.1719343 0.2278472 0.1044877 0.2303222 0.1044877 0.2303222 0.1719343 0.2458559 0.1044877 0.2458559 0.1719343 0.2405323 0.1719343 0.2352089 0.1044877 0.2405323 0.1044877 0.2405323 0.1719343 0.2532176 0.1044877 0.2532176 0.1719343 0.2507426 0.1719343 0.2458559 0.1044877 0.2507426 0.1044877 0.2507426 0.1719343</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape387-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape387-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape387-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="12">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape387-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape387-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape387-mesh-map-0" offset="2" set="0"/>
+          <p>4 0 0 10 1 1 5 1 2 2 2 3 10 1 4 1 2 5 6 3 6 12 4 7 7 4 8 4 0 9 12 4 10 9 0 11 3 5 12 13 6 13 8 6 14 6 3 15 13 6 16 11 3 17 4 0 18 9 0 19 10 1 20 2 2 21 5 1 22 10 1 23 6 3 24 11 3 25 12 4 26 4 0 27 7 4 28 12 4 29 3 5 30 0 5 31 13 6 32 6 3 33 8 6 34 13 6 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape388-mesh" name="pasted__nurbsToPolyShape388">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape388-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape388-mesh-positions-array" count="12">1.5 3 1 -1.5 3 1 -1.5 3 3.7 1.5 3 3.7</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape388-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape388-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape388-mesh-normals-array" count="3">0 1 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape388-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape388-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape388-mesh-map-0-array" count="12">0.2161378 0.1719343 0.264927 0.1044877 0.264927 0.1719343 0.2161378 0.1719343 0.2161378 0.1044877 0.264927 0.1044877</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape388-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape388-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape388-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="2">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape388-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape388-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape388-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 3 0 1 0 0 2 1 0 3 2 0 4 3 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape389-mesh" name="pasted__nurbsToPolyShape389">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape389-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape389-mesh-positions-array" count="42">-1.5 3 1 -2.5 2 1 -2.5 2 3.7 -1.5 3 3.7 -2.390744 2.454505 3.7 -2.487022 2.160583 3.7 -1.954505 2.890744 3.7 -2.207107 2.707107 3.7 -1.660583 2.987022 3.7 -2.390744 2.454505 1 -2.487022 2.160583 1 -1.954505 2.890744 1 -2.207107 2.707107 1 -1.660583 2.987022 1</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape389-mesh-positions-array" count="14" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape389-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape389-mesh-normals-array" count="21">-0.8904058 0.4551675 0 -0.9803476 0.197278 0 -0.9967515 0.0805397 0 -0.4551675 0.8904058 0 -0.7071068 0.7071068 0 -0.0805397 0.9967515 0 -0.197278 0.9803476 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape389-mesh-normals-array" count="7" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape389-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape389-mesh-map-0-array" count="72">0.2352089 0.1044877 0.2303222 0.1719343 0.2303222 0.1044877 0.2278472 0.1044877 0.2303222 0.1719343 0.2278472 0.1719343 0.2458559 0.1044877 0.2405323 0.1719343 0.2405323 0.1044877 0.2352089 0.1044877 0.2405323 0.1719343 0.2352089 0.1719343 0.2532176 0.1044877 0.2507426 0.1719343 0.2507426 0.1044877 0.2458559 0.1044877 0.2507426 0.1719343 0.2458559 0.1719343 0.2352089 0.1044877 0.2352089 0.1719343 0.2303222 0.1719343 0.2278472 0.1044877 0.2303222 0.1044877 0.2303222 0.1719343 0.2458559 0.1044877 0.2458559 0.1719343 0.2405323 0.1719343 0.2352089 0.1044877 0.2405323 0.1044877 0.2405323 0.1719343 0.2532176 0.1044877 0.2532176 0.1719343 0.2507426 0.1719343 0.2458559 0.1044877 0.2507426 0.1044877 0.2507426 0.1719343</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape389-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape389-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape389-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="12">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape389-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape389-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape389-mesh-map-0" offset="2" set="0"/>
+          <p>4 0 0 10 1 1 5 1 2 2 2 3 10 1 4 1 2 5 6 3 6 12 4 7 7 4 8 4 0 9 12 4 10 9 0 11 3 5 12 13 6 13 8 6 14 6 3 15 13 6 16 11 3 17 4 0 18 9 0 19 10 1 20 2 2 21 5 1 22 10 1 23 6 3 24 11 3 25 12 4 26 4 0 27 7 4 28 12 4 29 3 5 30 0 5 31 13 6 32 6 3 33 8 6 34 13 6 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape390-mesh" name="pasted__nurbsToPolyShape390">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape390-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape390-mesh-positions-array" count="42">-2.5 -2 1 -1.5 -3 1 -1.5 -3 3.7 -2.5 -2 3.7 -1.954505 -2.890744 3.7 -1.660583 -2.987022 3.7 -2.390744 -2.454505 3.7 -2.207107 -2.707107 3.7 -2.487022 -2.160583 3.7 -1.954505 -2.890744 1 -1.660583 -2.987022 1 -2.390744 -2.454505 1 -2.207107 -2.707107 1 -2.487022 -2.160583 1</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape390-mesh-positions-array" count="14" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape390-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape390-mesh-normals-array" count="21">-0.4551675 -0.8904058 0 -0.197278 -0.9803476 0 -0.0805397 -0.9967515 0 -0.8904058 -0.4551675 0 -0.7071068 -0.7071068 0 -0.9967515 -0.0805397 0 -0.9803476 -0.197278 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape390-mesh-normals-array" count="7" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape390-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape390-mesh-map-0-array" count="72">0.2352089 0.1044877 0.2303222 0.1719343 0.2303222 0.1044877 0.2278472 0.1044877 0.2303222 0.1719343 0.2278472 0.1719343 0.2458559 0.1044877 0.2405323 0.1719343 0.2405323 0.1044877 0.2352089 0.1044877 0.2405323 0.1719343 0.2352089 0.1719343 0.2532176 0.1044877 0.2507426 0.1719343 0.2507426 0.1044877 0.2458559 0.1044877 0.2507426 0.1719343 0.2458559 0.1719343 0.2352089 0.1044877 0.2352089 0.1719343 0.2303222 0.1719343 0.2278472 0.1044877 0.2303222 0.1044877 0.2303222 0.1719343 0.2458559 0.1044877 0.2458559 0.1719343 0.2405323 0.1719343 0.2352089 0.1044877 0.2405323 0.1044877 0.2405323 0.1719343 0.2532176 0.1044877 0.2532176 0.1719343 0.2507426 0.1719343 0.2458559 0.1044877 0.2507426 0.1044877 0.2507426 0.1719343</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape390-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape390-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape390-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="12">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape390-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape390-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape390-mesh-map-0" offset="2" set="0"/>
+          <p>4 0 0 10 1 1 5 1 2 2 2 3 10 1 4 1 2 5 6 3 6 12 4 7 7 4 8 4 0 9 12 4 10 9 0 11 3 5 12 13 6 13 8 6 14 6 3 15 13 6 16 11 3 17 4 0 18 9 0 19 10 1 20 2 2 21 5 1 22 10 1 23 6 3 24 11 3 25 12 4 26 4 0 27 7 4 28 12 4 29 3 5 30 0 5 31 13 6 32 6 3 33 8 6 34 13 6 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape391-mesh" name="pasted__nurbsToPolyShape391">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape391-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape391-mesh-positions-array" count="12">-1.5 -3 1 1.5 -3 1 1.5 -3 3.7 -1.5 -3 3.7</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape391-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape391-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape391-mesh-normals-array" count="3">0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape391-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape391-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape391-mesh-map-0-array" count="12">0.2161378 0.1719343 0.264927 0.1044877 0.264927 0.1719343 0.2161378 0.1719343 0.2161378 0.1044877 0.264927 0.1044877</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape391-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape391-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape391-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="2">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape391-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape391-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape391-mesh-map-0" offset="2" set="0"/>
+          <p>3 0 0 1 0 1 2 0 2 3 0 3 0 0 4 1 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape392-mesh" name="pasted__nurbsToPolyShape392">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape392-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape392-mesh-positions-array" count="42">1.5 -3 1 2.5 -2 1 2.5 -2 3.7 1.5 -3 3.7 2.390744 -2.454505 3.7 2.487022 -2.160583 3.7 1.954505 -2.890744 3.7 2.207107 -2.707107 3.7 1.660583 -2.987022 3.7 2.390744 -2.454505 1 2.487022 -2.160583 1 1.954505 -2.890744 1 2.207107 -2.707107 1 1.660583 -2.987022 1</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape392-mesh-positions-array" count="14" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape392-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape392-mesh-normals-array" count="21">0.8904058 -0.4551675 0 0.9803476 -0.197278 0 0.9967515 -0.0805397 0 0.4551675 -0.8904058 0 0.7071068 -0.7071068 0 0.0805397 -0.9967515 0 0.197278 -0.9803476 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape392-mesh-normals-array" count="7" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape392-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape392-mesh-map-0-array" count="72">0.2352089 0.1044877 0.2303222 0.1719343 0.2303222 0.1044877 0.2278472 0.1044877 0.2303222 0.1719343 0.2278472 0.1719343 0.2458559 0.1044877 0.2405323 0.1719343 0.2405323 0.1044877 0.2352089 0.1044877 0.2405323 0.1719343 0.2352089 0.1719343 0.2532176 0.1044877 0.2507426 0.1719343 0.2507426 0.1044877 0.2458559 0.1044877 0.2507426 0.1719343 0.2458559 0.1719343 0.2352089 0.1044877 0.2352089 0.1719343 0.2303222 0.1719343 0.2278472 0.1044877 0.2303222 0.1044877 0.2303222 0.1719343 0.2458559 0.1044877 0.2458559 0.1719343 0.2405323 0.1719343 0.2352089 0.1044877 0.2405323 0.1044877 0.2405323 0.1719343 0.2532176 0.1044877 0.2532176 0.1719343 0.2507426 0.1719343 0.2458559 0.1044877 0.2507426 0.1044877 0.2507426 0.1719343</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape392-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape392-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape392-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="12">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape392-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape392-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape392-mesh-map-0" offset="2" set="0"/>
+          <p>4 0 0 10 1 1 5 1 2 2 2 3 10 1 4 1 2 5 6 3 6 12 4 7 7 4 8 4 0 9 12 4 10 9 0 11 3 5 12 13 6 13 8 6 14 6 3 15 13 6 16 11 3 17 4 0 18 9 0 19 10 1 20 2 2 21 5 1 22 10 1 23 6 3 24 11 3 25 12 4 26 4 0 27 7 4 28 12 4 29 3 5 30 0 5 31 13 6 32 6 3 33 8 6 34 13 6 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__nurbsToPolyShape393-mesh" name="pasted__nurbsToPolyShape393">
+      <mesh>
+        <source id="pasted__nurbsToPolyShape393-mesh-positions">
+          <float_array id="pasted__nurbsToPolyShape393-mesh-positions-array" count="63">-2.5 2 1 -2.5 -2 1 -2.5 -2 3.7 -2.5 2 3.7 -2.5 0 1.75 -2.5 0 2.25 -2.5 -0.2971429 1 -2.5 -2 3.052 -2.5 -0.8914286 3.7 -2.5 0.8914286 3.7 -2.5 0.2971429 1 -2.5 -0.249998 1.999 -2.5 -0.1485714 1.798936 -2.5 -0.177053 1.8235 -2.5 -0.1485714 2.201063 -2.5 0.249998 1.999 -2.5 0.177053 1.8235 -2.5 0.1485714 2.201063 -2.5 0.1790243 2.1745 -2.5 0.2971429 3.7 -2.5 2 2.35</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape393-mesh-positions-array" count="21" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape393-mesh-normals">
+          <float_array id="pasted__nurbsToPolyShape393-mesh-normals-array" count="18">1 0 0 1 9.61489e-6 0 1 -4.23446e-7 0 1 2.07348e-6 0 1 1.98728e-7 0 1 -9.02947e-6 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape393-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__nurbsToPolyShape393-mesh-map-0">
+          <float_array id="pasted__nurbsToPolyShape393-mesh-map-0-array" count="126">0.2296903 0.138211 0.2161378 0.1332007 0.2161378 0.1432213 0.2373611 0.1412297 0.264927 0.1432213 0.2378411 0.1407161 0.2310185 0.1411964 0.2405323 0.1719343 0.2341898 0.1424264 0.2387254 0.138211 0.264927 0.1432213 0.264927 0.12318 0.2378411 0.1357059 0.264927 0.12318 0.264927 0.1044877 0.2378411 0.1357059 0.2532176 0.1044877 0.2341898 0.1339955 0.2341898 0.1339955 0.2161378 0.1044877 0.2310185 0.1352255 0.2161378 0.1332007 0.2310185 0.1352255 0.2161378 0.1044877 0.2310185 0.1411964 0.2161378 0.1432213 0.2161378 0.1719343 0.2373611 0.1412297 0.2341898 0.1424264 0.2405323 0.1719343 0.2296903 0.138211 0.2305746 0.1357059 0.2161378 0.1332007 0.2373611 0.1412297 0.264927 0.153242 0.264927 0.1432213 0.2310185 0.1411964 0.2161378 0.1719343 0.2405323 0.1719343 0.2387254 0.138211 0.2378411 0.1407161 0.264927 0.1432213 0.2378411 0.1357059 0.2387254 0.138211 0.264927 0.12318 0.2378411 0.1357059 0.264927 0.1044877 0.2532176 0.1044877 0.2341898 0.1339955 0.2532176 0.1044877 0.2161378 0.1044877 0.2161378 0.1332007 0.2305746 0.1357059 0.2310185 0.1352255 0.2310185 0.1411964 0.2296903 0.138211 0.2161378 0.1432213 0.2405323 0.1719343 0.264927 0.1719343 0.264927 0.153242 0.264927 0.153242 0.2373611 0.1412297 0.2405323 0.1719343</float_array>
+          <technique_common>
+            <accessor source="#pasted__nurbsToPolyShape393-mesh-map-0-array" count="63" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__nurbsToPolyShape393-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__nurbsToPolyShape393-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="21">
+          <input semantic="VERTEX" source="#pasted__nurbsToPolyShape393-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__nurbsToPolyShape393-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__nurbsToPolyShape393-mesh-map-0" offset="2" set="0"/>
+          <p>4 0 0 6 0 1 10 0 2 18 1 3 19 1 4 17 1 5 16 2 6 20 2 7 15 2 8 5 0 9 19 0 10 8 0 11 14 0 12 8 0 13 2 0 14 14 0 15 7 0 16 11 0 17 11 0 18 1 0 19 13 0 20 6 0 21 13 0 22 1 0 23 16 0 24 10 0 25 0 0 26 18 0 27 15 0 28 20 0 29 4 0 30 12 0 31 6 0 32 18 0 33 9 0 34 19 0 35 16 0 36 0 0 37 20 0 38 5 3 39 17 3 40 19 3 41 14 0 42 5 0 43 8 0 44 14 4 45 2 4 46 7 4 47 11 0 48 7 0 49 1 0 50 6 5 51 12 5 52 13 5 53 16 0 54 4 0 55 10 0 56 20 0 57 3 0 58 9 0 59 9 0 60 18 0 61 20 0 62</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pasted__polySurfaceShape46-mesh" name="pasted__polySurfaceShape46">
+      <mesh>
+        <source id="pasted__polySurfaceShape46-mesh-positions">
+          <float_array id="pasted__polySurfaceShape46-mesh-positions-array" count="180">2.427089 0.8654327 -0.7886091 2.064605 0.8654327 -1.500023 1.500023 0.8654327 -2.064605 0.788608 0.8654327 -2.427088 0 0.8654327 -2.551989 -0.788609 0.8654327 -2.427088 -1.500023 0.8654327 -2.064604 -2.064604 0.8654327 -1.500022 -2.427088 0.8654327 -0.7886089 -2.551988 0.8654327 0 -2.427088 0.8654327 0.7886079 -2.064604 0.8654327 1.500023 -1.500022 0.8654327 2.064605 -0.788609 0.8654327 2.427089 0 0.8654327 2.55199 0.7886078 0.8654327 2.427088 1.500022 0.8654327 2.064605 2.064603 0.8654327 1.500023 2.427088 0.8654327 0.7886079 2.551989 0.8654327 0 1.25106 0.8654327 -0.4064946 1.064214 0.8654327 -0.7731977 0.7731974 0.8654327 -1.064215 0.4064932 0.8654327 -1.25106 0 0.8654327 -1.315441 -0.4064942 0.8654327 -1.25106 -0.7731984 0.8654327 -1.064214 -1.064214 0.8654327 -0.7731966 -1.25106 0.8654327 -0.4064943 -1.31544 0.8654327 0 -1.25106 0.8654327 0.4064927 -1.064214 0.8654327 0.7731977 -0.7731972 0.8654327 1.064214 -0.4064944 0.8654327 1.25106 0 0.8654327 1.315441 0.4064929 0.8654327 1.25106 0.7731964 0.8654327 1.064215 1.064214 0.8654327 0.7731977 1.251059 0.8654327 0.4064927 1.31544 0.8654327 0 2.427089 0.7798996 -0.7886091 2.064605 0.7798996 -1.500023 1.500023 0.7798996 -2.064605 0.788608 0.7798996 -2.427088 0 0.7798996 -2.551989 -0.788609 0.7798996 -2.427088 -1.500023 0.7798996 -2.064604 -2.064604 0.7798996 -1.500022 -2.427088 0.7798996 -0.7886089 -2.551988 0.7798996 0 -2.427088 0.7798996 0.7886079 -2.064604 0.7798996 1.500023 -1.500022 0.7798996 2.064605 -0.788609 0.7798996 2.427089 0 0.7798996 2.55199 0.7886078 0.7798996 2.427088 1.500022 0.7798996 2.064605 2.064603 0.7798996 1.500023 2.427088 0.7798996 0.7886079 2.551989 0.7798996 0</float_array>
+          <technique_common>
+            <accessor source="#pasted__polySurfaceShape46-mesh-positions-array" count="60" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__polySurfaceShape46-mesh-normals">
+          <float_array id="pasted__polySurfaceShape46-mesh-normals-array" count="168">0.8910061 0 -0.4539915 0.7071071 0 -0.7071066 0.4539896 0 -0.8910071 0.156432 0 -0.9876888 -0.1564312 0 -0.9876889 -0.4539909 0 -0.8910064 -0.7071073 0 -0.7071064 -0.8910058 0 -0.453992 -0.987689 0 -0.1564302 -0.987689 0 0.1564304 -0.8910064 0 0.4539911 -0.7071071 0 0.7071066 -0.4539913 0 0.8910062 -0.1564316 0 0.9876888 0.1564327 0 0.9876886 0.4539892 0 0.8910072 0.707107 0 0.7071066 0.8910059 0 0.4539918 0.9876888 0 0.1564319 0.987689 0 -0.1564306 0 1 0 0 1 1.8337e-7 0 1 0 0 1 3.40922e-7 0 1 0 0 1 0 0 1 0 0 1 -1.22247e-7 0 1 0 0 1 1.33403e-7 0.8910067 0 -0.4539903 0.7071066 0 -0.707107 0.4539899 0 -0.8910068 0.1564317 0 -0.9876888 -0.1564323 0 -0.9876888 -0.7071077 0 -0.7071059 -0.8910065 0 -0.4539906 -0.891007 0 0.4539898 -0.7071066 0 0.707107 -0.4539917 0 0.891006 -0.1564314 0 0.9876889 0.1564332 0 0.9876886 0.4539902 0 0.8910067 0.7071079 0 0.7071057 0.8910064 0 0.4539911 0.9876888 0 0.1564317 0.987689 0 -0.1564302 0 1 0 0 1 -3.55741e-7 0 1 0 0 1 -3.4092e-7 0 1 0 0 1 0 0 1 0 0 1 4.74324e-7 0 1 -1.77872e-7</float_array>
+          <technique_common>
+            <accessor source="#pasted__polySurfaceShape46-mesh-normals-array" count="56" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pasted__polySurfaceShape46-mesh-map-0">
+          <float_array id="pasted__polySurfaceShape46-mesh-map-0-array" count="480">0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.3596402 0.2278827 0.3596402 0.1139811 0.3596402 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827 0.4735418 0.1139811 0.4735418 0.2278827 0.3596402 0.2278827 0.3596402 0.1139811 0.4735418 0.1139811 0.4735418 0.2278827</float_array>
+          <technique_common>
+            <accessor source="#pasted__polySurfaceShape46-mesh-map-0-array" count="240" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pasted__polySurfaceShape46-mesh-vertices">
+          <input semantic="POSITION" source="#pasted__polySurfaceShape46-mesh-positions"/>
+        </vertices>
+        <triangles material="pasted__lambert19-material" count="80">
+          <input semantic="VERTEX" source="#pasted__polySurfaceShape46-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#pasted__polySurfaceShape46-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#pasted__polySurfaceShape46-mesh-map-0" offset="2" set="0"/>
+          <p>41 0 0 0 0 1 40 0 2 42 1 3 1 1 4 41 1 5 43 2 6 2 2 7 42 2 8 44 3 9 3 3 10 43 3 11 45 4 12 4 4 13 44 4 14 46 5 15 5 5 16 45 5 17 47 6 18 6 6 19 46 6 20 48 7 21 7 7 22 47 7 23 49 8 24 8 8 25 48 8 26 50 9 27 9 9 28 49 9 29 51 10 30 10 10 31 50 10 32 52 11 33 11 11 34 51 11 35 53 12 36 12 12 37 52 12 38 54 13 39 13 13 40 53 13 41 55 14 42 14 14 43 54 14 44 56 15 45 15 15 46 55 15 47 57 16 48 16 16 49 56 16 50 58 17 51 17 17 52 57 17 53 59 18 54 18 18 55 58 18 56 40 19 57 19 19 58 59 19 59 1 20 60 20 20 61 0 20 62 1 20 63 22 20 64 21 20 65 3 20 66 22 20 67 2 20 68 4 20 69 23 20 70 3 20 71 4 20 72 25 20 73 24 20 74 6 21 75 25 21 76 5 21 77 7 20 78 26 20 79 6 20 80 7 22 81 28 22 82 27 22 83 9 20 84 28 20 85 8 20 86 9 23 87 30 23 88 29 23 89 11 20 90 30 20 91 10 20 92 11 24 93 32 24 94 31 24 95 12 25 96 33 25 97 32 25 98 14 20 99 33 20 100 13 20 101 14 20 102 35 20 103 34 20 104 15 26 105 36 26 106 35 26 107 17 27 108 36 27 109 16 27 110 17 28 111 38 28 112 37 28 113 19 20 114 38 20 115 18 20 116 19 29 117 20 29 118 39 29 119 41 30 120 1 30 121 0 30 122 42 31 123 2 31 124 1 31 125 43 32 126 3 32 127 2 32 128 44 33 129 4 33 130 3 33 131 45 34 132 5 34 133 4 34 134 46 5 135 6 5 136 5 5 137 47 35 138 7 35 139 6 35 140 48 36 141 8 36 142 7 36 143 49 8 144 9 8 145 8 8 146 50 9 147 10 9 148 9 9 149 51 37 150 11 37 151 10 37 152 52 38 153 12 38 154 11 38 155 53 39 156 13 39 157 12 39 158 54 40 159 14 40 160 13 40 161 55 41 162 15 41 163 14 41 164 56 42 165 16 42 166 15 42 167 57 43 168 17 43 169 16 43 170 58 44 171 18 44 172 17 44 173 59 45 174 19 45 175 18 45 176 40 46 177 0 46 178 19 46 179 1 47 180 21 47 181 20 47 182 1 20 183 2 20 184 22 20 185 3 20 186 23 20 187 22 20 188 4 20 189 24 20 190 23 20 191 4 20 192 5 20 193 25 20 194 6 48 195 26 48 196 25 48 197 7 49 198 27 49 199 26 49 200 7 20 201 8 20 202 28 20 203 9 50 204 29 50 205 28 50 206 9 20 207 10 20 208 30 20 209 11 51 210 31 51 211 30 51 212 11 20 213 12 20 214 32 20 215 12 52 216 13 52 217 33 52 218 14 20 219 34 20 220 33 20 221 14 53 222 15 53 223 35 53 224 15 20 225 16 20 226 36 20 227 17 54 228 37 54 229 36 54 230 17 20 231 18 20 232 38 20 233 19 55 234 39 55 235 38 55 236 19 20 237 0 20 238 20 20 239</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.481132 0.7276763 0.3054208 -0.6141704 -6.50764 0 0.8953956 0.4452714 5.343665 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Lamp" name="Lamp" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Lamp-light"/>
+      </node>
+      <node id="group" name="group" type="NODE">
+        <matrix sid="transform">1.36287e-5 0.00999999 -1.24724e-9 0 -0.009999943 1.36286e-5 -3.07981e-5 0 -3.07981e-5 4.3221e-8 0.009999952 0 0 0 0 1</matrix>
+        <node id="pasted__group33" name="pasted__group33" type="NODE">
+          <matrix sid="transform">1 7.65397e-11 0 0 -1.56293e-10 1 -4.54747e-13 0 -4.65661e-10 4.54747e-13 1 0 0 0 0 1</matrix>
+          <node id="pasted__polySurface23" name="pasted__polySurface23" type="NODE">
+            <matrix sid="transform">-6.30972e-8 6.33299e-8 1.444208 -0.07252678 1.444208 4.30409e-8 6.29648e-8 -0.002284268 -4.30405e-8 1.444208 -6.37956e-8 112.6769 0 0 0 1</matrix>
+            <node id="pasted__transform161" name="pasted__transform161" type="NODE">
+              <matrix sid="transform">1 -4.54747e-13 5.13074e-11 0 4.54747e-13 1 -2.32831e-10 7.62939e-6 1.67723e-10 0 1 -1.86265e-8 0 0 0 1</matrix>
+            </node>
+          </node>
+          <node id="pasted__group39" name="pasted__group39" type="NODE">
+            <matrix sid="transform">1 7.65397e-11 0 0.06991965 -1.56293e-10 1 -4.54747e-13 0 -4.65661e-10 4.54747e-13 1 -115.0618 0 0 0 1</matrix>
+            <node id="pasted__nurbsToPoly383" name="pasted__nurbsToPoly383" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape383-mesh" name="pasted__nurbsToPoly383">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly384" name="pasted__nurbsToPoly384" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape384-mesh" name="pasted__nurbsToPoly384">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly385" name="pasted__nurbsToPoly385" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape385-mesh" name="pasted__nurbsToPoly385">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly386" name="pasted__nurbsToPoly386" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape386-mesh" name="pasted__nurbsToPoly386">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly387" name="pasted__nurbsToPoly387" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape387-mesh" name="pasted__nurbsToPoly387">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly388" name="pasted__nurbsToPoly388" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape388-mesh" name="pasted__nurbsToPoly388">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly389" name="pasted__nurbsToPoly389" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape389-mesh" name="pasted__nurbsToPoly389">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly390" name="pasted__nurbsToPoly390" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape390-mesh" name="pasted__nurbsToPoly390">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly391" name="pasted__nurbsToPoly391" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape391-mesh" name="pasted__nurbsToPoly391">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly392" name="pasted__nurbsToPoly392" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791935 0.9177397 -4.00542e-8 4.54747e-13 -8.68467e-4 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape392-mesh" name="pasted__nurbsToPoly392">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__nurbsToPoly393" name="pasted__nurbsToPoly393" type="NODE">
+              <matrix sid="transform">-3.99235e-8 -0.9177396 -6.98492e-10 -0.03791932 0.9177397 -4.00542e-8 4.54747e-13 4.58841 4.54747e-13 4.65661e-10 0.9177397 112.9188 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__nurbsToPolyShape393-mesh" name="pasted__nurbsToPoly393">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+            <node id="pasted__polySurface46" name="pasted__polySurface46" type="NODE">
+              <matrix sid="transform">-6.28644e-8 6.28643e-8 1.444208 -0.07252674 1.444208 4.30409e-8 6.29648e-8 -0.002284268 -4.30409e-8 1.444208 -6.42613e-8 112.6769 0 0 0 1</matrix>
+              <instance_geometry url="#pasted__polySurfaceShape46-mesh" name="pasted__polySurface46">
+                <bind_material>
+                  <technique_common>
+                    <instance_material symbol="pasted__lambert19-material" target="#pasted__lambert19-material"/>
+                  </technique_common>
+                </bind_material>
+              </instance_geometry>
+            </node>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

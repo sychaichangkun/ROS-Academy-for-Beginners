@@ -11,7 +11,7 @@
       <updateRate>50</updateRate>
       <leftJoint>left_wheel_hinge</leftJoint>
       <rightJoint>right_wheel_hinge</rightJoint>
-      <wheelSeparation>0.49</wheelSeparation>
+      <wheelSeparation>0.46</wheelSeparation>
       <wheelDiameter>0.19</wheelDiameter>
       <torque>10.4</torque>
       <wheelAcceleration>1</wheelAcceleration>
@@ -81,7 +81,6 @@
   </gazebo>
 
   <gazebo reference="laser">
-    <material>Gazebo/Grey</material>
   </gazebo>
 
   <gazebo reference="right_wheel">
@@ -101,13 +100,11 @@
   <gazebo reference="yaw_platform">
     <mu>.5</mu>
     <mu2>.5</mu2>
-    <material>Gazebo/Grey</material>
   </gazebo>
 
   <gazebo reference="pitch_platform">
     <mu>.5</mu>
     <mu2>.5</mu2>
-    <material>Gazebo/Grey</material>
   </gazebo>
 
   <!--Transmission and actuators-->

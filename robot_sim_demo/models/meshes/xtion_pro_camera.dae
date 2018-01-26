@@ -29,7 +29,7 @@
               <color>0 0 0 1</color>
             </emission>
             <ambient>
-              <color>0.5882353 0.5882353 0.5882353 1</color>
+              <color>0.8882353 0.8882353 0.8882353 1</color>
             </ambient>
             <diffuse>
               <texture texture="xtion_pro_camera_jpg-sampler" texcoord="CHANNEL1"/>
@@ -129,7 +129,7 @@
     <light id="EnvironmentAmbientLight" name="EnvironmentAmbientLight">
       <technique_common>
         <ambient>
-          <color>0 0 0</color>
+          <color>0.7 0.7 0.7</color>
         </ambient>
       </technique_common>
     </light>

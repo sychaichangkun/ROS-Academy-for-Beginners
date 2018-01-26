@@ -6,8 +6,11 @@
   name="sick_tim">
   
   <xacro:include filename="$(find robot_sim_demo)/urdf/sick_tim.urdf.xacro" />
-  <xacro:sick_tim571 name="laser" ros_topic="scan"   />
-  
+
+  <!-- Choose your laser -->
+  <!--<xacro:sick_tim571 name="laser" ros_topic="scan"   />-->
+  <xacro:rplidarA2 name="laser" ros_topic="scan"   />
+
   <xacro:include filename="$(find robot_sim_demo)/urdf/materials.xacro" />
   <xacro:include filename="$(find robot_sim_demo)/urdf/xbot2.urdf.xacro" />
   <xacro:include filename="$(find robot_sim_demo)/urdf/xbot2.gazebo" />
@@ -15,6 +18,5 @@
 
 
 
-  <!--xacro:include filename="$(find robot_sim_demo)/urdf/sick_tim.gazebo.xacro" /-->
   
 </robot>
