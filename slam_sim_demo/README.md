@@ -1,6 +1,6 @@
 # slam\_sim\_demo
 
-睿思学院ROS入门课程 SLAM演示功能包，本演示包包含以下内容：
+SLAM演示功能包，本演示包包含以下内容：
 
 * **gmapping_demo**: gmapping SLAM演示
 * **karto_demo**: karto SLAM演示
@@ -12,19 +12,27 @@
 
 首先运行gazebo仿真场景
 
-	roslaunch robot_sim_demo robot_spawn.launch
+```sh
+$ roslaunch robot_sim_demo robot_spawn.launch
+```
 
 然后运行键盘控制程序
 
-	rosrun robot_sim_demo robot_keyboard_teleop.py
+```sh
+$ rosrun robot_sim_demo robot_keyboard_teleop.py
+```
 
 再运行建图程序gmapping
 
-	roslaunch slam_sim_demo gmapping_demo.launch
+```sh
+$ roslaunch slam_sim_demo gmapping_demo.launch
+```
 
 最后，启动rviz可视化工具，这里已经添加了一些必须模块，如LaserScan，Map等等
 
-	roslaunch slam_sim_demo view_navigation.launch
+```sh
+$ roslaunch slam_sim_demo view_navigation.launch
+```
 
 然后用键盘控制小车运动，就能在rviz上看到地图的建立过程
 

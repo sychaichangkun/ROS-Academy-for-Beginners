@@ -6,10 +6,12 @@
 * **topic_demo**: topic通信，自定义msg，分别以C++和python两种语言实现
 * **service_demo**: service通信，自定义srv，分别以C++和python两种语言实现
 * **param_demo**: param操作，分别以C++和python两种语言实现
+* **msgs_demo**: msg与srv文件示例，演示msg与srv的格式规范
 * **tf_demo**: TF和URDF的操作演示，分别以C++和python两种语言实现
 * **urdf_demo**: 创建机器人urdf模型，在RViz中显示
 * **navigation_sim_demo**: 导航演示工具包，包括AMCL, Odometry Navigation等演示
 * **slam_sim_demo**: 同步定位与建图演示，包括Gmapping, Karto, Hector, Cartographer等SLAM演示
+* **ros_academy_for_beginners**: Metapacakge，依赖了本仓库所有的pacakge
 
 ---
 ## 下载和编译
@@ -54,55 +56,6 @@ $ source ~/catkin_ws/devel/setup.bash
 3. 确保所有依赖都已安装，如`gazebo_ros`, `gmapping`, `slam_karto`, `amcl`。
 
 
----
-## 课程介绍
-本课程介绍ROS机器人操作系统的基本概念、原理和应用。教学内容包括视频、教材和演示代码。本仓库为ROS入门教程配套的软件包。
-
-课程安排和知识点为：
-1. ROS介绍与安装
-  - 欢迎      
-  - 什么是ROS
-  - Xbot机器人演示
-  - ROS安装和配置
-2. 工程结构
-  - catkin工作空间   
-  - package
-  - 操作演示
-3. 通信架构（上）
-  - master和node
-  - 操作演示
-  - topic和msg
-  - 操作演示
-4. 通信架构（下）
-  - service和srv
-  - parameter server
-  - 操作演示
-5. 常用工具
-  - gazebo
-  - rviz
-  - rqt
-  - rosbag
-6. 客户端库-roscpp
-  - roscpp
-  - topic\_demo
-  - service\_demo
-  - param\_demo 
-7. 客户端库-rospy
-  - rospy
-  - topic\_demo
-  - service\_demo
-  - param\_demo
-8. tf和urdf
-  - Transform
-  - tf in roscpp
-  - tf in rospy
-9. SLAM入门
-  - SLAM与地图
-  - Gmapping
-  - Karto
-  - Hector
-10. Navigation入门
-  - TODO
 
 ---
 ## Copyright
