@@ -2,7 +2,7 @@
   <name>slam_sim_demo</name>
   <version>0.0.1</version>
   <description>
-  A SLAM demo of Xbot2, with gmapping, karto, AMCL and cartographer.
+  A SLAM demo of xbot-u, with gmapping, karto, AMCL and cartographer.
   </description>
   <author>Chai Changkun</author>
   <maintainer email="chaichangkun@163.com">Chai Changkun</maintainer>

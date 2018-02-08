@@ -17,7 +17,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://ISCAS_Museum/meshes/ISCAS_museum2.dae</uri>
+            <uri>model://ISCAS_Museum/meshes/ISCAS_museum.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -25,7 +25,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://ISCAS_Museum/meshes/ISCAS_museum2.dae</uri>
+            <uri>model://ISCAS_Museum/meshes/ISCAS_museum.dae</uri>
           </mesh>
         </geometry>
       </visual>

@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<robot xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+  xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+  xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="xbot2_base">
+  <link name="base_footprint"/>
+  <joint name="base_footprint_to_base" type="fixed">
+    <axis rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.015 0.0 0.0014" />
+      <mass value="35" />
+      <inertia ixx="0.6125" ixy="0.00495" ixz="0.0031" iyy="0.6426" iyz="-0.0017" izz="0.494" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_sim_demo/models/meshes/base_link.dae" />
+      </geometry>
+    </visual>
+
+    <collision name="front_omniwheel">
+      <origin xyz="0.18 0 0.02" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.019"/>
+      </geometry>
+    </collision>
+    <collision name="back_omniwheel">
+      <origin xyz="-0.18 0 0.02" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.019"/>
+      </geometry>
+    </collision>
+    <collision name="collision1">
+      <origin xyz="0.0 0 0.135" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.15" radius="0.25"/>
+      </geometry>
+    </collision>
+    <collision name="collision2">
+      <origin xyz="0.03 0 0.25" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.08" radius="0.045"/>
+      </geometry>
+    </collision>
+    <collision name="collision3">
+      <origin xyz="0 0 0.68" rpy="0 0 0" />
+      <geometry>
+        <cylinder length="0.8" radius="0.08"/>
+      </geometry>
+    </collision>
+    <collision name="collision4">
+      <origin xyz="0 0 1.135" rpy="0 0 0" />
+      <geometry>
+        <box size="0.04 0.17 0.09"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="laser_mount_link"/>
+  <joint name="base_to_laser" type="fixed">
+    <axis rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="laser_mount_link"/>
+    <origin rpy="0 0 0" xyz=".114 0 .17"/>
+  </joint>
+
+  <link name="imu_link"/>
+  <joint name="base_to_imu" type="fixed">
+    <axis rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin rpy="0 0 0" xyz="0 0 .2"/>
+  </joint>
+
+  <link name="left_wheel">
+    <collision name="collision">
+      <origin xyz="0 0 0" rpy="1.57079632 0 0"/>
+      <geometry>
+        <cylinder radius="0.095" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual name="left_wheel_visual">
+      <origin xyz="0 0 0" rpy="0 0 -1.57079632"/>
+      <geometry>
+        <mesh filename="package://robot_sim_demo/models/meshes/wheel.dae" />
+      </geometry>
+    </visual>    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="4.3542" />
+      <inertia ixx="0.0045" ixy="0" ixz="0" iyy="0.005" iyz="0" izz="0.0045" />
+    </inertial>
+  </link>
+
+  <joint type="continuous" name="left_wheel_hinge">
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <origin xyz="0 0.23 .095" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <limit effort="6" velocity="1.0"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="right_wheel">
+    <collision name="collision">
+      <origin xyz="0 0 0" rpy="-1.57079632  0 0"/>
+      <geometry>
+        <cylinder radius="0.095" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_visual">
+      <origin xyz="0 0 0" rpy="0 0 1.57079632"/>
+      <geometry>
+        <mesh filename="package://robot_sim_demo/models/meshes/wheel.dae" />
+      </geometry>
+    </visual>    
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="4.3542" />
+      <inertia ixx="0.0045" ixy="0" ixz="0" iyy="0.005" iyz="0" izz="0.0045" />
+    </inertial>
+  </link>
+
+  <joint type="continuous" name="right_wheel_hinge">
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <origin xyz="0 -0.23 .095" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <limit effort="6" velocity="1.0"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+
+  <link name="yaw_platform">
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 1.57079632" />
+      <geometry>
+        <mesh filename="package://robot_sim_demo/models/meshes/yaw_platform.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 1.57079632" />
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_to_yaw_platform" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="base_link"/>
+    <child link="yaw_platform"/>
+    <origin rpy="0 0 0" xyz="0 0 1.305"/>
+    <limit effort="100" velocity="100" lower="-1.57" upper="1.57" />
+    <dynamics damping="0.0" friction="10.0"/>
+  </joint>
+
+  <link name="pitch_platform">
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_sim_demo/models/meshes/pitch_platform.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="yaw_to_pitch_platform" type="revolute">
+    <axis xyz="0 1 0"/>
+    <parent link="yaw_platform"/>
+    <child link="pitch_platform"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <limit effort="100" velocity="100" lower="-1.57" upper="1.57" />
+    <dynamics damping="0.0" friction="10.0"/>
+  </joint>
+
+  <!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <!--<mesh filename="package://robot_sim_demo/models/meshes/xtion_pro_camera.dae" />-->
+        <mesh filename="package://robot_sim_demo/models/meshes/realsense.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="-0.005 0 .06" rpy="0 0 0"/>
+    <parent link="pitch_platform"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <!-- generate an optical frame http://www.ros.org/reps/rep-0103.html#suffix-frames
+      so that ros and opencv can operate on the camera frame correctly -->
+  <joint name="camera_optical_joint" type="fixed">
+    <!-- these values have to be these values otherwise the gazebo camera image
+        won't be aligned properly with the frame it is supposedly originating from -->
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    <parent link="camera_link"/>
+    <child link="camera_link_optical"/>
+  </joint>
+
+  <link name="camera_link_optical">
+  </link>
+
+
+  </xacro:macro>
+</robot>

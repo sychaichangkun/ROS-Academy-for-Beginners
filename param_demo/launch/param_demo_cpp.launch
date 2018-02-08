@@ -11,7 +11,7 @@
         param5: 5
     </rosparam>
 	<!--以上写法将参数转成YAML文件加载，注意param前面必须为空格，不能用Tab，否则YAML解析错误-->
-	<!--rosparam file="$(find robot_sim_demo)/config/xbot2_control.yaml" command="load" /-->
+	<!--rosparam file="$(find robot_sim_demo)/config/xbot-u_control.yaml" command="load" /-->
 	<node pkg="param_demo" type="param_demo" name="param_demo" output="screen" />
 
 	

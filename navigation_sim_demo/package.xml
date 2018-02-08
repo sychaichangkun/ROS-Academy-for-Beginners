@@ -2,7 +2,7 @@
   <name>navigation_sim_demo</name>
   <version>0.0.1</version>
   <description>
-  A navigation demo of Xbot2, with gmapping, amcl.
+  A navigation demo of xbot-u, with gmapping, amcl.
   </description>
   <author>Chai Changkun</author>
   <author>Han JinFei</author>

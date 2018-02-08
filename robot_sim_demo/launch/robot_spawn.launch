@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="robot" default="xbot2"/>
+  <arg name="robot" default="xbot-u"/>
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>

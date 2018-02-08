@@ -1,0 +1,60 @@
+xbot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  yaw_platform_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: base_to_yaw_platform
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  pitch_platform_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: yaw_to_pitch_platform
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  # mobile_base_controller:
+  #   type        : "diff_drive_controller/DiffDriveController"
+  #   left_wheel  : 'left_wheel_hinge'
+  #   right_wheel : 'right_wheel_hinge'
+  #   publish_rate: 50.0               # default: 50
+  #   pose_covariance_diagonal : [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+  #   twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+
+  #   # Wheel separation and diameter. These are both optional.
+  #   # diff_drive_controller will attempt to read either one or both from the
+  #   # URDF if not specified as a parameter
+  #   wheel_separation : 0.49
+  #   wheel_radius : 0.095
+
+  #   # Wheel separation and radius multipliers
+  #   wheel_separation_multiplier: 1.0 # default: 1.0
+  #   wheel_radius_multiplier    : 1.0 # default: 1.0
+
+  #   # Velocity commands timeout [s], default 0.5
+  #   cmd_vel_timeout: 0.25
+
+  #   # Base frame_id
+  #   base_frame_id: base_footprint #default: base_link
+
+  #   # Velocity and acceleration limits
+  #   # Whenever a min_* is unspecified, default to -max_*
+  #   linear:
+  #     x:
+  #       has_velocity_limits    : true
+  #       max_velocity           : 2.0  # m/s
+  #       min_velocity           : -2.0 # m/s
+  #       has_acceleration_limits: true
+  #       max_acceleration       : 2.67  # m/s^2
+  #       min_acceleration       : -2.67 # m/s^2
+  #       has_jerk_limits        : false
+  #       max_jerk               : 10.0  # m/s^3
+  #   angular:
+  #     z:
+  #       has_velocity_limits    : true
+  #       max_velocity           : 8.1  # rad/s
+  #       has_acceleration_limits: true
+  #       max_acceleration       : 10.9  # rad/s^2
+  #       has_jerk_limits        : false
+  #       max_jerk               : 40.82  # rad/s^3

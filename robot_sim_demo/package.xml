@@ -2,7 +2,7 @@
   <name>robot_sim_demo</name>
   <version>0.0.1</version>
   <description>
-    A demostration of ROS computing graph and communication using Xbot2 simulation.
+    A demostration of ROS computing graph and communication using xbot-u simulation.
   </description>
   <author>Changkun</author>
   <maintainer email="chaichangkun@163.com">Chai Changkun</maintainer>
