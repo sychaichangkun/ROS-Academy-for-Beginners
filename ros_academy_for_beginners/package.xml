@@ -1,6 +1,6 @@
 <package>
     <name>ros_academy_for_beginners</name>
-    <version>17.12.4</version>
+    <version>18.2.10</version>
     <description>
         --------------------------------------------------------------------------
         A ROS tutorial for beginner level learners. This metapacakge includes some
@@ -10,7 +10,7 @@
     </description>
     <maintainer email="chaichangkun@163.com">Chai Changkun</maintainer>
     <author>Chai Changkun</author>
-    <license>BSD</license>  
+    <license>BSD</license>
     <url>http://rosacademy.cn</url>
 
     <buildtool_depend>catkin</buildtool_depend>
@@ -27,4 +27,3 @@
         <metapackage/>
     </export>
 </package>
-

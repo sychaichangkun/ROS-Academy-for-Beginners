@@ -12,7 +12,7 @@ $ roslaunch robot_sim_demo robot_spawn.launch
 初次启动Gazebo需要几分钟的加载时间，Gazebo会从服务器上下载材质。
 
 你将看到以下内容：软件博物馆场景和Xbot-U机器人。
-![Gazebo仿真效果](./simulation_pic.jpg)
+![Gazebo仿真效果](./simulation_pic.png)
 
 你可以启动速度控制程序，用键盘控制机器人移动
 
@@ -37,5 +37,3 @@ $ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 $ sudo apt-get update
 $ sudo apt-get install gazebo7
 ```
-
-
