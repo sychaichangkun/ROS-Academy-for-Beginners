@@ -4,10 +4,10 @@
     <static>true</static>
     <link name="link">
       <collision name="collision">
-        <geometry>
+        <geometry>  
           <plane>
             <normal>0 0 1</normal>
-            <size>50 50</size>
+            <size>30 30</size>
           </plane>
         </geometry>
         <surface>
@@ -24,7 +24,7 @@
         <geometry>
           <plane>
             <normal>0 0 1</normal>
-            <size>50 50</size>
+            <size>30 30</size>
           </plane>
         </geometry>
         <material>

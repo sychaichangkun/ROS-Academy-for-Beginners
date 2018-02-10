@@ -13,7 +13,6 @@ material ISCAS_groundplane/Image
       {
         texture ISCAS_groundplane.png
 	      filtering trilinear
-	      max_anisotropy 16
 	      scale 0.12 0.12
       }
     }
