@@ -2,7 +2,13 @@
 <sdf version="1.4">
   <world name="default">
   <scene>
-    <ambient>0.58 0.58 0.58 1.0</ambient>
+    <ambient>0.68 0.68 0.68 1.0</ambient>
+    <sky>
+      <sunrise/>
+      <clouds>
+        <speed>12</speed>
+    </clouds>
+    </sky>
   </scene>
     <physics type='ode'>
       <max_step_size>0.001</max_step_size>
