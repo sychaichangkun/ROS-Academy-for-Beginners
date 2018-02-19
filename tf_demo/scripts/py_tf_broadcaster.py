@@ -6,9 +6,12 @@ import math
 import tf   
   
 if __name__ == '__main__':  
-    rospy.init_node('py_tf_broadcaster')  
+    rospy.init_node('py_tf_broadcaster')
+    print '讲解tf.transformBroadcaster类'
+    print '第1种发布方式：sendTransform(translation,rotation,time,child,parent)'
+#第一部分，发布sendTransform(translation,rotation,time,child,parent)
     br = tf.TransformBroadcaster()
-    #输入相对原点的值和欧拉角
+#输入相对原点的值和欧拉角
     x=1.0 
     y=2.0
     z=3.0  

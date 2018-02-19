@@ -21,6 +21,7 @@ int main(int argc, char** argv){
   //qw=tf::createQuaternionMsgFromRollPitchYaw(roll,pitch,yaw);方法2
   transform.setOrigin(tf::Vector3(x,y,z));
   transform.setRotation(q);
+  std::cout<<"发布tf变换：sendTransform函数"<<std::endl;
   br.sendTransform(tf::StampedTransform(transform,ros::Time::now(),"base_link","link1"));
   std::cout<<"输出的四元数为：w="<<q[3]<<",x="<<q[0]<<",y="<<q[1]<<",z="<<q[2]<<std::endl;
   //  std::cout<<"输出的四元数为：w="<<qw.w<<",x="<<qw.x<<",y="<<qw.y<<",z="<<qw.z<<std::endl;
