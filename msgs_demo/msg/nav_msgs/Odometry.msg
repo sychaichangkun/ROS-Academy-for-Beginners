@@ -1,0 +1,5 @@
+#消息描述了自由空间中位置和速度的估计值
+std_msgs/Header header
+string child_frame_id
+geometry_msgs/PoseWithCovariance pose
+geometry_msgs/TwistWithCovariance twist
