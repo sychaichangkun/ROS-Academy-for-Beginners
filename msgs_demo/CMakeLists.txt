@@ -3,20 +3,21 @@ project(msgs_demo)
 find_package(catkin REQUIRED COMPONENTS std_msgs actionlib_msgs message_generation)
 
 add_message_files(DIRECTORY msg
-                      FILES 
-                      SensorState.msg
-                      DebugSensor.msg
-                      DockInfraRed.msg
-                      KeyboardInput.msg
-                      CloudCamera.msg
-                      XbotState.msg
-                      Lift.msg
-                      Power.msg
-                      ImuNine.msg
-                      ImuYRP.msg
+                      FILES
+                      Accel.msg
                       Echos.msg
-                      InfraRed.msg
-                      NaviState.msg
+                      Imu.msg
+                      LaserScan.msg
+                      Odometry.msg
+                      Point.msg
+                      Pose.msg
+                      PoseStamped.msg
+                      PoseWithCovariance.msg
+                      Power.msg
+                      Quaternion.msg
+                      Twist.msg
+                      TwistWithCovariance.msg
+                      Vector3.msg
                  )
 
 add_action_files(DIRECTORY action
