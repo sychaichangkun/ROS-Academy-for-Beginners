@@ -1,0 +1,3 @@
+#消息表示了包含时空基准和不确定性的位姿信息
+header header
+PoseWithCovariance pose
