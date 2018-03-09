@@ -1,3 +1,0 @@
-#
-MultiArrayLayout layout
-byte[] data
