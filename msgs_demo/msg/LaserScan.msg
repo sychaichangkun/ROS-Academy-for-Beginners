@@ -1,6 +1,8 @@
 #平面内的激光测距扫描数据，注意此消息类型仅仅适配激光测距设备
 #如果有其他类型的测距设备(如声呐)，需要另外创建不同类型的消息
 
+#位置：sensor_msgs/LaserScan.msg
+
 Header header			#时间戳为接收到第一束激光的时间
 float32 angle_min		#扫描开始时的角度(单位为rad)
 float32 angle_max		#扫描结束时的角度(单位为rad)
