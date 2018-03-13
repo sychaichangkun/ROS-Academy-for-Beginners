@@ -80,6 +80,37 @@
     <origin rpy="0 0 0" xyz="0 0 .2"/>
   </joint>
 
+  <xacro:include filename="$(find robot_sim_demo)/urdf/sonar.xacro"/>
+  <sonar_sensor parent="base_link" name="front_left" ros_topic="/echo/front_left" 
+                update_rate="10" min_range="0.1" max_range="0.8" field_of_view="0.18" ray_count="2" >
+    <origin xyz="0.196 0.130 0.095" rpy="0 0 0.5838" />
+  </sonar_sensor>
+
+  <sonar_sensor parent="base_link" name="front_middle" ros_topic="/echo/front_middle" 
+                update_rate="10" min_range="0.1" max_range="0.8" field_of_view="0.18" ray_count="2" >
+    <origin xyz="0.236 0.0 0.095" rpy="0 0 0" />
+  </sonar_sensor>
+
+  <sonar_sensor parent="base_link" name="front_right" ros_topic="/echo/front_right" 
+                update_rate="10" min_range="0.1" max_range="0.8" field_of_view="0.18" ray_count="2" >
+    <origin xyz="0.196 -0.130 0.095" rpy="0 0 -0.5838" />
+  </sonar_sensor>
+
+  <sonar_sensor parent="base_link" name="rear_right" ros_topic="/echo/rear_right" 
+                update_rate="10" min_range="0.1" max_range="0.8" field_of_view="0.18" ray_count="2" >
+    <origin xyz="-0.196 -0.130 0.095" rpy="0 0 3.7254" />
+  </sonar_sensor>
+
+  <sonar_sensor parent="base_link" name="rear_middle" ros_topic="/echo/rear_middle" 
+                update_rate="10" min_range="0.1" max_range="0.8" field_of_view="0.18" ray_count="2" >
+    <origin xyz="-0.236 0 0.095" rpy="0 0 3.1416" />
+  </sonar_sensor>
+
+  <sonar_sensor parent="base_link" name="rear_left" ros_topic="/echo/rear_left" 
+                update_rate="10" min_range="0.1" max_range="0.8" field_of_view="0.18" ray_count="2" >
+    <origin xyz="-0.196 0.130 0.095" rpy="0 0 2.5578" />
+  </sonar_sensor>
+
   <link name="left_wheel">
     <collision name="collision">
       <origin xyz="0 0 0" rpy="1.57079632 0 0"/>
