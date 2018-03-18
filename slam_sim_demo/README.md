@@ -7,6 +7,8 @@ SLAM演示功能包，本演示包包含以下内容：
 * **hector_demo**: hector SLAM演示
 * **cartographer_demo**: Google catographer演示
 
+注意在此之前使用rosdep install slam_sim_demo命令安装依赖项
+
 
 ### gmapping示例运行方法
 
