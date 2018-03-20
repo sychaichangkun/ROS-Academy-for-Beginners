@@ -1,0 +1,5 @@
+<launch>
+
+<node name="RGBD" pkg="ORB_SLAM2" type="RGBD" args="$(find ORB_SLAM2)/../../../Vocabulary/ORBvoc.txt $(find ORB_SLAM2)/Zdzn.yaml"/>
+
+</launch>
