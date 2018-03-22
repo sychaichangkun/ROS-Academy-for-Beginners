@@ -28,6 +28,7 @@
 | **urdf_demo** |  创建机器人urdf模型，在RViz中显示  |
 | **navigation_sim_demo** | 导航演示工具包，包括AMCL, Odometry Navigation等演示 |
 | **slam_sim_demo** | 同步定位与建图演示，包括Gmapping, Karto, Hector等SLAM演示 |
+| **robot_orbslam2_demo** | ORB_SLAM2的演示 |
 | **ros_academy_for_beginners** | Metapacakge示例，依赖了本仓库所有的pacakge |
 
 
