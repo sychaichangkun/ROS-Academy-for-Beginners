@@ -16,6 +16,7 @@
       <torque>10.4</torque>
       <wheelAcceleration>1</wheelAcceleration>
       <robotBaseFrame>base_footprint</robotBaseFrame>
+      <publishTf>true</publishTf>
       <publishWheelTF>true</publishWheelTF>
       <publishWheelJointState>true</publishWheelJointState>
     </plugin>
