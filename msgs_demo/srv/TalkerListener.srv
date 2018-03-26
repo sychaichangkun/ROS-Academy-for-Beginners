@@ -1,0 +1,6 @@
+#这是一个问答类型的srv文件，当一个node发送消息时，另外一个node对接收到
+#的请求做出回应
+
+string request
+---
+string response

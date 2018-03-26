@@ -20,8 +20,16 @@ add_message_files(DIRECTORY msg
                       Vector3.msg
                  )
 
+add_service_files(DIRECTORY srv
+					FILES
+					AddTwoInts.srv
+					TalkerListener.srv
+				)
+
 add_action_files(DIRECTORY action
-                     FILES AutoDocking.action
+                     FILES 
+					 AutoDocking.action
+					 AddTwoInts.action
                 )
 
 generate_messages(DEPENDENCIES std_msgs actionlib_msgs)
