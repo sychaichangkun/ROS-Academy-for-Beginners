@@ -1,0 +1,6 @@
+#获取地图信息，响应部分为空
+
+---
+nav_msgs/OccupancyGrid map
+---
+#无返回部分

@@ -1,0 +1,5 @@
+#以初始位置为基准，设定新的地图
+nav_msgs/OccupancyGrid map
+geometry_msgs/PoseWithCovarianceStamped initial_pose
+---
+bool success

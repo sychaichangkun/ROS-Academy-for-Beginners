@@ -1,0 +1,8 @@
+#得到一条从当前位置到目标点的路径
+
+geometry_msgs/PoseStamped start		#起始点
+geometry_msgs/PoseStamped goal		#目标点
+
+float32 tolerance	#到达目标点的x，y方向的容错距离
+---
+nav_msgs/Path plan

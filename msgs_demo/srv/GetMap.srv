@@ -1,0 +1,3 @@
+#获取地图,注意请求部分为空
+---
+nav_msgs/OccupancyGrid map

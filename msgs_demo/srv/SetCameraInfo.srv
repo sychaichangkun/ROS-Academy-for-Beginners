@@ -1,0 +1,6 @@
+#通过给定的CameraInfo相机信息，来对相机进行标定
+
+sensor_msgs/CameraInfo camera_info		#相机信息
+---
+bool success			#如果调用成功，则返回true
+string status_message	#给出调用成功的细节
