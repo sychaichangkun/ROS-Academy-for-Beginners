@@ -9,6 +9,7 @@
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
     <robotNamespace>/</robotNamespace>
     <alwaysOn>true</alwaysOn>
+    <legacyMode>false</legacyMode>
     <updateRate>50</updateRate>
     <leftJoint>mybot_left_wheel_hinge</leftJoint>
     <rightJoint>mybot_right_wheel_hinge</rightJoint>
