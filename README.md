@@ -24,7 +24,7 @@
 | **action_demo** | action通信，自定义action，C++和python两种语言实现 |
 | **param_demo** | param操作，分别以C++和python两种语言实现 |
 | **msgs_demo** | 演示msg、srv、action文件的格式规范 |
-| **tf_demo** | TF相关API操作演示，tf示例包括C++和python两个版本 |
+| **tf_demo** | tf相关API操作演示，tf示例包括C++和python两个版本 |
 | **tf_follower** | 制作mybot机器人 实现mybot跟随xbot的功能 |
 | **urdf_demo** |  创建机器人urdf模型，在RViz中显示  |
 | **navigation_sim_demo** | 导航演示工具包，包括AMCL, Odometry Navigation等演示 |
