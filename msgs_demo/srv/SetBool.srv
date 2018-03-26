@@ -1,0 +1,4 @@
+bool data # 启动或者关闭硬件
+---
+bool success   # 标示硬件是否成功运行
+string message # 运行信息
