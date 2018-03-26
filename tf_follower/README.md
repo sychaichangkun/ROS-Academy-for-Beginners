@@ -1,30 +1,22 @@
-# service_demo
+# tf_follower
 
-Service通信示例，用C++与Python两个版本实现service通信。
+制作mybot机器人 实现mybot跟随xbot的功能
 
 ## 功能介绍
 
-假设Service的提供方/服务器端提供名为`greetings`的服务，其srv的请求是姓名和年龄，反馈为一个字符串，向请求方问好。
-
-本例需要自定义srv文件，见[srv/Greeting.srv](./srv/Greeting.srv)。
-
-C++版本代码见`src/`下的[client.cpp](./src/client.cpp)和[server.cpp](./src/server.cpp)。
-
-Python版本代码见`scripts/`下的[client_demo.py](./scripts/client_demo.py)和[server_demo.py](./scripts/server_demo.py)。
+制作mybot的gazebo模型，在`mybot_control`中提供左右轮的PID控制参数
+详见[mybot_control.yaml](./mybot_control/config/mybot_control.yaml) 。在`mybot_description`中提供mybot的urdf模型，tf_tree以及gazebo插件的相关参数，详见[mybot.xacro](./mybot_description/urdf/mybot.xacro) 。在`scripts`文件夹中的`py_tf_follower.py`订阅`mybot_link`和`base_footprint`并且发布`/mybot_cmd_vel`实现mybot跟随xbot功能。当mybot与xbot距离小于1米的时候，mybot停止移动。
 
 
 ## 运行方法
 
-启动服务器端
+在gazebo中启动xbot和mybot
 
 ```sh
-$ rosrun service_demo server_demo.py   #Python
-$ rosrun service_demo server           #C++
+$ roslaunch tf_follower robot_spawn.launch
 ``` 
 
-启动客户端
+启动跟随
 
 ```sh
-$ rosrun service_demo client_demo.py   #Python
-$ rosrun service_demo client           #C++
-``` 
+$ rosrun tf_follower py_tf_follower.py  
