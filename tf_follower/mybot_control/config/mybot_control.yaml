@@ -1,0 +1,16 @@
+mybot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  
+
+  # Effort Controllers ---------------------------------------
+  leftWheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: mybot_left_wheel_hinge
+    pid: {p: 100.0, i: 0.1, d: 10.0}
+  rightWheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: mybot_right_wheel_hinge
+    pid: {p: 100.0, i: 0.1, d: 10.0}
