@@ -3,27 +3,27 @@
 1. 根据自己的ROS版本,安装对应的rtabmap-ros
  * lunar
 
-			$ sudo apt-get install ros-lunar-rtabmap-ros
+		 $ sudo apt-get install ros-lunar-rtabmap-ros
  * 	Kinetic
 				
-                $ sudo apt-get install ros-kinetic-rtabmap-ros
+             $ sudo apt-get install ros-kinetic-rtabmap-ros
 	
  * 	Jade
 
-				$ sudo apt-get install ros-jade-rtabmap-ros
+			 $ sudo apt-get install ros-jade-rtabmap-ros
  * 	Indigo
 				
-                $ sudo apt-get install ros-indigo-rtabmap-ros
+             $ sudo apt-get install ros-indigo-rtabmap-ros
 	
  * 	Hydro
 
-				$ sudo apt-get install ros-hydro-rtabmap-ros
+			 $ sudo apt-get install ros-hydro-rtabmap-ros
                       
 2. 从源构建,添加依赖
 	
     * 首先检查 `~/.bashrc`文件是否包含下面两句:
     	
-      	  $ source /opt/ros/kinetic/setup.bash
+      	    $ source /opt/ros/kinetic/setup.bash
 			$ source ~/catkin_ws/devel/setup.bash
     * 要求安装的依赖:
 
