@@ -10,12 +10,12 @@ if __name__ == '__main__':
 
         listener = tf.TransformListener()
         
-        turtle_vel = rospy.Publisher('/sim_p3at/cmd_vel', geometry_msgs.msg.Twist,queue_size=1)
+        turtle_vel = rospy.Publisher('/mybot_cmd_vel', geometry_msgs.msg.Twist,queue_size=1)
     
         rate = rospy.Rate(10.0)
         ctrl_c = False
         
-        follower_model_frame = "/pioneer3at_link"
+        follower_model_frame = "/mybot_link"
         model_to_be_followed_frame = "/base_footprint"
         
         def shutdownhook():
@@ -40,7 +40,7 @@ if __name__ == '__main__':
             cmd = geometry_msgs.msg.Twist()
             if 2*linear>1:            
             	cmd.linear.x = linear*0.2
-            	cmd.angular.z = angular*0.1
+            	cmd.angular.z = -angular*0.1
             else:
             	cmd.linear.x =0
             	cmd.angular.z =0

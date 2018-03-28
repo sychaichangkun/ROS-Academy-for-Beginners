@@ -6,9 +6,7 @@
 
   <!-- Setup controllers -->
   <!-- rosparam file="$(find fetch_gazebo)/param/freight_controllers.yaml" command="load" / -->
-
-  <!-- URDF and TF support -->
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find robot_sim_demo)/urdf/robot.xacro" />
+ <param name="robot_description" command="$(find xacro)/xacro.py $(find robot_sim_demo)/urdf/robot.xacro" />
   
   <!-- Put a robot in gazebo, make it look pretty -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
@@ -19,7 +17,7 @@
   </node-->
 
   <!--Load the joint controllers to param server-->
-  <rosparam file="$(find robot_sim_demo)/param/xbot2_control.yaml" command="load"/>
+  <rosparam file="$(find robot_sim_demo)/param/xbot-u_control.yaml" command="load"/>
 
   <!--Load controllers-->
   <node name="spawner" pkg="controller_manager" type="spawner" respawn="false"
@@ -35,13 +33,15 @@
   </node>
 
 
-<group ns="pioneer3at">
 
-    <param name="robot_description" command="$(find xacro)/xacro.py $(find tf_demo)/urdf/pioneer3at.urdf.xacro" />
+<group ns="mybot">
+    <rosparam file="$(find tf_follower)/mybot_control/config/mybot_control.yaml" command="load"/>
+    <param name="robot_description"
+	 command="$(find xacro)/xacro.py '$(find tf_follower)/mybot_description/urdf/mybot.xacro'" />
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
-        args="-urdf -model pioneer3at -param robot_description -x 3 -y 3 -z 0"/>
+        args="-urdf -model mybot -param robot_description -x 3 -y 3 -z 0"/>
 </group>
 
   <!-- Publish base_scan_raw if anything subscribes to it -->

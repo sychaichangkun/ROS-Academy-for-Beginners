@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ <gazebo>
+   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+   </plugin>
+ </gazebo>
+
+ <gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <robotNamespace>/</robotNamespace>
+    <alwaysOn>true</alwaysOn>
+    <legacyMode>false</legacyMode>
+    <updateRate>50</updateRate>
+    <leftJoint>mybot_left_wheel_hinge</leftJoint>
+    <rightJoint>mybot_right_wheel_hinge</rightJoint>
+    <wheelSeparation>${chassisWidth+wheelWidth}</wheelSeparation>
+    <wheelDiameter>${2*wheelRadius}</wheelDiameter>
+    <torque>20</torque>
+    <commandTopic>mybot_cmd_vel</commandTopic>
+    <odometryTopic>mybot_odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>mybot_link</robotBaseFrame>
+  </plugin>
+</gazebo>
+
+ <gazebo>
+  <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+    <frameName>map</frameName>
+    <bodyName>mybot_chassis</bodyName>
+    <topicName>odom</topicName>
+    <updateRate>30.0</updateRate>
+  </plugin>
+</gazebo>
+
+<gazebo reference="mybot_chassis">
+  <material>Gazebo/Orange</material>
+</gazebo>
+<gazebo reference="caster_wheel">
+  <mu1>0.0</mu1>
+  <mu2>0.0</mu2>
+  <material>Gazebo/Red</material>
+</gazebo>
+<gazebo reference="right_wheel">
+  <mu1 value="1.0"/>
+  <mu2 value="1.0"/>
+  <kp  value="10000000.0" />
+  <kd  value="1.0" />
+  <fdir1 value="1 0 0"/>
+  <material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="left_wheel">
+  <mu1 value="1.0"/>
+  <mu2 value="1.0"/>
+  <kp  value="10000000.0" />
+  <kd  value="1.0" />
+  <fdir1 value="1 0 0"/>
+  <material>Gazebo/Black</material>
+</gazebo>
+
+</robot>
