@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<robot name="mybot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+        <!-- Put here the robot description -->
+<xacro:property name="PI" value="3.1415926535897931"/>
+
+<xacro:property name="chassisHeight" value="0.1"/>
+<xacro:property name="chassisLength" value="0.4"/>
+<xacro:property name="chassisWidth" value="0.2"/>
+<xacro:property name="chassisMass" value="5"/>
+
+<xacro:property name="casterRadius" value="0.05"/>
+<xacro:property name="casterMass" value="3"/>
+
+<xacro:property name="wheelWidth" value="0.05"/>
+<xacro:property name="wheelRadius" value="0.1"/>
+<xacro:property name="wheelPos" value="0.2"/>
+<xacro:property name="wheelMass" value="2"/>
+
+<xacro:property name="cameraSize" value="0.05"/>
+<xacro:property name="cameraMass" value="0.1"/>
+<xacro:include filename="$(find urdf_demo)/mybot_description/xacro/mybot.gazebo" />
+<xacro:include filename="$(find urdf_demo)/mybot_description/xacro/materials.xacro" />
+<xacro:include filename="$(find urdf_demo)/mybot_description/xacro/macros.xacro" />
+<link name="mybot_link" />
+
+<joint name="base_joint" type="fixed">
+  <parent link="mybot_link"/>
+  <child link="mybot_chassis"/>
+</joint>
+<link name='mybot_chassis'>
+  <collision> 
+    <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/> 
+    <geometry> 
+      <box size="${chassisLength} ${chassisWidth} ${chassisHeight}"/> 
+    </geometry> 
+  </collision>
+  <visual> 
+    <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/> 
+    <geometry> 
+      <box size="${chassisLength} ${chassisWidth} ${chassisHeight}"/> 
+    </geometry> 
+    <material name="orange"/>
+  </visual>
+  <inertial> 
+    <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/> 
+    <mass value="${chassisMass}"/> 
+    <box_inertia m="${chassisMass}" x="${chassisLength}" y="${chassisWidth}" z="${chassisHeight}"/>
+  </inertial>
+</link>
+<joint name="fixed" type="fixed">
+  <parent link="mybot_chassis"/>
+  <child link="mybot_caster_wheel"/>
+</joint>
+
+<link name="mybot_caster_wheel">
+  <collision>
+    <origin xyz="${casterRadius-chassisLength/2} 0 ${casterRadius-chassisHeight+wheelRadius}" rpy="0 0 0"/>
+    <geometry>
+      <sphere radius="${casterRadius}"/>
+    </geometry>
+  </collision>
+  
+  <visual>
+    <origin xyz="${casterRadius-chassisLength/2} 0 ${casterRadius-chassisHeight+wheelRadius}" rpy="0 0 0"/>
+    <geometry>
+      <sphere radius="${casterRadius}"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+
+  <inertial>
+    <origin xyz="${casterRadius-chassisLength/2} 0 ${casterRadius-chassisHeight+wheelRadius}" rpy="0 0 0"/>
+    <mass value="${casterMass}"/>
+    <sphere_inertia m="${casterMass}" r="${casterRadius}"/>
+  </inertial>
+</link>
+<link name="mybot_left_wheel">
+  <collision>
+    <origin xyz="0 0 0" rpy="0 ${PI/2} ${PI/2}" />
+    <geometry>
+      <cylinder length="${wheelWidth}" radius="${wheelRadius}"/>
+    </geometry>
+  </collision>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 ${PI/2} ${PI/2}" />
+    <geometry>
+      <cylinder length="${wheelWidth}" radius="${wheelRadius}"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 ${PI/2} ${PI/2}" />
+    <mass value="${wheelMass}"/>
+    <cylinder_inertia m="${wheelMass}" r="${wheelRadius}" h="${wheelWidth}"/>
+  </inertial>
+</link>
+
+<joint name="mybot_left_wheel_hinge" type="continuous">
+  <parent link="mybot_chassis"/>
+  <child link="mybot_left_wheel"/>
+<origin xyz="${-wheelPos+chassisLength/2} ${1*wheelWidth/2+1*chassisWidth/2} ${wheelRadius}" rpy="0 0 0" />
+  <axis xyz="0 1 0" rpy="0 0 0" />
+  <limit effort="100" velocity="100"/>
+  <joint_properties damping="0.0" friction="0.0"/>
+</joint>
+
+
+<transmission name="left_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="mybot_left_wheel_hinge"> 
+  	<hardwareInterface>EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="leftMotor">
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+<link name="mybot_right_wheel">
+  <collision>
+    <origin xyz="0 0 0" rpy="0 ${PI/2} ${PI/2}" />
+    <geometry>
+      <cylinder length="${wheelWidth}" radius="${wheelRadius}"/>
+    </geometry>
+  </collision>
+
+  <visual>
+    <origin xyz="0 0 0" rpy="0 ${PI/2} ${PI/2}" />
+    <geometry>
+      <cylinder length="${wheelWidth}" radius="${wheelRadius}"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 ${PI/2} ${PI/2}" />
+    <mass value="${wheelMass}"/>
+    <cylinder_inertia m="${wheelMass}" r="${wheelRadius}" h="${wheelWidth}"/>
+  </inertial>
+</link>
+
+<joint name="mybot_right_wheel_hinge" type="continuous">
+  <parent link="mybot_chassis"/>
+  <child link="mybot_right_wheel"/>
+<origin xyz="${-wheelPos+chassisLength/2} ${-1*wheelWidth/2+(-1)*chassisWidth/2} ${wheelRadius}" rpy="0 0 0" />
+  <axis xyz="0 1 0" rpy="0 0 0" />
+  <limit effort="100" velocity="100"/>
+  <joint_properties damping="0.0" friction="0.0"/>
+</joint>
+
+
+<transmission name="right_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="mybot_right_wheel_hinge">
+  <hardwareInterface>EffortJointInterface</hardwareInterface>
+   </joint>
+  <actuator name="rightMotor">
+    <hardwareInterface>EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

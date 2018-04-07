@@ -1,0 +1,28 @@
+<launch>
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find urdf_demo)/worlds/mybot.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+ <rosparam file="$(find urdf_demo)/mybot_control/config/mybot_control.yaml" command="load"/>
+    <param name="robot_description"
+	 command="$(find xacro)/xacro.py '$(find urdf_demo)/mybot_description/xacro/mybot.xacro'" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
+        args="-urdf -model mybot -param robot_description -x 0 -y 0 -z 0"/> 
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find urdf_demo)/gazebo.rviz" output="screen"/> 
+</launch>

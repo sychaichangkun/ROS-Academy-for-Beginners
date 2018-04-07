@@ -16,7 +16,7 @@
       <geometry>  
         <cylinder length="0.04" radius="0.07"/>  
       </geometry>  
-      <origin rpy="0  0  0" xyz="0 0 0"/>  
+      <origin rpy="1.5707  0  0" xyz="0 0 0"/>  
       <material name="black">  
         <color rgba="0 0 0 1"/>  
       </material>  
@@ -28,19 +28,19 @@
       <geometry>  
         <cylinder length="0.04" radius="0.07"/>  
       </geometry>  
-      <origin rpy="0  0  0" xyz="0 0 0"/>  
+      <origin rpy="1.5707  0  0" xyz="0 0 0"/>  
       <material name="black"/>  
     </visual>  
   </link>  
   
   <joint name="right" type="continuous"> 
-    <origin rpy="1.57075  0  0" xyz="0 -0.2 0.07"/>   
+    <origin rpy="0  0  0" xyz="0 -0.2 0.07"/>   
     <parent link="base_link"/>  
     <child link="right"/>  
   </joint>  
   
   <joint name="left" type="continuous">  
-    <origin rpy="-1.57075 0 0" xyz="0 0.2 0.07"/>
+    <origin rpy="0 0 0" xyz="0 0.2 0.07"/>
     <parent link="base_link"/>  
     <child link="left"/>   
   </joint>  
