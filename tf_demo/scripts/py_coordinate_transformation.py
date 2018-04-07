@@ -25,9 +25,9 @@ if __name__ == '__main__':
     v_m=tf.transformations.translation_matrix(v)
     print '通过向量来求旋转矩阵：'
     print v_m
-#1.5 通过旋转矩阵来向量
+#1.5 通过旋转矩阵来求向量
     m_v=tf.transformations.translation_from_matrix(m)
-    print '通过旋转矩阵来向量：'
+    print '通过旋转矩阵来求向量：'
     print  m_v
 #第2部分，定义四元数
     print '第2部分，定义四元数'
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     print '两个四元数相乘'
     print  qxq   
 #第3部分，定义欧拉角度
-    print '第3部分，定义欧拉角度'
+    print '第3部分，定义欧拉角'
 #3.1 从欧拉角和旋转轴返回旋转矩阵
     rpy_m=tf.transformations.euler_matrix(1, 2, 3, 'syxz')
     print '从欧拉角和旋转轴返回旋转矩阵'

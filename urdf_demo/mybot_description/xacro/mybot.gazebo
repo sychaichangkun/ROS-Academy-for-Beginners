@@ -33,7 +33,7 @@
 </gazebo>
 
 <gazebo reference="mybot_chassis">
-  <material>Gazebo/White</material>
+  <material>Gazebo/Orange</material>
 </gazebo>
 <gazebo reference="caster_wheel">
   <mu1>0.0</mu1>
