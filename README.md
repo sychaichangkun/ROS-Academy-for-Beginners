@@ -25,6 +25,7 @@
 | **param_demo** | param操作，分别以C++和python两种语言实现 |
 | **msgs_demo** | 演示msg、srv、action文件的格式规范 |
 | **tf_demo** | tf相关API操作演示，tf示例包括C++和python两个版本 |
+| **name_demo** | 演示全局命名空间和局部命名空间下参数的提取 |
 | **tf_follower** | 制作mybot机器人 实现mybot跟随xbot的功能 |
 | **urdf_demo** |  创建机器人urdf模型，在RViz中显示  |
 | **navigation_sim_demo** | 导航演示工具包，包括AMCL, Odometry Navigation等演示 |

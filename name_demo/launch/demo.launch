@@ -1,0 +1,9 @@
+<launch>
+  <!--全局参数serial-->
+  <param name="serial" value="5" />
+  <node name="name_demo" pkg="name_demo" type="name_demo"
+   output="screen">
+    <!--局部参数serial-->
+    <param name="serial" value="10" />
+  </node>
+</launch>
