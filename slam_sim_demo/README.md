@@ -31,7 +31,7 @@ $ roslaunch slam_sim_demo gmapping_demo.launch
 最后，启动rviz可视化工具，这里已经添加了一些必须模块，如LaserScan，Map等等
 
 ```sh
-$ roslaunch slam_sim_demo view_navigation.launch
+$ roslaunch slam_sim_demo view_slam.launch
 ```
 
 然后用键盘控制小车运动，就能在rviz上看到地图的建立过程
@@ -44,14 +44,14 @@ $ roslaunch slam_sim_demo view_navigation.launch
 	roslaunch robot_sim_demo robot_spawn.launch
 	rosrun robot_sim_demo robot_keyboard_teleop.py
 	roslaunch slam_sim_demo karto_demo.launch
-	roslaunch slam_sim_demo view_navigation.launch
+	roslaunch slam_sim_demo view_slam.launch
 
 ### hector示例运行方法
 
 	roslaunch robot_sim_demo robot_spawn.launch
 	rosrun robot_sim_demo robot_keyboard_teleop.py
 	roslaunch slam_sim_demo hector_demo.launch
-	roslaunch slam_sim_demo view_navigation.launch
+	roslaunch slam_sim_demo view_slam.launch
 
 ### cartopgrapher示例运行方法
 
@@ -60,7 +60,7 @@ $ roslaunch slam_sim_demo view_navigation.launch
 	roslaunch robot_sim_demo robot_spawn.launch
 	rosrun robot_sim_demo robot_keyboard_teleop.py
 	roslaunch slam_sim_demo cartographer_demo.launch
-	roslaunch slam_sim_demo view_navigation.launch
+	roslaunch slam_sim_demo view_slam.launch
 
 
 ### 注意事项
