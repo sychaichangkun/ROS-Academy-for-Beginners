@@ -60,7 +60,6 @@ $ roslaunch slam_sim_demo view_slam.launch
 	roslaunch robot_sim_demo robot_spawn.launch
 	rosrun robot_sim_demo robot_keyboard_teleop.py
 	roslaunch slam_sim_demo cartographer_demo.launch
-	roslaunch slam_sim_demo view_slam.launch
 
 
 ### 注意事项
